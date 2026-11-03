@@ -77,8 +77,8 @@ if(experience){
   let start;
   const animate=time=>{
    if(start===undefined)start=time;
-   const progress=Math.min(1,(time-start)/1300);
-   const eased=1-Math.pow(1-progress,3);
+   const progress=Math.min(1,(time-start)/2800);
+   const eased=progress*progress*(3-2*progress);
    counters.forEach(counter=>{counter.textContent=String(Math.round(Number(counter.dataset.experienceCount)*eased));});
    if(progress<1)requestAnimationFrame(animate);
   };
