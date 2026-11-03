@@ -49,3 +49,19 @@ if(siteHeader){
  window.addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(updateHeader);ticking=true;}},{passive:true});
  updateHeader();
 }
+
+// Parallax on the transparent team portrait: subtle, eased, and disabled on reduced motion.
+const teamPortrait=document.querySelector('.hero-team img');
+if(teamPortrait && matchMedia('(prefers-reduced-motion: no-preference)').matches){
+ let portraitFrame=false;
+ const movePortrait=()=>{
+  const hero=document.querySelector('.hero');
+  const rect=hero.getBoundingClientRect();
+  const progress=Math.max(0,Math.min(1,-rect.top/(rect.height*.85)));
+  teamPortrait.style.setProperty('--team-scroll',`${Math.round(progress*34)}px`);
+  teamPortrait.style.setProperty('--team-scale',(1-progress*.045).toFixed(3));
+  portraitFrame=false;
+ };
+ addEventListener('scroll',()=>{if(!portraitFrame){requestAnimationFrame(movePortrait);portraitFrame=true;}},{passive:true});
+ movePortrait();
+}
