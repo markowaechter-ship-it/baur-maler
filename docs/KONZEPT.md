@@ -57,3 +57,9 @@ Jede Seite enthält eine eigene Description, ein H1, lokale Kontaktdaten und ein
 ## Performance und Erfolgsmessung
 
 Keine Framework-Laufzeit, keine externen Fonts, keine Marketing-Skripte. Bilder lokal und komprimiert. Das Ladezeitziel von 1,5 Sekunden ist als Ziel zu prüfen, nicht als garantiertes Ergebnis. Core Web Vitals sind nach Veröffentlichung über Felddaten zu bewerten. Sinnvolle Geschäftsmessung: qualifizierte Anfragen, Anrufe und Anfragen pro Leistung. Tracking erst nach Festlegung eines passenden Datenschutzkonzepts ergänzen.
+
+## Aktualisierte Seitenstruktur nach Kundenschema
+
+Der freigegebene helle, zentrierte Header bleibt erhalten. Die Startseite folgt nun dem gelieferten Schema: Hero mit transparentem Team-PNG und Erfahrungsleiste; vier Leistungskacheln; vier Gründe für Baur; drei Kundenstimmen; zweispaltige FAQ mit aufklappbaren Antworten; abschliessendes Kontaktangebot; bestehender Footer. Die Erfahrungsleiste übernimmt die Vertrauensfunktion der im Schema vorgesehenen Partnerlogos, da keine belegten Partnerschaften vorliegen.
+
+Die Leistungskacheln verwenden abstrakte Materialstudien aus CSS. Die Kundenstimme von Hanna Meier ist ein Originalzitat; die beiden weiteren Karten sind ausdrücklich als sinngemässe Zusammenfassungen gekennzeichnet. Die Inhaltsseiten bleiben über die Leistungskacheln erreichbar. Das Teamfoto wird mit natürlichem Seitenverhältnis und erhaltenem Alpha-Kanal geladen; der Scroll-Effekt verändert seine Proportionen nicht.
