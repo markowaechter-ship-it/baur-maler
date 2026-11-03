@@ -85,3 +85,7 @@ Aus der interaktiven Timeline entfernt: Ernst Baur sen. bei 1946, Ernst Baur jun
 ## Grösserer Hero mit überlagerter Teamaufnahme
 
 Die Hauptüberschrift ist deutlich grösser und fett gesetzt. Die transparente Teamaufnahme wächst auf bis zu 940 Pixel Breite und ragt bewusst leicht vor die untere Textzeile, wie ausdrücklich gewünscht. Beim Scrollen bewegt sich die Aufnahme nach oben und vergrössert sich moderat, während die Überschrift leicht in Gegenrichtung wandert. Die Begleittexte und Aktionen folgen mit kompakterem Abstand mittig unter dem Bild. Die vorhandene Malfläche bleibt hinter dem gesamten Inhalt. Bei reduzierter Bewegung bleiben die Ebenen statisch.
+
+## Hero: Bild am unteren Rand, weisse Texte darüber
+
+Das Teamfoto ist nun absolut am unteren Rand des Heros verankert und nochmals vergrössert. Die Personen ragen sichtbar in die grosse Überschrift hinein. Eine eigene Vordergrundebene enthält Bildunterschrift, Begleittext und Aktionen über dem unteren Fotobereich, mit weissen Texten und einem zurückhaltenden dunklen Verlauf für die Lesbarkeit. Beim Scrollen vergrössert sich die Teamaufnahme von ihrer unteren Kante aus, sodass diese bündig bleibt. Mobil steht die Farbpalette oberhalb der Komposition, um keine Gesichter oder Aktionen zu verdecken.

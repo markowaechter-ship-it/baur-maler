@@ -46,3 +46,7 @@ Elf Jahresstationen und 15 zugeordnete Porträtverwendungen geprüft. Browserpr�
 ## Überarbeiteter Hero (4. November 2026)
 
 Desktop (1440 Pixel) und Mobilansicht (390 Pixel) gerendert und visuell geprüft: fette zweizeilige Hauptüberschrift, deutlich vergrössertes transparentes Teamfoto und kompakt zentrierte Begleittexte/Aktionen. Das Foto überlagert die untere Textzeile bewusst auf ausdrücklichen Kundenwunsch; die entsprechende stilistische Überlagerungswarnung ist deshalb akzeptiert. Die Malpalette bleibt seitlich bzw. mobil darunter. Syntaxprüfung, Seitenprüfung und Build erfolgreich.
+
+## Am unteren Hero-Rand verankertes Bild
+
+Nach der weiteren Vergrösserung wurden Desktop und Mobilansicht erneut visuell geprüft. Browsermessung: Unterkante des Fotos und Hero-Unterkante stimmen exakt überein (0 Pixel Differenz). Kein horizontaler Seitenüberlauf bei 1440 oder 390 Pixeln. Die Begleittexte sind weiss und liegen gemeinsam mit den Aktionen über dem Bild; ein dunkler Verlauf sichert ihre Lesbarkeit. Die Personen überdecken bewusst Teile der unteren Überschriftenzeile. Die mobile Farbpalette wurde oberhalb der Komposition platziert.
