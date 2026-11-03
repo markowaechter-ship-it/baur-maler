@@ -37,3 +37,7 @@ npm run build
 ## Vor Veröffentlichung
 
 Die rechtliche Firmenbezeichnung bestätigen (Briefing: AG; bisheriger Logo-Dateiname: GmbH). Hosting und Datenschutz vervollständigen, Bildnutzungsrechte bestätigen, alle Leistungen und Umweltclaims freigeben und Canonical-/Open-Graph-Domain an das tatsächliche Ziel anpassen. Die Anfrage ist ein transparenter Mailto-Workflow, kein serverseitiger Formularversand. Es werden keine Nachrichten im Browser oder auf einem Server gespeichert.
+
+## Vollständige Originalinhalte integriert
+
+Die Texte und Bilder aller drei öffentlich verlinkten Originalseiten sind inzwischen eingebaut, einschliesslich sämtlicher Leistungsbeschreibungen, vier vollständiger Kundenstimmen und der Firmengeschichte von 1937 bis 2016. Neue Seiten: `/leistungen/` und `/geschichte/`. Originaldateien und Quellenzuordnung: `assets/original/` und `docs/original-content.json`. Der helle Header mit schwarzem Logo und das transparente Teamfoto bleiben erhalten. Die bisherigen Hinweise auf fehlende Originalbilder und eine ungeklärte Firmierung sind durch diese Quellenübernahme aktualisiert; die Geschichte bestätigt „Baur die Maler GmbH“.

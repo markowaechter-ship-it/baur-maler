@@ -1,0 +1,460 @@
+{
+  "start": {
+    "blocks": [
+      {
+        "tag": "h1",
+        "text": "Ihre Vision, unsere Farben."
+      },
+      {
+        "tag": "h4",
+        "text": "Gemeinsam gestalten wir!"
+      },
+      {
+        "tag": "h1",
+        "text": "Weil unsere Kunden Qualität schätzen."
+      },
+      {
+        "tag": "h2",
+        "text": "Jahre"
+      },
+      {
+        "tag": "h2",
+        "text": "Generationen"
+      },
+      {
+        "tag": "h1",
+        "text": "Malen, Tapezieren & Spritzen"
+      },
+      {
+        "tag": "h3",
+        "text": "Beratung"
+      },
+      {
+        "tag": "p",
+        "text": "Bevor die Malerarbeiten beginnen, nimmt sich das Team Zeit, um mit Ihnen Ihre Vorstellungen und Wünsche zu besprechen. Sie erhalten professionelle Ratschläge zur Farbauswahl, Finish-Optionen und möglichen Gestaltungskonzepten."
+      },
+      {
+        "tag": "p",
+        "text": "Individuell, fundiert & authentisch."
+      },
+      {
+        "tag": "h3",
+        "text": "Planung"
+      },
+      {
+        "tag": "p",
+        "text": "Nach der Beratung erstellen die Maler einen detaillierten Plan für Ihr Projekt. Dies beinhaltet die Bestimmung der benötigten Materialien, die Festlegung des Zeitplans und die Koordination aller notwendigen Schritte, um sicherzustellen, dass Ihr Projekt reibungslos verläuft."
+      },
+      {
+        "tag": "p",
+        "text": "Die ganze Vielfalt des Maler handwerks."
+      },
+      {
+        "tag": "h3",
+        "text": "Ausführung"
+      },
+      {
+        "tag": "p",
+        "text": "Schließlich setzen die Maler ihren Plan in die Tat um. Sie kümmern sich um alle Aspekte der Malerarbeiten, von der Vorbereitung der Oberflächen über das präzise Auftragen der Farbe bis hin zur sorgfältigen Reinigung und Abschlussarbeiten."
+      },
+      {
+        "tag": "p",
+        "text": "Meisterliches Handwerk & Qualität."
+      },
+      {
+        "tag": "h1",
+        "text": "Wir gehen über ökologische Standards hinaus:"
+      },
+      {
+        "tag": "p",
+        "text": "Mit modernen Spalt- und Destillieranlagen setzen wir aktiv auf Umweltschutz. Einmalig in Winterthur – für nachhaltiges Malerhandwerk!"
+      },
+      {
+        "tag": "h1",
+        "text": "Kontakt"
+      },
+      {
+        "tag": "h4",
+        "text": "Schreiben Sie uns jetzt. Wir freuen uns auf Ihre Nachricht."
+      },
+      {
+        "tag": "p",
+        "text": "Was unsere Kunden sagen."
+      },
+      {
+        "tag": "li",
+        "text": "„Preis-Leistungs-Verhältnis, Professionalität, Pünktlichkeit, Qualität, Reaktionsschnelligkeit bei Anfragen.\" Nico Baumbach"
+      },
+      {
+        "tag": "h2",
+        "text": "„Preis-Leistungs-Verhältnis, Professionalität, Pünktlichkeit, Qualität, Reaktionsschnelligkeit bei Anfragen.\""
+      },
+      {
+        "tag": "p",
+        "text": "Nico Baumbach"
+      },
+      {
+        "tag": "li",
+        "text": "„Zuverlässiger und kompetenter Familienbetrieb. Ich kenne die Baur Maler schon seit zwei Generationen und war immer äusserst zufrieden - Weiter so!“ Jürg Thöny"
+      },
+      {
+        "tag": "h2",
+        "text": "„Zuverlässiger und kompetenter Familienbetrieb. Ich kenne die Baur Maler schon seit zwei Generationen und war immer äusserst zufrieden - Weiter so!“"
+      },
+      {
+        "tag": "p",
+        "text": "Jürg Thöny"
+      },
+      {
+        "tag": "li",
+        "text": "„Super freundliche Mitarbeiter und Top Service. Wir mussten uns um nichts kümmern.“ Hanna Meier"
+      },
+      {
+        "tag": "h2",
+        "text": "„Super freundliche Mitarbeiter und Top Service. Wir mussten uns um nichts kümmern.“"
+      },
+      {
+        "tag": "p",
+        "text": "Hanna Meier"
+      },
+      {
+        "tag": "li",
+        "text": "„Einfach guter Service zu guten Preisen.“ Theo Morger"
+      },
+      {
+        "tag": "h2",
+        "text": "„Einfach guter Service zu guten Preisen.“"
+      },
+      {
+        "tag": "p",
+        "text": "Theo Morger"
+      }
+    ],
+    "images": [
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/65607e6444ab605beb0761c8/b3154f33-4dce-4f15-914f-08879c23fa7a/Baur-Mitarbeiter-Web.png",
+        "alt": "",
+        "local": "/assets/original/start-01.png"
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/65607e6444ab605beb0761c8/18fd52af-0149-4648-b809-8f2fd1cb9fd3/Baur+die+Maler+GmbH+Logo.png",
+        "alt": "",
+        "local": "/assets/original/start-02.png"
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/65607e6444ab605beb0761c8/27539bfc-26da-4a0c-9499-593963d01117/Farbe+2.png",
+        "alt": "",
+        "local": "/assets/original/start-03.png"
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/65607e6444ab605beb0761c8/337d9703-cceb-4785-ac2d-08acee9dc6a9/Bauer+Grafik+2.png",
+        "alt": "",
+        "local": "/assets/original/start-04.png"
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/65607e6444ab605beb0761c8/6cb8ed7e-e0c0-4a71-ab3d-658ee62f4dcc/Farbe+3.png",
+        "alt": "",
+        "local": "/assets/original/start-05.png"
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/65607e6444ab605beb0761c8/b4a6f8f3-c1b7-4d48-b852-b4a5cec43ef1/Bauer+Grafik+5.png",
+        "alt": "",
+        "local": "/assets/original/start-06.png"
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/65607e6444ab605beb0761c8/1700961114841-MI8TIXKNR8D9R40JJFVJ/image-asset.jpeg",
+        "alt": "",
+        "local": "/assets/original/start-07.jpeg"
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/6318962264475814777b6172/1662555820065-0JIBPVC1MARX2OTXTXH5/Rectangle+25.jpg",
+        "alt": "Rectangle 25.jpg",
+        "local": "/assets/original/start-08.jpg"
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/65607e6444ab605beb0761c8/bead173b-98d0-4652-bf76-417e3ecf45d7/u2489435461_Frau_mittleren_Alters_Portrt_Testimonial_Sympatis_64a4d66f-5786-49ad-94d9-33745586b81c_1.png",
+        "alt": "u2489435461_Frau_mittleren_Alters_Portrt_Testimonial_Sympatis_64a4d66f-5786-49ad-94d9-33745586b81c_1.png",
+        "local": "/assets/original/start-09.png"
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/65607e6444ab605beb0761c8/1d8f5a04-f8dc-401a-bebc-c8fae9590e46/image-asset.jpg",
+        "alt": "image-asset.jpg",
+        "local": "/assets/original/start-10.jpg"
+      }
+    ]
+  },
+  "leistungen": {
+    "blocks": [
+      {
+        "tag": "h2",
+        "text": "Innenbereich"
+      },
+      {
+        "tag": "h3",
+        "text": "Fassaden- Renovation & Gestaltung"
+      },
+      {
+        "tag": "p",
+        "text": "Wir sind Spezialisten für einzigartige Fassadengestaltung, die sich perfekt ins Gesamtbild einfügt. Baur die Maler steht für professionelle und nachhaltige Renovationen mit umweltverträglichen Materialien, sogar bei denkmalgeschützten Gebäuden."
+      },
+      {
+        "tag": "h3",
+        "text": "Betonsanierung & Risssanierung"
+      },
+      {
+        "tag": "p",
+        "text": "Beton ist das meistverwendete Baumaterial, doch ohne angemessene Wartung leidet seine Dauerhaftigkeit. Risse, Rostfahnen und Abplatzungen sind häufige Probleme. Wir bieten intelligente Lösungen und handwerkliches Geschick, um die Funktion und das Erscheinungsbild von Gebäuden dauerhaft wiederherzustellen."
+      },
+      {
+        "tag": "h3",
+        "text": "Holzwerkarbeiten"
+      },
+      {
+        "tag": "p",
+        "text": "Holz verleiht Charme und Wärme, sowohl drinnen als auch draußen. Wir kümmern uns um verschiedene Objekte wie Riegelhäuser, Fenster, Türen, Jalousieläden, Dachuntersichten und Gartenmöbel. Regelmäßige Pflege erhöht die Lebensdauer von Holzwerk und spart langfristig Kosten, sowohl im Innen- als auch im Außenbereich."
+      },
+      {
+        "tag": "h2",
+        "text": "Ästhetischer & schützende Gebäudehüllen."
+      },
+      {
+        "tag": "h3",
+        "text": "Aussenvergoldung"
+      },
+      {
+        "tag": "p",
+        "text": "Die Wahl zwischen einfacher Vergoldung und doppelter Ölvergoldung hängt von der Situation ab. Eine fachgerechte und nachhaltige Vergoldung im Freien ist entscheidend für die Lebensdauer."
+      },
+      {
+        "tag": "h3",
+        "text": "Von klassischer Wandgestaltung bis zu Stucco Veneziano."
+      },
+      {
+        "tag": "p",
+        "text": "Farbe ist mehr als Dekoration - sie ist Energie. Ob Neubau, Umbau oder Renovierung, wir schaffen die perfekte Atmosphäre. Lassen Sie sich bei einer persönlichen Farbberatung begeistern."
+      },
+      {
+        "tag": "h3",
+        "text": "Malen & Naturfarben"
+      },
+      {
+        "tag": "p",
+        "text": "Von reinem Weiß bis zu lebendigen Farben bieten wir vielfältige Maleroptionen. Entdecken Sie die Naturschönheit mineralischer und kalkhaltiger Farben mit Vorteilen wie Schimmelresistenz, Lichtbeständigkeit und Umweltfreundlichkeit. Unsere Malerarbeiten sind nicht nur termingerecht, sondern auch geruchsarm und für Allergiker geeignet, mit professioneller Einrichtungsabdeckung."
+      },
+      {
+        "tag": "h3",
+        "text": "Tapezieren vom Profi"
+      },
+      {
+        "tag": "p",
+        "text": "Tapeten bieten endlose Vielfalt: modern oder klassisch, urban oder rustikal. In verschiedenen Materialien und Designs setzen sie Highlights und schaffen einzigartige Raumatmosphären. Unsere Fototapeten verewigen Schnappschüsse und Lieblingsmotive."
+      },
+      {
+        "tag": "h2",
+        "text": "Dekorativ- & Spezialtechniken"
+      },
+      {
+        "tag": "h3",
+        "text": "Technik für Ihren Wohnstil"
+      },
+      {
+        "tag": "p",
+        "text": "Von mutig bis dezent, wir verwandeln Ihre Ideen in konkrete Farbkonzepte."
+      },
+      {
+        "tag": "h3",
+        "text": "Venezianischer Edelputz"
+      },
+      {
+        "tag": "p",
+        "text": "Stucco Veneziano schafft ein edel-klassisches Ambiente durch seine antike Spachteltechnik und das wunderschöne Finish. Dezent, aber einzigartig, rundet es die gesamte Raumatmosphäre ab."
+      },
+      {
+        "tag": "h3",
+        "text": "Dekorative Eleganz"
+      },
+      {
+        "tag": "p",
+        "text": "Lasurtechniken wie Holzimitate, Marmorierungen und Maserierungen, zusammen mit Patinierarbeiten, Wischtechniken und Vergoldungen, bereichern Räume gezielt und setzen beeindruckende Akzente."
+      },
+      {
+        "tag": "h3",
+        "text": "Alte Klassiker"
+      },
+      {
+        "tag": "p",
+        "text": "Unser Portfolio dekorativer Techniken wird durch klassische Methoden wie Schablonieren und Schriftenmalerei vollendet."
+      }
+    ],
+    "images": [
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/65607e6444ab605beb0761c8/337d9703-cceb-4785-ac2d-08acee9dc6a9/Bauer+Grafik+2.png",
+        "alt": "",
+        "local": "/assets/original/leistungen-01.png"
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/65607e6444ab605beb0761c8/09564ef5-4d3b-4634-bf60-007c3fff3669/1+Innere+Arbeiten+Baur+die+Maler.png",
+        "alt": "",
+        "local": "/assets/original/leistungen-02.png"
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/65607e6444ab605beb0761c8/299e9d31-d0b9-4dc7-8319-a1014bf3d76f/2+%C3%84ussere+Arbeiten+Bauer+die+Maler.png",
+        "alt": "",
+        "local": "/assets/original/leistungen-03.png"
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/65607e6444ab605beb0761c8/e429c68f-5d67-453a-8944-951bf20efc79/3+Dekorative+Wandarbeiten+Baur+die+Maler.png",
+        "alt": "",
+        "local": "/assets/original/leistungen-04.png"
+      }
+    ]
+  },
+  "geschichte": {
+    "blocks": [
+      {
+        "tag": "h2",
+        "text": "1937"
+      },
+      {
+        "tag": "p",
+        "text": "Gründet Ernst Baur sen. den Malerbetrieb in Winterthur. Der eidg. dipl. Malermeister stellt kontinuierlich mehr Mitarbeiter ein und setzt auf ein starkes, gut ausgebildetes Team. Sein Erfolg bestätigt seinen Weg."
+      },
+      {
+        "tag": "h2",
+        "text": "1946"
+      },
+      {
+        "tag": "p",
+        "text": "Die Familie Baur erweitert ihren Betrieb und übernimmt die Liegenschaft an der Agnesstrasse 36 in Winterthur. Um dem wachsenden Platzbedarf gerecht zu werden, errichten sie dort eine neue, moderne Werkstatt."
+      },
+      {
+        "tag": "p",
+        "text": "Ernst Baur sen."
+      },
+      {
+        "tag": "h2",
+        "text": "1973"
+      },
+      {
+        "tag": "p",
+        "text": "Die nächste Generation. Nach intensiven Lehrjahren tritt Ernst Baur jun. 1972 in den Familienbetrieb ein und schließt 1973 erfolgreich die Prüfung zum eidg. dipl. Malermeister ab."
+      },
+      {
+        "tag": "p",
+        "text": "Ernst Baur jun."
+      },
+      {
+        "tag": "h2",
+        "text": "1976"
+      },
+      {
+        "tag": "p",
+        "text": "Generationenwechsel. Ernst Baur jun. übernimmt gemeinsam mit seiner Frau Therese den Betrieb. Getreu der Tradition legt er großen Wert auf die Weiterbildung der Mitarbeiter. Zudem engagiert er sich regelmäßig im Malermeisterverband als Prüfungsexperte für Lehrlinge und als Prüfungs-Obmann."
+      },
+      {
+        "tag": "h2",
+        "text": "1986"
+      },
+      {
+        "tag": "p",
+        "text": "Die Nase vorn. Die neue Werkstatt, das eigene Spritzwerk und eine Wärmerückgewinnungsanlage werden in Betrieb genommen. Baur die Maler erfüllt nicht nur alle ökologischen Auflagen, sondern setzt als erster Malerbetrieb in Winterthur mit neuen Spalt- und Destillieranlagen ein freiwilliges Zeichen für aktiven Umweltschutz."
+      },
+      {
+        "tag": "p",
+        "text": "Therese Baur"
+      },
+      {
+        "tag": "h2",
+        "text": "1997"
+      },
+      {
+        "tag": "p",
+        "text": "Nachwuchsfragen stellen sich nicht. Andi (1997) und Mathias (1999) Baur beginnen ihre Malerlehren und führen die Familientradition fort."
+      },
+      {
+        "tag": "h2",
+        "text": "2004"
+      },
+      {
+        "tag": "p",
+        "text": "Der erste Streich. Mathias Baur tritt in den Betrieb ein und unterstützt das Team als Spezialist für Spritzarbeiten und dekorative Techniken."
+      },
+      {
+        "tag": "p",
+        "text": "Mathias Baur"
+      },
+      {
+        "tag": "h2",
+        "text": "2007"
+      },
+      {
+        "tag": "p",
+        "text": "Andi Baur verstärkt das Team von Baur die Maler nach erfolgreichem Abschluss seiner Meisterprüfung."
+      },
+      {
+        "tag": "p",
+        "text": "Andi Baur"
+      },
+      {
+        "tag": "h2",
+        "text": "2012"
+      },
+      {
+        "tag": "p",
+        "text": "Im Sommer schließt auch Mathias Baur die Meisterschule ab und wird damit der dritte im Bunde. Beide Söhne unterstützen zunehmend ihren Vater in der Geschäftsleitung von Baur die Maler."
+      },
+      {
+        "tag": "h2",
+        "text": "2014"
+      },
+      {
+        "tag": "p",
+        "text": "2014 markiert einen Wendepunkt: Mathias und Britta Baur übernehmen die Geschäftsführung. Ernst und Therese Baur treten etwas in den Hintergrund, stehen jedoch weiterhin stets mit Rat und Tat zur Seite."
+      },
+      {
+        "tag": "p",
+        "text": "Britta Baur"
+      },
+      {
+        "tag": "h2",
+        "text": "2016"
+      },
+      {
+        "tag": "p",
+        "text": "Eine wesentliche Veränderung. Im 80. Jahr seit der Gründung übernehmen Mathias und Britta Baur das Geschäft vollständig und wandeln es am 1. Juli 2016 in die Baur die Maler GmbH um."
+      }
+    ],
+    "images": [
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/65607e6444ab605beb0761c8/1789a70b-d74d-4584-aeb1-299ee757a48c/2B826F2E-99C8-4001-AE63-72DC0A69269E_1_102_o.jpg",
+        "alt": "",
+        "local": "/assets/original/geschichte-01.jpg"
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/65607e6444ab605beb0761c8/571a793b-3952-4f3c-b9d7-bc5bc07020aa/011+Marko+W%C3%A4chter+PHOTOGRAPHY.jpg",
+        "alt": "",
+        "local": "/assets/original/geschichte-02.jpg"
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/65607e6444ab605beb0761c8/560e6cc5-fc07-4b38-b714-0eed736e98bf/014+Marko+W%C3%A4chter+PHOTOGRAPHY.jpg",
+        "alt": "",
+        "local": "/assets/original/geschichte-03.jpg"
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/65607e6444ab605beb0761c8/468c6b9e-91e5-467c-a43f-5e26db5539ce/016+Marko+W%C3%A4chter+PHOTOGRAPHY.jpg",
+        "alt": "",
+        "local": "/assets/original/geschichte-04.jpg"
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/65607e6444ab605beb0761c8/5875a346-730b-4696-a2dd-422ef367a1f3/Andreas-BaurDie-Maler-Winterthur.jpg",
+        "alt": "",
+        "local": "/assets/original/geschichte-05.jpg"
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/65607e6444ab605beb0761c8/db0bb862-0784-4555-a252-dffeaba83634/017+Marko+W%C3%A4chter+PHOTOGRAPHY.jpg",
+        "alt": "",
+        "local": "/assets/original/geschichte-06.jpg"
+      }
+    ]
+  }
+}

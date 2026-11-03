@@ -1,5 +1,5 @@
 import {readFile,access} from 'node:fs/promises';
-const paths=['index.html','malen-gipsen/index.html','tapezieren/index.html','spritzwerk/index.html','nachhaltigkeit/index.html','ueber-uns/index.html','kontakt/index.html','impressum/index.html','datenschutz/index.html','404.html'];
+const paths=['index.html','malen-gipsen/index.html','tapezieren/index.html','spritzwerk/index.html','nachhaltigkeit/index.html','ueber-uns/index.html','leistungen/index.html','geschichte/index.html','kontakt/index.html','impressum/index.html','datenschutz/index.html','404.html'];
 let checked=0;
 for(const path of paths){
  const html=await readFile(path,'utf8');

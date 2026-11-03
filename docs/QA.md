@@ -28,3 +28,9 @@ Der Inspektor wurde mit `--allow eyebrow,few-pictures,still-page` ausgeführt. B
 7. Ladezeit und Core Web Vitals unter dem tatsächlichen Hosting messen. Unter 1,5 Sekunden wurde nicht nachgewiesen; es ist ein Ziel.
 
 Kein öffentlicher Deploy und keine Änderung an baur-maler.ch im Rahmen dieser Übergabe. Der Auftrag wurde als Ablage von Website-Code und Konzept im angegebenen GitHub-Repository umgesetzt.
+
+## Prüfung nach vollständiger Inhaltsmigration
+
+Alle erfassten Originalüberschriften, Absätze und Kundenstimmen wurden nach HTML-Decodierung mit den sichtbaren neuen Seiteninhalten verglichen: keine fehlenden Textblöcke. Alle 20 erfassten Bildverweise sind in den öffentlichen Seiten referenziert. Es sind 19 unterschiedliche Motive, da ein Motiv auf zwei Quellseiten verwendet wird. PNG-Transparenz bleibt erhalten. `npm run check` prüft nun zwölf Seiten und 218 lokale Links/Assets. `npm run build` enthält die neuen Routen und Originaldateien.
+
+Die Startseite wurde bei 1440 und 390 Pixeln gerendert und visuell geprüft. Die neuen Seiten Leistungen und Geschichte wurden ebenfalls bei 390 Pixeln geprüft: kein horizontaler Überlauf. Unterhalb des Sichtbereichs werden die Bilder bewusst verzögert geladen. Die Kachelanordnung folgt dem vom Auftraggeber ausdrücklich gewünschten Schema; die entsprechende stilistische Kartenwarnung des Design-Inspektors bleibt deshalb bestehen.
