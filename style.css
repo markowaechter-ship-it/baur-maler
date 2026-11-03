@@ -252,3 +252,5 @@ footer{background:#111;color:#f7f7f5}footer .legal,footer .footer-top p{color:#c
 @media(max-width:760px){.paint-hero{padding-top:90px}.paint-tools{top:14px;bottom:auto;right:50%;transform:translateX(50%);flex-direction:row;padding:12px 17px;border-radius:999px;gap:12px;width:max-content;max-width:94%}.paint-colours{flex-direction:row;gap:12px}.paint-colour{width:27px;height:27px}.paint-reset{max-width:52px;font-size:11px}}
 .paint-hero .hero-layout.hero-stage{height:clamp(740px,66vw,1000px)}
 @media(max-width:760px){.paint-hero{padding-top:108px}.paint-hero .hero-layout.hero-stage{height:calc(112vw - 75px);min-height:360px;max-height:640px}}
+.paint-hero .hero-overlay .hero-phone{background:#000;border:0;color:#fff}
+.paint-hero .hero-overlay .hero-phone:hover{background:#242424}
