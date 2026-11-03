@@ -40,3 +40,12 @@ if(heroArt){
   heroArt.addEventListener('pointerleave',()=>wall.style.transform='');
  }
 }
+
+// Smoothly compact the brand header after scrolling, with a reduced-motion-safe update.
+const siteHeader=document.querySelector('header');
+if(siteHeader){
+ let ticking=false;
+ const updateHeader=()=>{siteHeader.classList.toggle('is-scrolled',window.scrollY>28);ticking=false;};
+ window.addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(updateHeader);ticking=true;}},{passive:true});
+ updateHeader();
+}
