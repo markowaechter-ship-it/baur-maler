@@ -63,3 +63,7 @@ Keine Framework-Laufzeit, keine externen Fonts, keine Marketing-Skripte. Bilder 
 Der freigegebene helle, zentrierte Header bleibt erhalten. Die Startseite folgt nun dem gelieferten Schema: Hero mit transparentem Team-PNG und Erfahrungsleiste; vier Leistungskacheln; vier Gründe für Baur; drei Kundenstimmen; zweispaltige FAQ mit aufklappbaren Antworten; abschliessendes Kontaktangebot; bestehender Footer. Die Erfahrungsleiste übernimmt die Vertrauensfunktion der im Schema vorgesehenen Partnerlogos, da keine belegten Partnerschaften vorliegen.
 
 Die Leistungskacheln verwenden abstrakte Materialstudien aus CSS. Die Kundenstimme von Hanna Meier ist ein Originalzitat; die beiden weiteren Karten sind ausdrücklich als sinngemässe Zusammenfassungen gekennzeichnet. Die Inhaltsseiten bleiben über die Leistungskacheln erreichbar. Das Teamfoto wird mit natürlichem Seitenverhältnis und erhaltenem Alpha-Kanal geladen; der Scroll-Effekt verändert seine Proportionen nicht.
+
+## Eigenständige Erfahrungssektion
+
+„80 Jahre Erfahrung · 3 Generationen“ wurde aus dem Hero entfernt. Direkt danach folgt die dunkle Sektion „Von Hand zu Hand.“ mit grossen Zahlen, einmaliger Zählanimation und einem Zeitstrahl für 1937, 1976 und 2016. Der Zeitstrahl verlinkt die vollständige Geschichte. Ohne JavaScript oder bei reduzierter Bewegung bleiben die finalen Zahlen lesbar; die Animation wird nur beim ersten Eintritt in den sichtbaren Bereich gestartet.

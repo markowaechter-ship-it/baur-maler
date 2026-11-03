@@ -65,3 +65,27 @@ if(teamPortrait && matchMedia('(prefers-reduced-motion: no-preference)').matches
  addEventListener('scroll',()=>{if(!portraitFrame){requestAnimationFrame(movePortrait);portraitFrame=true;}},{passive:true});
  movePortrait();
 }
+
+// Reveal the heritage figures once when the section enters view.
+const experience=document.querySelector('.experience');
+if(experience){
+ const counters=[...experience.querySelectorAll('[data-experience-count]')];
+ const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+ const revealExperience=()=>{
+  experience.classList.add('is-visible');
+  if(reduced.matches)return;
+  let start;
+  const animate=time=>{
+   if(start===undefined)start=time;
+   const progress=Math.min(1,(time-start)/1300);
+   const eased=1-Math.pow(1-progress,3);
+   counters.forEach(counter=>{counter.textContent=String(Math.round(Number(counter.dataset.experienceCount)*eased));});
+   if(progress<1)requestAnimationFrame(animate);
+  };
+  requestAnimationFrame(animate);
+ };
+ if('IntersectionObserver' in window){
+  const observer=new IntersectionObserver(entries=>{if(entries.some(entry=>entry.isIntersecting)){revealExperience();observer.disconnect();}},{threshold:.2});
+  observer.observe(experience);
+ }else revealExperience();
+}
