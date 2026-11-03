@@ -65,3 +65,65 @@ footer{background:#111;color:#f5f5f3}footer .legal,footer .footer-top p{color:#c
 .skip:focus{background:#111;color:#fff}
 @media(max-width:1000px){.hero-layout{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:12px}.hero-copy h1{font-size:clamp(48px,6.3vw,72px)}}
 @media(max-width:760px){header,header.is-scrolled{background:rgba(248,248,247,.97)}nav{background:#f8f8f7;border-bottom:1px solid #ddd;color:#111}nav a{color:#111}.menu-toggle{color:#111;border-color:#aaa}.hero{padding:22px var(--margin) 25px}.hero-layout{grid-template-columns:1fr;gap:15px;padding:40px 0 16px}.hero-copy h1{font-size:clamp(45px,11vw,67px);color:#111}.hero-copy h1 span{color:#111}.hero-copy>p:not(.small){color:#686b6d}.hero-team{height:clamp(280px,78vw,430px);min-height:0;margin:0}.hero-team img{width:min(100%,440px);height:100%;max-height:none;object-fit:contain;object-position:center bottom}.hero-proof{font-size:12px;justify-content:space-between;gap:10px}.hero-proof span{padding:0}.hero-phone{padding:13px 17px}.colour-section,.process,.contact-band,.subhero{background:#eeefed}}
+/* Full-site application of the light, centered reference direction */
+:root{--paper:#f7f7f5;--ink:#111;--green:#111;--sage:#f0f0ee;--sand:#f7f7f5;--muted:#6b6b6b;color-scheme:light}
+body{background:#f7f7f5;color:#111}
+header,header.is-scrolled{min-height:112px;display:flex;flex-direction:column;justify-content:center;gap:0;padding:8px var(--margin);background:rgba(247,247,245,.96);border:0;border-bottom:1px solid #e6e6e3;box-shadow:none}
+header .wordmark,header.is-scrolled .wordmark{width:188px;height:70px;justify-content:center;transform:none}
+header .wordmark img,header.is-scrolled .wordmark img{object-fit:contain;object-position:center;transform:none}
+header nav{justify-content:center;gap:clamp(18px,3vw,48px);width:100%;min-height:38px}
+header nav a{color:#292929;font-size:14px}
+header nav .button{background:#111;color:#fff;border-radius:999px;padding:11px 22px}
+header nav .button:hover{background:#393939;color:#fff}
+header.is-scrolled{min-height:90px;padding-top:4px;padding-bottom:4px}
+header.is-scrolled .wordmark{width:154px;height:55px}
+.hero{min-height:calc(100svh - 112px);display:flex;flex-direction:column;align-items:center;text-align:center;padding:28px var(--margin) 24px;background:#f7f7f5;color:#111}
+.hero-intro{width:100%;max-width:1200px;margin:0 auto;justify-content:space-between;text-align:left;color:#696969}
+.hero-layout{width:100%;max-width:1200px;display:flex;flex-direction:column;align-items:center;gap:0;padding:16px 0 4px}
+.hero-team{order:0;width:100%;height:clamp(300px,43vw,550px);min-height:0;margin:0;overflow:hidden;display:flex;justify-content:center;align-items:flex-end}
+.hero-team img{width:min(620px,72vw);height:100%;max-height:550px;object-fit:contain;object-position:center bottom;filter:none;transform:translate3d(0,var(--team-scroll,0px),0) scale(var(--team-scale,1))}
+.team-aura{left:15%;right:15%;bottom:5%;height:70%;background:radial-gradient(ellipse,rgba(215,218,213,.58),transparent 70%);filter:blur(35px)}
+.hero-team figcaption{right:0;bottom:7px;color:#737373;font-size:12px}
+.hero-copy{order:1;max-width:850px;padding:18px 0 10px;text-align:center}
+.hero-copy h1{white-space:normal;margin:0 auto 16px;font-size:clamp(42px,5.4vw,76px);line-height:1.02;letter-spacing:-.065em;color:#111}
+.hero-copy h1 span{color:#111}
+.hero-copy>p:not(.small){margin:0 auto;color:#686868;max-width:58ch;font-size:18px}
+.hero-actions{justify-content:center;margin:22px auto 15px}
+.hero-actions .button{background:#111;color:white;border-radius:999px;box-shadow:none;padding:15px 26px}
+.hero-actions .button:hover{background:#414141}
+.hero-phone{border-radius:999px;color:#222;border:1px solid #c9c9c7;padding:13px 23px}
+.hero-copy .small{margin:0 auto;color:#777;font-size:14px}
+.hero-proof{justify-content:center;width:100%;border:0;padding:12px 0 0;gap:clamp(18px,5vw,70px);color:#626262}
+.hero-proof span,.hero-proof span:first-child{padding:0;border:0}
+/* Apply the light editorial surfaces consistently to every page. */
+.colour-section,.process,.contact-band,.subhero,.faq{background:#efefed;color:#111}
+.services,.testimonial,.detail,.enquiry-section,.legal-copy{background:#f7f7f5;color:#111}
+.eco{background:#eceeeb;color:#111}
+.eco-fact{color:#111;text-shadow:none}.eco p,.process p,.contact-band p,.subhero .lead,.detail ul,.enquiry-section p{color:#626262}
+.service-row:nth-of-type(odd){background:#efefed}.service-row:hover{background:#e7e7e4}
+.service-title,.section-heading h2,.process h2,.faq h2,.colour-section h2{color:#111}
+.steps article{background:#f7f7f5;padding:28px 26px}.steps span{color:#555;text-transform:none;letter-spacing:0}
+footer{background:#111;color:#f7f7f5}footer .legal,footer .footer-top p{color:#c4c4c1}footer .footer-top strong{color:#fff}
+.subhero{ text-align:center}.subhero h1,.subhero .lead{margin-left:auto;margin-right:auto}.subhero .back{display:block;text-align:left}
+.detail,.enquiry-section{align-items:start}
+.faq details{background:#f7f7f5;border:1px solid #e1e1de;color:#111}
+@media(max-width:760px){
+ header,header.is-scrolled{min-height:76px;flex-direction:row;justify-content:space-between;padding:8px var(--margin);gap:12px}
+ header .wordmark,header.is-scrolled .wordmark{width:148px;height:56px;justify-content:flex-start}
+ header .wordmark img,header.is-scrolled .wordmark img{object-position:left center}
+ header .menu-toggle{color:#111;border-color:#aaa}
+ header nav{top:76px;left:0;right:0;width:100%;background:#f7f7f5;padding:18px var(--margin);align-items:stretch;border-bottom:1px solid #e3e3e0}
+ header nav a{color:#111}
+ .hero{min-height:auto;padding:19px var(--margin) 22px}
+ .hero-intro{font-size:11px;gap:12px}.hero-intro p:first-child{font-size:11px}
+ .hero-layout{padding:4px 0 0;gap:0}
+ .hero-team{height:clamp(260px,76vw,360px);margin-top:8px}
+ .hero-team img{width:min(430px,90vw);height:100%;max-height:none}
+ .hero-team figcaption{font-size:11px;bottom:0}
+ .hero-copy{padding:18px 0 5px}
+ .hero-copy h1{font-size:clamp(38px,9.5vw,56px);line-height:1.04}
+ .hero-copy>p:not(.small){font-size:16px}
+ .hero-actions{gap:10px;flex-wrap:wrap}.hero-actions .button,.hero-phone{padding:13px 18px}
+ .hero-proof{font-size:11px;gap:14px;justify-content:center;flex-wrap:wrap}
+ .subhero{text-align:center}.subhero .back{text-align:left}
+}
