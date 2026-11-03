@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.baur-maler.ch/sitemap.xml

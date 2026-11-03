@@ -1,0 +1,30 @@
+# Prüfung und Übergabe
+
+Geprüft am 3. November 2026.
+
+## Erfolgreich geprüft
+
+- JavaScript-Syntax mit `node --check app.js`.
+- `npm run check`: zehn HTML-Seiten, 131 lokale Link-/Asset-Verweise, je ein H1, Titel, Description und valides JSON-LD.
+- `npm run build`: statische Auslieferung in `dist/`.
+- Echte Chrome-Renderings bei 1440, 768 und 390 Pixeln. Desktop, Tablet und mobile Screenshots visuell angesehen. Ursprünglich angeschnittenes Teamfoto korrigiert, lange Überschriften verkürzt und Zitat auf Textgrösse gesetzt.
+- Browser-Funktionstest: mobiles Menü öffnen, Escape schliessen, Farbstimmung wechseln und aria-pressed aktualisieren.
+- Kontaktformular: leere Pflichtfelder ungültig; ausgefüllte Felder gültig. Ein tatsächlicher E-Mail-Versand wurde nicht ausgelöst.
+- Startseite, Kontakt und fünf Inhaltsseiten: kein horizontaler Überlauf bei 390 Pixeln.
+- Design-Inspektor nach Korrekturen: null Fehler mit expliziten Ausnahmen, fünf gestalterische Hinweise.
+
+## Bewusste Designabweichungen
+
+Der Inspektor wurde mit `--allow eyebrow,few-pictures,still-page` ausgeführt. Betriebsort und Erfahrungsangaben bleiben im ersten Sichtbereich, wie im Briefing verlangt. Nur ein authentisches Original-Teamfoto ist verfügbar; keine fremden Bilder werden als Projekte ausgegeben. Zurückhaltende Bewegung und kein Video dienen dem ruhigen Handwerksauftritt und dem Performanceziel. Der Inspektor weist zusätzlich auf die warme Cremefarbe, mehrere Schriftgrössen, die abweichende Sans-Serif und Weissraum neben dem Zitat auf dem Tablet hin. Creme und Sans-Serif entsprechen ausdrücklich dem Briefing; die übrigen Punkte sind gestalterisch bewusste Entscheidungen und keine Funktionsfehler.
+
+## Noch vor öffentlichem Livegang
+
+1. Rechtliche Firmenbezeichnung und Impressumsangaben bestätigen: AG im Briefing, GmbH im bisherigen Logo-Dateinamen.
+2. Hostinganbieter und vollständige Datenschutzhinweise ergänzen.
+3. Bild- und Personenfreigaben für das Original-Teamfoto bestätigen.
+4. Leistungsumfang (insbesondere Gipsen/Spachteln) und Umwelt-Copy durch den Betrieb freigeben.
+5. Bei gewünschtem Direktversand einen echten Formularanbieter oder Backend samt Missbrauchsschutz und Datenschutzhinweisen ergänzen. Aktuell ausdrücklich E-Mail-Entwurf im lokalen E-Mail-Programm.
+6. Vorher-Nachher-Fotos und weitere Referenzen erst nach Lieferung authentischer, freigegebener Bilder ergänzen.
+7. Ladezeit und Core Web Vitals unter dem tatsächlichen Hosting messen. Unter 1,5 Sekunden wurde nicht nachgewiesen; es ist ein Ziel.
+
+Kein öffentlicher Deploy und keine Änderung an baur-maler.ch im Rahmen dieser Übergabe. Der Auftrag wurde als Ablage von Website-Code und Konzept im angegebenen GitHub-Repository umgesetzt.

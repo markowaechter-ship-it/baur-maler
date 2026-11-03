@@ -1,0 +1,1 @@
+{"name":"baur-maler-relaunch","version":"1.0.0","private":true,"description":"Statischer Relaunch-Entwurf für Baur – die Maler, Winterthur","scripts":{"dev":"python3 -m http.server 4321 --bind 127.0.0.1","build":"node scripts/build.mjs","check":"node scripts/check.mjs"}}
