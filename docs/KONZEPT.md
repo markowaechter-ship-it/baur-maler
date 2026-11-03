@@ -97,3 +97,7 @@ Die Malerrolle wurde durch einen Pinsel mit Holzgriff, Metallzwinge, Borsten und
 ## Fliessende Farbspur statt sichtbarem Pinsel
 
 Der Werkzeug-Cursor wurde durch einen kleinen Farbtropfen ersetzt. Die Hintergrundspur besteht aus geglätteten Kurven mit geschwindigkeitsabhängiger Breite: langsame Bewegung ergibt feine Linien, schnelle Schwünge breite Bänder. Die Farbe erhält zurückhaltende Borstenlinien und Lichtkanten; frische Abschnitte glänzen kurz und werden anschliessend matter. Wenige Tropfen akzentuieren schnellere Gesten. Maximal 32 fliegende Tropfen und 48 kurze Glanzsegmente werden gleichzeitig verarbeitet; im Stillstand endet die Animation nach dem Abklingen. Die Farbauswahl, das vollständige Leeren, die Begrenzung auf den Hero und die Vordergrundebene für Inhalt und Personen bleiben erhalten.
+
+## Geschichte ausschliesslich auf der Startseite
+
+Auf Kundenwunsch wurde die eigenständige Geschichtsseite entfernt, einschliesslich ihrer identischen Kopie unter `/ueber-uns/`, des Menülinks und des zusätzlichen Verweises unter der Timeline. Die vollständige interaktive Chronik samt Bildern bleibt auf der Startseite erhalten. Beide entfernten Routen wurden aus Build, Seitenprüfung und Sitemap gestrichen.
