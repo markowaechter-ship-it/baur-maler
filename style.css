@@ -166,3 +166,5 @@ footer{background:#111;color:#f7f7f5}footer .legal,footer .footer-top p{color:#c
  header.is-scrolled{min-height:76px;padding-top:7px;padding-bottom:7px}
  header.is-scrolled .wordmark{flex-basis:150px;width:150px;height:62px}
 }
+/* Contact closing without the removed envelope illustration. */
+.cta-panel{grid-template-columns:1fr}.cta-panel>div{max-width:780px}
