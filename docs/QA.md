@@ -38,3 +38,7 @@ Die Startseite wurde bei 1440 und 390 Pixeln gerendert und visuell geprüft. Die
 ## Interaktive Malfläche
 
 Im echten Browser mit Mausereignissen geprüft: Malbewegung erzeugt sichtbare Pixel im Canvas; Farbtasten wechseln den ausgewählten Farbton; ausserhalb des Heros endet der Rollen-Cursor; „Neu streichen“ leert sämtliche gezeichneten Pixel. Ein Screenshot wurde visuell geprüft. Canvas und Roller liegen unter der Ebene von Text, Teamfoto und Aktionen. Syntaxprüfung und statischer Build erfolgreich; das neue Skript ist im Auslieferungsverzeichnis enthalten.
+
+## Vollständige Timeline
+
+Elf Jahresstationen und 15 zugeordnete Porträtverwendungen geprüft. Browserprüfung: die Vorwärtssteuerung bewegt die Zeitleiste (1080 Pixel nach drei Schritten), weitere Porträts erscheinen beim Eintritt in den sichtbaren Bereich (vier zu Beginn, sieben nach dem Blättern). Kein horizontaler Seitenüberlauf bei 1440 oder 390 Pixeln. Desktopdarstellung visuell geprüft. Alle Originaltexte der elf Jahresstationen sind enthalten; Bilddateien stammen aus der bereits migrierten Geschichte.

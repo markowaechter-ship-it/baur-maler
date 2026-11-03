@@ -71,3 +71,9 @@ Die Leistungskacheln verwenden abstrakte Materialstudien aus CSS. Die Kundenstim
 ## Interaktiver Maler-Hero
 
 Eine auf den Hero begrenzte Canvas-Ebene nimmt Farbstreifen auf. Auf Desktop verwandelt sich der Mauszeiger über der freien Malfläche mit einer kurzen Skalierungsanimation in eine SVG-Malerrolle. Die Rolle folgt geglättet und zeichnet ausschliesslich hinter dem Inhalt. Fünf helle Farbtöne stehen rechts zur Auswahl; „Neu streichen“ leert die Fläche. Links und Bedienelemente behalten ihren normalen Zeiger. Beim Verlassen des Heros, Scrollen oder Fensterwechsel endet die Malinteraktion. Touch-Geräte behalten normales Scrollen; die Farbauswahl sitzt unten. Bei reduzierter Bewegung entfällt die verzögerte Zeigerbewegung. Es werden keine Malbewegungen gespeichert oder übertragen.
+
+## Vollständige interaktive Timeline im Erfahrungsbereich
+
+Der Erfahrungsbereich enthält nun alle elf Originalstationen: 1937, 1946, 1973, 1976, 1986, 1997, 2004, 2007, 2012, 2014 und 2016, jeweils mit dem vollständigen Originaltext. Die Porträts stehen über den Punkten. Ernst Baur sen. ist 1937/1946 zugeordnet, Ernst Baur jun. 1973/1986 und zusammen mit Therese dem Wechsel 1976; Andi und Mathias stehen für 1997, Mathias für 2004/2012, Andi für 2007 und Mathias/Britta für 2014/2016. Die Bilder zeigen die Personen und werden nicht als historische Aufnahmen aus dem jeweiligen Ereignisjahr ausgegeben.
+
+Die horizontale Zeitleiste funktioniert mit Pfeilbuttons, Scrollen, Tastatur und Wischen. Beim Eintritt einer Station in den Sichtbereich erscheinen die Porträts sanft. Die Verbindungslinie wächst mit dem Durchblättern und behält bereits erreichten Fortschritt. Bei reduzierter Bewegung erscheinen Bilder ohne Übergang.
