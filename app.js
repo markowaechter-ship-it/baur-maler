@@ -20,3 +20,23 @@ if(form)form.addEventListener('submit',event=>{
  document.querySelector('#form-status').textContent='Ihre E-Mail ist vorbereitet. Bitte versenden Sie sie in Ihrem E-Mail-Programm. Falls sich kein Programm öffnet, schreiben Sie direkt an info@baur-maler.ch oder rufen Sie uns an.';
  window.location.href=link;
 });
+
+// Hero colour study: update the room material and provide subtle pointer parallax.
+const heroArt=document.querySelector('.hero-art');
+if(heroArt){
+ const wall=heroArt.querySelector('.art-wall');
+ const glow=heroArt.querySelector('.art-glow');
+ const swatches=[...heroArt.querySelectorAll('.hero-swatch')];
+ swatches.forEach(button=>button.addEventListener('click',()=>{
+  const tone=button.dataset.tone;
+  wall.style.setProperty('--hero-tone',tone);
+  wall.style.background=`linear-gradient(145deg, color-mix(in srgb, ${tone} 32%, #d8d4c8), color-mix(in srgb, ${tone} 22%, #858c87))`;
+  glow.style.background=tone;
+  document.querySelector('#hero-colour-name').textContent=button.dataset.name;
+  swatches.forEach(item=>{item.classList.toggle('active',item===button);item.setAttribute('aria-pressed',String(item===button));});
+ }));
+ if(matchMedia('(pointer:fine) and (prefers-reduced-motion: no-preference)').matches){
+  heroArt.addEventListener('pointermove',event=>{const r=heroArt.getBoundingClientRect();const x=(event.clientX-r.left)/r.width-.5;const y=(event.clientY-r.top)/r.height-.5;wall.style.transform=`rotateY(${x*4}deg) rotateX(${-y*4}deg)`;});
+  heroArt.addEventListener('pointerleave',()=>wall.style.transform='');
+ }
+}
