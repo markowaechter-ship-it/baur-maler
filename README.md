@@ -41,3 +41,7 @@ Die rechtliche Firmenbezeichnung bestätigen (Briefing: AG; bisheriger Logo-Date
 ## Vollständige Originalinhalte integriert
 
 Die Texte und Bilder aller drei öffentlich verlinkten Originalseiten sind inzwischen eingebaut, einschliesslich sämtlicher Leistungsbeschreibungen, vier vollständiger Kundenstimmen und der Firmengeschichte von 1937 bis 2016. Neue Seiten: `/leistungen/` und `/geschichte/`. Originaldateien und Quellenzuordnung: `assets/original/` und `docs/original-content.json`. Der helle Header mit schwarzem Logo und das transparente Teamfoto bleiben erhalten. Die bisherigen Hinweise auf fehlende Originalbilder und eine ungeklärte Firmierung sind durch diese Quellenübernahme aktualisiert; die Geschichte bestätigt „Baur die Maler GmbH“.
+
+## Interaktiver Hero
+
+`hero-paint.js` steuert eine ausschliesslich lokale Malfläche hinter dem Hero-Inhalt. Farbauswahl und Zurücksetzen sind per Tastatur erreichbar. Die SVG-Malerrolle erscheint nur im Hero und blendet über Links und Bedienelementen aus. Die transparente Teamaufnahme bleibt darüber sichtbar. Beim Grössenwechsel wird die Zeichnung erhalten; im Build wird das Skript mitgeliefert.

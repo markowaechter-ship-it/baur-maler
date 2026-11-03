@@ -67,3 +67,7 @@ Die Leistungskacheln verwenden abstrakte Materialstudien aus CSS. Die Kundenstim
 ## Eigenständige Erfahrungssektion
 
 „80 Jahre Erfahrung · 3 Generationen“ wurde aus dem Hero entfernt. Direkt danach folgt die dunkle Sektion „Von Hand zu Hand.“ mit grossen Zahlen, einmaliger Zählanimation und einem Zeitstrahl für 1937, 1976 und 2016. Der Zeitstrahl verlinkt die vollständige Geschichte. Ohne JavaScript oder bei reduzierter Bewegung bleiben die finalen Zahlen lesbar; die Animation wird nur beim ersten Eintritt in den sichtbaren Bereich gestartet.
+
+## Interaktiver Maler-Hero
+
+Eine auf den Hero begrenzte Canvas-Ebene nimmt Farbstreifen auf. Auf Desktop verwandelt sich der Mauszeiger über der freien Malfläche mit einer kurzen Skalierungsanimation in eine SVG-Malerrolle. Die Rolle folgt geglättet und zeichnet ausschliesslich hinter dem Inhalt. Fünf helle Farbtöne stehen rechts zur Auswahl; „Neu streichen“ leert die Fläche. Links und Bedienelemente behalten ihren normalen Zeiger. Beim Verlassen des Heros, Scrollen oder Fensterwechsel endet die Malinteraktion. Touch-Geräte behalten normales Scrollen; die Farbauswahl sitzt unten. Bei reduzierter Bewegung entfällt die verzögerte Zeigerbewegung. Es werden keine Malbewegungen gespeichert oder übertragen.
