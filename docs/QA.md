@@ -42,3 +42,7 @@ Im echten Browser mit Mausereignissen geprüft: Malbewegung erzeugt sichtbare Pi
 ## Vollständige Timeline
 
 Elf Jahresstationen und 15 zugeordnete Porträtverwendungen geprüft. Browserprüfung: die Vorwärtssteuerung bewegt die Zeitleiste (1080 Pixel nach drei Schritten), weitere Porträts erscheinen beim Eintritt in den sichtbaren Bereich (vier zu Beginn, sieben nach dem Blättern). Kein horizontaler Seitenüberlauf bei 1440 oder 390 Pixeln. Desktopdarstellung visuell geprüft. Alle Originaltexte der elf Jahresstationen sind enthalten; Bilddateien stammen aus der bereits migrierten Geschichte.
+
+## Überarbeiteter Hero (4. November 2026)
+
+Desktop (1440 Pixel) und Mobilansicht (390 Pixel) gerendert und visuell geprüft: fette zweizeilige Hauptüberschrift, deutlich vergrössertes transparentes Teamfoto und kompakt zentrierte Begleittexte/Aktionen. Das Foto überlagert die untere Textzeile bewusst auf ausdrücklichen Kundenwunsch; die entsprechende stilistische Überlagerungswarnung ist deshalb akzeptiert. Die Malpalette bleibt seitlich bzw. mobil darunter. Syntaxprüfung, Seitenprüfung und Build erfolgreich.

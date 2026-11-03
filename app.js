@@ -58,8 +58,9 @@ if(teamPortrait && matchMedia('(prefers-reduced-motion: no-preference)').matches
   const hero=document.querySelector('.hero');
   const rect=hero.getBoundingClientRect();
   const progress=Math.max(0,Math.min(1,-rect.top/(rect.height*.85)));
-  teamPortrait.style.setProperty('--team-scroll',`${Math.round(progress*34)}px`);
-  teamPortrait.style.setProperty('--team-scale',(1-progress*.045).toFixed(3));
+  teamPortrait.style.setProperty('--team-scroll',`${Math.round(-progress*65)}px`);
+  teamPortrait.style.setProperty('--team-scale',(1+progress*.06).toFixed(3));
+  hero.style.setProperty('--hero-title-shift',`${Math.round(progress*24)}px`);
   portraitFrame=false;
  };
  addEventListener('scroll',()=>{if(!portraitFrame){requestAnimationFrame(movePortrait);portraitFrame=true;}},{passive:true});

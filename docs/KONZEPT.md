@@ -81,3 +81,7 @@ Die horizontale Zeitleiste funktioniert mit Pfeilbuttons, Scrollen, Tastatur und
 ## Porträtauswahl nach Kundenkorrektur
 
 Aus der interaktiven Timeline entfernt: Ernst Baur sen. bei 1946, Ernst Baur jun. bei 1976 und 1986, Mathias Baur bei 2004 und 2012 sowie beide Porträts bei 2014. Therese bleibt bei 1976. Alle übrigen acht Porträtverwendungen werden kreisrund dargestellt. Die Jahresstationen, vollständigen Texte und ihre Ausrichtung auf der Linie bleiben erhalten.
+
+## Grösserer Hero mit überlagerter Teamaufnahme
+
+Die Hauptüberschrift ist deutlich grösser und fett gesetzt. Die transparente Teamaufnahme wächst auf bis zu 940 Pixel Breite und ragt bewusst leicht vor die untere Textzeile, wie ausdrücklich gewünscht. Beim Scrollen bewegt sich die Aufnahme nach oben und vergrössert sich moderat, während die Überschrift leicht in Gegenrichtung wandert. Die Begleittexte und Aktionen folgen mit kompakterem Abstand mittig unter dem Bild. Die vorhandene Malfläche bleibt hinter dem gesamten Inhalt. Bei reduzierter Bewegung bleiben die Ebenen statisch.
