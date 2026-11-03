@@ -54,3 +54,7 @@ Nach der weiteren Vergrösserung wurden Desktop und Mobilansicht erneut visuell 
 ## Cursor-Pinsel statt Rolle
 
 Browserprüfung mit echten Mausereignissen in vier Richtungen: Pinselwinkel rechts ≈ π/2, abwärts ≈ π, links ≈ −π/2, aufwärts ≈ 0; alle innerhalb der Toleranz nach dem Einfedern. In allen vier Bewegungen waren Farbtropfen auf der separaten Animationsebene sichtbar. Farbauswahl, Verlassen des Heros und vollständiges Löschen beider Canvas-Ebenen erfolgreich geprüft. Screenshot mit mehreren Pinselspuren und gedrehtem Pinsel visuell geprüft. Syntaxprüfung, Seitenprüfung und Build erfolgreich.
+
+## Flüssige Farbspur
+
+Mit echten Mausereignissen im Browser geprüft: Die langsame horizontale Spur war am Messpunkt 16 Pixel breit, die schnelle 70 Pixel. Der sichtbare Werkzeug-Pinsel ist aus dem DOM entfernt; der kleine Farbpunkt ist vorhanden. Farbauswahl, normale Zeigeranzeige ausserhalb des Heros und vollständiges Leeren beider Canvas-Ebenen funktionieren. Screenshot mit schmaler Linie, breitem Band und gekrümmter Farbspur visuell geprüft. Syntaxprüfung, Seitenprüfung und Build erfolgreich.

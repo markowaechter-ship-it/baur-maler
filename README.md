@@ -44,4 +44,4 @@ Die Texte und Bilder aller drei öffentlich verlinkten Originalseiten sind inzwi
 
 ## Interaktiver Hero
 
-`hero-paint.js` steuert eine ausschliesslich lokale Malfläche hinter dem Hero-Inhalt. Farbauswahl und Zurücksetzen sind per Tastatur erreichbar. Der SVG-Pinsel erscheint nur im Hero und blendet über Links und Bedienelementen aus. Die transparente Teamaufnahme bleibt darüber sichtbar. Beim Grössenwechsel wird die Zeichnung erhalten; im Build wird das Skript mitgeliefert.
+`hero-paint.js` steuert eine ausschliesslich lokale Malfläche hinter dem Hero-Inhalt. Farbauswahl und Zurücksetzen sind per Tastatur erreichbar. Der kleine Farbtropfen erscheint nur im Hero und blendet über Links und Bedienelementen aus. Die transparente Teamaufnahme bleibt darüber sichtbar. Beim Grössenwechsel wird die Zeichnung erhalten; im Build wird das Skript mitgeliefert.

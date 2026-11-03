@@ -265,3 +265,10 @@ footer{background:#111;color:#f7f7f5}footer .legal,footer .footer-top p{color:#c
 @media(hover:none),(pointer:coarse){.paint-brush{display:none}}
 @media(prefers-reduced-motion:reduce){.paint-brush,.paint-brush svg{transition:none}}
 @media(prefers-reduced-motion:reduce){.paint-brush svg{transition:none}}
+/* Fluid paint cursor: a small wet pigment dot, with no visible tool. */
+.paint-dot{position:absolute;top:0;left:0;z-index:1;width:0;height:0;pointer-events:none;opacity:0;visibility:hidden;transition:opacity .18s,visibility .18s;will-change:transform}
+.paint-dot:before{content:'';position:absolute;left:-6px;top:-6px;width:12px;height:12px;border-radius:50%;background:var(--paint-colour,#9fc7df);border:1px solid rgba(255,255,255,.8);box-shadow:0 1px 5px #17333b26,inset 1px 1px 2px #ffffff70;transform:scale(var(--drop-scale,1));transition:transform .12s ease-out}
+.paint-dot:after{content:'';position:absolute;left:-3px;top:-3px;width:3px;height:2px;background:#ffffffb3;border-radius:50%}
+.paint-hero.is-painting .paint-dot{opacity:1;visibility:visible}
+@media(hover:none),(pointer:coarse){.paint-dot{display:none}}
+@media(prefers-reduced-motion:reduce){.paint-dot,.paint-dot:before{transition:none}}
