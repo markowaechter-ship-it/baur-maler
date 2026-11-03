@@ -272,3 +272,56 @@ footer{background:#111;color:#f7f7f5}footer .legal,footer .footer-top p{color:#c
 .paint-hero.is-painting .paint-dot{opacity:1;visibility:visible}
 @media(hover:none),(pointer:coarse){.paint-dot{display:none}}
 @media(prefers-reduced-motion:reduce){.paint-dot,.paint-dot:before{transition:none}}
+/* Two native-scroll cards inspired by the supplied stacked-card recording. */
+.chapter-nav,.chapter-meter,.chapter-next{display:none}
+.chapter-card{min-width:0}
+@media(min-width:1000px) and (min-height:620px) and (prefers-reduced-motion:no-preference){
+ body.chapter-live{background:#e4e7e1}
+ .chapter-live header{background:rgba(247,247,245,.97)}
+ .chapter-live .chapter-deck{height:calc(205svh - 95px);position:relative;padding:0 100px 0}
+ .chapter-live .chapter-stage{position:sticky;top:var(--chapter-top,112px);height:calc(100svh - var(--chapter-top,112px) - 50px);max-width:1320px;margin:0 auto;perspective:1600px;isolation:isolate}
+ .chapter-live .chapter-card{position:absolute;inset:0;border-radius:20px;overflow:hidden;box-shadow:0 18px 42px #17241c16;transform-origin:center top;will-change:transform}
+ .chapter-live .chapter-hero{z-index:2;background:#f7f7f5}
+ .chapter-live .chapter-history{z-index:1;background:#151c18}
+ .chapter-live .chapter-card>section{height:100%;max-height:100%;overflow-y:auto;overscroll-behavior-y:auto;scrollbar-width:thin;scrollbar-color:#8c9c82 transparent}
+ .chapter-live .chapter-card[aria-hidden="true"]{pointer-events:none}
+ .chapter-live .chapter-nav{position:fixed;top:50%;left:20px;z-index:20;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;opacity:0;visibility:hidden;transition:opacity .25s}
+ .chapter-live.chapter-engaged .chapter-nav,.chapter-live.chapter-engaged .chapter-meter{opacity:1;visibility:visible}
+ .chapter-nav button,.chapter-nav>a{display:flex;align-items:center;justify-content:center;position:relative;width:54px;height:54px;border:0;border-radius:15px;background:#f4f5ef;color:#747b70;cursor:pointer;text-decoration:none;transition:background .2s,color .2s,transform .2s}
+ .chapter-nav button[aria-pressed="true"]{background:#17241c;color:#f4f5ef}
+ .chapter-nav svg{width:23px;height:23px}.chapter-nav button:hover,.chapter-nav>a:hover{background:#d0d9c9;transform:translateX(3px)}
+ .chapter-nav span{position:absolute;left:63px;background:#17241c;color:white;padding:5px 11px;border-radius:6px;font-size:13px;opacity:0;pointer-events:none;white-space:nowrap;transition:opacity .2s}
+ .chapter-nav button:hover span,.chapter-nav button:focus-visible span,.chapter-nav>a:hover span,.chapter-nav>a:focus-visible span{opacity:1}
+ .chapter-live .chapter-meter{position:fixed;right:20px;top:50%;z-index:15;display:flex;flex-direction:column;align-items:center;gap:17px;transform:translateY(-50%);color:#697565;opacity:0;visibility:hidden;transition:opacity .25s;font-size:12px}
+ .chapter-meter i{position:relative;width:2px;height:130px;background:#c3cdbd}.chapter-meter b{position:absolute;top:0;left:-4px;display:block;width:10px;height:10px;border-radius:50%;background:#17241c}
+ .chapter-live .chapter-next{display:flex;position:absolute;bottom:-38px;left:50%;transform:translateX(-50%);gap:22px;align-items:center;border:0;background:none;color:#45523e;cursor:pointer;font-size:13px;padding:6px 15px;white-space:nowrap}
+ /* Fit the existing hero composition to the first card, keeping all actions visible. */
+ .chapter-live .paint-hero{padding:16px 24px 0;overflow:hidden}
+ .chapter-live .paint-hero .hero-intro{margin:0 auto 8px;font-size:12px;line-height:1.4}
+ .chapter-live .paint-hero .hero-layout.hero-stage{height:calc(100% - 30px);min-height:0;max-height:none}
+ .chapter-live .paint-hero .hero-stage h1{top:0;padding-top:0;font-size:clamp(60px,7.6vw,112px);line-height:.91;max-width:100%;letter-spacing:-.07em}
+ .chapter-live .paint-hero .hero-stage .hero-team{width:min(85%,calc((100svh - 180px)*1.38));bottom:0}
+ .chapter-live .hero-overlay{bottom:22px}.chapter-live .hero-photo-caption{font-size:12px}
+ .chapter-live .hero-overlay-title{font-size:27px}
+ .chapter-live .paint-hero .hero-overlay .hero-actions{margin:14px auto 12px}
+ .chapter-live .paint-hero .hero-overlay .button{padding:13px 21px;font-size:14px}
+ .chapter-live .paint-hero .hero-overlay .hero-phone{padding:13px 20px;font-size:14px}
+ .chapter-live .hero-overlay-note{font-size:12px}.chapter-live .hero-photo-shade{height:260px}
+ .chapter-live .paint-tools{right:12px;padding:15px 9px;gap:12px;max-width:94px}
+ .chapter-live .paint-colours{gap:11px}.chapter-live .paint-colour{width:25px;height:25px}.chapter-live .paint-hint{display:none}
+ /* History remains vertically readable within its card; its timeline scrolls horizontally. */
+ .chapter-live .experience{padding:35px 42px 30px}
+ .chapter-live .experience-top{gap:11px}.chapter-live .experience-top h2{font-size:clamp(35px,4vw,56px)}
+ .chapter-live .experience-intro{font-size:15px;line-height:1.45}
+ .chapter-live .experience-stats{margin:25px auto 35px;gap:35px;max-width:850px}
+ .chapter-live .experience-number{font-size:clamp(90px,11vw,155px)}
+ .chapter-live .experience-stat h3{font-size:25px;margin-top:12px}.chapter-live .experience-stat>p{font-size:13px}
+ .chapter-live .heritage-heading{margin-bottom:23px}
+ .chapter-live .heritage-event{width:315px;padding-right:28px}.chapter-live .heritage-event:last-child{width:287px}
+ .chapter-live .heritage-portraits{height:215px}.chapter-live .heritage-portraits figure{max-width:155px}
+ .chapter-live .heritage-progress{top:224px}.chapter-live .heritage-year{font-size:26px}
+ .chapter-live .heritage-event h4{font-size:21px}.chapter-live .heritage-event>p{font-size:15px}
+ .chapter-live main>.schema-section{max-width:1440px}
+}
+/* Mobile, reduced motion and no script retain normal document flow and complete content. */
+@media(max-width:999px),(max-height:619px),(prefers-reduced-motion:reduce){.chapter-card{position:relative;transform:none!important;opacity:1!important}.chapter-stage{height:auto}.chapter-deck{height:auto}.chapter-card>section{max-height:none}}

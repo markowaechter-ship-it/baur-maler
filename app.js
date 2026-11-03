@@ -72,7 +72,9 @@ const experience=document.querySelector('.experience');
 if(experience){
  const counters=[...experience.querySelectorAll('[data-experience-count]')];
  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+ let experienceStarted=false;
  const revealExperience=()=>{
+  if(experienceStarted)return;experienceStarted=true;
   experience.classList.add('is-visible');
   if(reduced.matches)return;
   let start;
@@ -86,7 +88,8 @@ if(experience){
   requestAnimationFrame(animate);
  };
  if('IntersectionObserver' in window){
-  const observer=new IntersectionObserver(entries=>{if(entries.some(entry=>entry.isIntersecting)){revealExperience();observer.disconnect();}},{threshold:.2});
+  const observer=new IntersectionObserver(entries=>{if(entries.some(entry=>entry.isIntersecting)&&!experience.closest('[inert]')){revealExperience();observer.disconnect();}},{threshold:.2});
   observer.observe(experience);
+  experience.addEventListener('chapteractivate',()=>{revealExperience();observer.disconnect();},{once:true});
  }else revealExperience();
 }

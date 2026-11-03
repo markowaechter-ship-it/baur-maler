@@ -101,3 +101,9 @@ Der Werkzeug-Cursor wurde durch einen kleinen Farbtropfen ersetzt. Die Hintergru
 ## Geschichte ausschliesslich auf der Startseite
 
 Auf Kundenwunsch wurde die eigenständige Geschichtsseite entfernt, einschliesslich ihrer identischen Kopie unter `/ueber-uns/`, des Menülinks und des zusätzlichen Verweises unter der Timeline. Die vollständige interaktive Chronik samt Bildern bleibt auf der Startseite erhalten. Beide entfernten Routen wurden aus Build, Seitenprüfung und Sitemap gestrichen.
+
+## Zwei gestapelte Ansichten nach Video-Referenz
+
+Die Startseite beginnt nun auf grossen Bildschirmen mit einer am Viewport gehaltenen Bühne und zwei Karten. Die erste Karte enthält den bestehenden Hero mit Teamfoto, Malfläche, Farbwahl und Aktionen. Beim nativen Scrollen hebt und kippt sie sich nach oben; die zweite Karte mit animierten Erfahrungszahlen und vollständiger Timeline wird sichtbar und vergrössert sich auf ihre Endposition. Seitensteuerung links und Fortschrittsanzeige rechts orientieren sich am Aufbau der gelieferten Aufnahme, mit Baur-Farben und Baur-Inhalten.
+
+Es entstehen keine neuen separaten HTML-Seiten: Beide Ansichten gehören weiterhin zur Startseite. Längere Geschichtsinhalte sind innerhalb der zweiten Karte vertikal scrollbar; die bestehende Timeline bleibt horizontal mit Pfeilen, Tastatur und Wischen bedienbar. Die Zahlanimation startet erst bei aktivierter zweiter Ansicht, die Porträts blenden bei Sichtbarkeit ein. Die übrigen Leistungen und Abschnitte folgen unterhalb der Bühne. Mobil, bei geringer Fensterhöhe, ohne JavaScript und mit reduzierter Bewegung werden die beiden Bereiche vollständig im normalen Dokumentfluss dargestellt. Das Mausrad wird nicht abgefangen; kein Scroll-Lock und keine zusätzlichen Bibliotheken oder CDN-Abhängigkeiten.

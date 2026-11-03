@@ -15,8 +15,12 @@
  previous.addEventListener('click',()=>move(-1));next.addEventListener('click',()=>move(1));
  rail.addEventListener('scroll',()=>{if(!queued){queued=true;requestAnimationFrame(update);}},{passive:true});
  if('IntersectionObserver' in window){
-  const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-revealed');started=true;update();observer.unobserve(entry.target);}});},{threshold:.12});
+  const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting&&!section.closest('[inert]')){entry.target.classList.add('is-revealed');started=true;update();observer.unobserve(entry.target);}});},{threshold:.12});
   events.forEach(event=>observer.observe(event));
  }else{events.forEach(event=>event.classList.add('is-revealed'));started=true;}
+ section.closest('.experience')?.addEventListener('chapteractivate',()=>{
+  const bounds=rail.getBoundingClientRect();
+  events.forEach(event=>{const r=event.getBoundingClientRect();if(r.right>bounds.left&&r.left<bounds.right&&r.bottom>0&&r.top<innerHeight){event.classList.add('is-revealed');started=true;}});update();
+ });
  new ResizeObserver(update).observe(rail);update();
 })();

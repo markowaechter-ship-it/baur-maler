@@ -58,3 +58,9 @@ Browserprüfung mit echten Mausereignissen in vier Richtungen: Pinselwinkel rech
 ## Flüssige Farbspur
 
 Mit echten Mausereignissen im Browser geprüft: Die langsame horizontale Spur war am Messpunkt 16 Pixel breit, die schnelle 70 Pixel. Der sichtbare Werkzeug-Pinsel ist aus dem DOM entfernt; der kleine Farbpunkt ist vorhanden. Farbauswahl, normale Zeigeranzeige ausserhalb des Heros und vollständiges Leeren beider Canvas-Ebenen funktionieren. Screenshot mit schmaler Linie, breitem Band und gekrümmter Farbspur visuell geprüft. Syntaxprüfung, Seitenprüfung und Build erfolgreich.
+
+## Kartenaufbau nach Video-Referenz (4. November 2026)
+
+Die 11,26 Sekunden lange Nutzeraufnahme wurde in zehn Einzelbildern ausgewertet. Die daraus abgeleiteten zwei Desktop-Karten wurden am Start, während des Übergangs, bei aktivierter Geschichte und nach dem Lesen der Timeline im Browser fotografiert und visuell geprüft.
+
+Browserprüfung: Malfläche in Karte 1 zeichnet weiterhin; die direkte Seitennavigation aktiviert Karte 2; inaktive Karten sind aus der Tastaturbedienung und dem Accessibility-Baum ausgeblendet. Die Zahlen enden korrekt bei 80 und 3. Die Timeline behält alle elf Stationen und bewegt sich mit dem Vorwärtspfeil um eine Station (315 Pixel). Kein horizontaler Seitenüberlauf am Desktop oder bei 390 Pixeln. Mobile Darstellung und reduzierte Bewegung: normale Dokumentreihenfolge, beide Karten vollständig zugänglich, keine ausgeblendeten Inhalte. Ein während der Prüfung entdeckter mobiler Überlauf durch die Vollbild-Dekoration wurde korrigiert.

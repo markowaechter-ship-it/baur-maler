@@ -45,3 +45,7 @@ Die Texte und Bilder aller drei öffentlich verlinkten Originalseiten sind inzwi
 ## Interaktiver Hero
 
 `hero-paint.js` steuert eine ausschliesslich lokale Malfläche hinter dem Hero-Inhalt. Farbauswahl und Zurücksetzen sind per Tastatur erreichbar. Der kleine Farbtropfen erscheint nur im Hero und blendet über Links und Bedienelementen aus. Die transparente Teamaufnahme bleibt darüber sichtbar. Beim Grössenwechsel wird die Zeichnung erhalten; im Build wird das Skript mitgeliefert.
+
+## Zwei Ansichten als animierter Kartenstapel
+
+`chapters.js` ergänzt den Desktop-Auftritt um zwei gestapelte Ansichten auf der Startseite: den interaktiven Hero und die vollständige Geschichte mit Timeline. Vertikales Scrollen steuert den Kipp- und Hebeübergang; links stehen direkte Ansichtswechsel bereit. Die zweite Karte kann intern vertikal gelesen werden, während die Timeline ihre horizontale Bedienung behält. Die restlichen Inhalte folgen anschliessend im Dokument. Mobil, bei kleinen Fensterhöhen, ohne JavaScript und bei reduzierter Bewegung bleiben die Inhalte im normalen Seitenfluss.
