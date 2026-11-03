@@ -257,3 +257,11 @@ footer{background:#111;color:#f7f7f5}footer .legal,footer .footer-top p{color:#c
 /* Lift the headline slightly, retaining the portrait overlap and scroll motion. */
 .paint-hero .hero-stage h1{top:-38px}
 @media(max-width:760px){.paint-hero .hero-stage h1{top:-12px}}
+/* Directional bristle brush and airborne droplets stay behind the hero content. */
+.hero-splatter-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.paint-brush{position:absolute;top:0;left:0;width:112px;height:184px;z-index:1;pointer-events:none;opacity:0;visibility:hidden;transition:opacity .18s,visibility .18s;will-change:transform;filter:drop-shadow(2px 5px 3px #11111126)}
+.paint-brush svg{display:block;width:100%;height:100%;transform:rotate(var(--brush-angle,-.35rad)) scale(.65);transform-origin:55px 16px;transition:scale .2s ease}
+.paint-hero.is-painting .paint-brush{opacity:1;visibility:visible}.paint-hero.is-painting .paint-brush svg{transform:rotate(var(--brush-angle,-.35rad)) scale(1)}
+@media(hover:none),(pointer:coarse){.paint-brush{display:none}}
+@media(prefers-reduced-motion:reduce){.paint-brush,.paint-brush svg{transition:none}}
+@media(prefers-reduced-motion:reduce){.paint-brush svg{transition:none}}

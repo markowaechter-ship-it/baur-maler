@@ -89,3 +89,7 @@ Die Hauptüberschrift ist deutlich grösser und fett gesetzt. Die transparente T
 ## Hero: Bild am unteren Rand, weisse Texte darüber
 
 Das Teamfoto ist nun absolut am unteren Rand des Heros verankert und nochmals vergrössert. Die Personen ragen sichtbar in die grosse Überschrift hinein. Eine eigene Vordergrundebene enthält Bildunterschrift, Begleittext und Aktionen über dem unteren Fotobereich, mit weissen Texten und einem zurückhaltenden dunklen Verlauf für die Lesbarkeit. Beim Scrollen vergrössert sich die Teamaufnahme von ihrer unteren Kante aus, sodass diese bündig bleibt. Mobil steht die Farbpalette oberhalb der Komposition, um keine Gesichter oder Aktionen zu verdecken.
+
+## Richtungsgesteuerter Cursor-Pinsel
+
+Die Malerrolle wurde durch einen Pinsel mit Holzgriff, Metallzwinge, Borsten und farbiger Spitze ersetzt. Die Borstenspitze bleibt am Malpunkt; die Orientierung folgt der Bewegungsrichtung auf dem kürzesten Winkelweg. Eine gedämpfte Federbewegung sorgt für leichtes Nachschwingen. Die Bildspur wird aus gedrehten Borstenstempeln aufgebaut. Bewegungsgeschwindigkeit steuert Dichte und Stärke kleiner Farbspritzer. Diese fliegen auf einer separaten Canvas-Ebene und hinterlassen beim Landen Punkte auf der Hintergrundfläche. Maximal 65 Tropfen werden gleichzeitig animiert; im Stillstand endet der Renderloop. Farbauswahl, Löschen und Begrenzung auf den Hero bleiben erhalten. Bei reduzierter Bewegung gibt es direkte Orientierung und statische Farbpunkte statt fliegender Tropfen.
