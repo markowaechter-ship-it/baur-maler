@@ -629,3 +629,15 @@ h1,h2,h3,h4{font-family:inherit;font-weight:650;letter-spacing:-.045em}
 @media(max-width:760px){.service-back{padding:24px 20px}.service-detail-heading h2{font-size:30px}}
 @media(prefers-reduced-motion:reduce){.service-back{transition:none}}
 .service-detail{box-shadow:none;appearance:none;-webkit-appearance:none}
+
+/* Smaller presentation cards leave generous white space around the scene. */
+.chapter-fixed .chapter-stage{transform:scale(.75);transform-origin:center center}
+.paint-tools-external{position:fixed!important;z-index:65;right:20px!important;left:auto!important;top:calc(45% - 230px)!important;bottom:auto!important;transform:none!important;width:45px!important;max-width:none!important;padding:0!important;gap:14px!important;background:none!important;border:0!important;box-shadow:none!important;border-radius:0!important;display:flex;flex-direction:column!important;align-items:center}
+.paint-tools-external[hidden]{display:none!important}
+.paint-tools-external .paint-tools-title,.paint-tools-external .paint-hint{display:none!important}
+.paint-tools-external .paint-colours{flex-direction:column!important;gap:12px!important}
+.paint-tools-external .paint-colour{width:18px!important;height:18px!important;border:0!important;box-shadow:none}
+.paint-tools-external .paint-colour.is-selected{outline:1px solid #555;outline-offset:4px}
+.paint-tools-external .paint-reset{font-size:0!important;padding:0;width:25px;min-height:25px;color:#777}
+.paint-tools-external .paint-reset:after{content:'↺';font-size:20px}
+@media(max-width:760px){.chapter-fixed .chapter-stage{transform:scale(.9)}.paint-tools-external{top:auto!important;bottom:93px!important;right:20px!important;width:auto!important;flex-direction:row!important;gap:14px!important}.paint-tools-external .paint-colours{flex-direction:row!important;gap:14px!important}}

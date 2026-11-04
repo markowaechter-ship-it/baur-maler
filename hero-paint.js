@@ -2,10 +2,14 @@
  const hero=document.querySelector('.paint-hero');if(!hero)return;
  const canvas=hero.querySelector('.hero-paint-canvas'),ctx=canvas.getContext('2d');if(!ctx)return;
  const cursor=hero.querySelector('.paint-dot'),tools=hero.querySelector('.paint-tools'),status=tools.querySelector('.paint-status');
+ document.body.append(tools);
+ tools.classList.add('paint-tools-external');
+ hero.addEventListener('chapteractivate',()=>{tools.hidden=false;});
+ document.addEventListener('chapterbeforechange',()=>{tools.hidden=true;});
  const fx=document.createElement('canvas');fx.className='hero-splatter-canvas';fx.setAttribute('aria-hidden','true');canvas.after(fx);
  const fctx=fx.getContext('2d');if(!fctx)return;
  const reduced=matchMedia('(prefers-reduced-motion: reduce)'),TAU=Math.PI*2;
- let colour='#9fc7df',width=0,height=0,dpr=1,frame=0,active=false,touching=false,previous=null,lastTime=0;
+ let colour='#588b9a',width=0,height=0,dpr=1,frame=0,active=false,touching=false,previous=null,lastTime=0;
  let target={x:0,y:0},position={x:0,y:0},radius=2,splatterDistance=0;
  let particles=[],wet=[];
  const tint=(hex,amount)=>{
