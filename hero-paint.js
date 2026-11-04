@@ -112,6 +112,7 @@
  hero.addEventListener('pointerdown',event=>{if(event.pointerType==='mouse'||event.target.closest('a,button,.paint-tools'))return;touching=true;move(event);});
  hero.addEventListener('pointerup',event=>{if(event.pointerType!=='mouse'){touching=false;stop();}});
  hero.addEventListener('pointercancel',()=>{touching=false;stop();});
+ document.addEventListener('chapterbeforechange',()=>stop(true));
  addEventListener('scroll',()=>stop(),{passive:true});addEventListener('blur',()=>stop(true));document.addEventListener('visibilitychange',()=>{if(document.hidden)stop(true);});
  tools.querySelectorAll('[data-paint-colour]').forEach(button=>button.addEventListener('click',()=>{
   colour=button.dataset.paintColour;hero.style.setProperty('--paint-colour',colour);

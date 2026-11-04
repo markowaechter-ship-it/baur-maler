@@ -49,3 +49,7 @@ Die Texte und Bilder aller drei öffentlich verlinkten Originalseiten sind inzwi
 ## Zwei Ansichten als animierter Kartenstapel
 
 `chapters.js` ergänzt den Desktop-Auftritt um zwei gestapelte Ansichten auf der Startseite: den interaktiven Hero und die vollständige Geschichte mit Timeline. Vertikales Scrollen steuert den Kipp- und Hebeübergang; links stehen direkte Ansichtswechsel bereit. Die zweite Karte kann intern vertikal gelesen werden, während die Timeline ihre horizontale Bedienung behält. Die restlichen Inhalte folgen anschliessend im Dokument. Mobil, bei kleinen Fensterhöhen, ohne JavaScript und bei reduzierter Bewegung bleiben die Inhalte im normalen Seitenfluss.
+
+## Aktueller Aufbau: feste Karten statt langer Scroll-Seite
+
+Die Website läuft jetzt als feste Kartenpräsentation ohne vertikales Dokument-Scrollen. Auf der Startseite gibt es neun Sektionen; Detailseiten werden aus ihren vorhandenen Abschnitten in Karten aufgebaut. Mausrad/Wischen, seitliche Navigation und Tastatur wechseln die Karten. Horizontale Timeline und Inhaltsreihen bleiben bedienbar. Lange Texte sind über ein horizontal paginiertes Lesefenster vollständig zugänglich; das Anfrageformular befindet sich direkt auf der Kontaktkarte. Bei reduzierter Bewegung wird sofort gewechselt. Ohne JavaScript bleibt der normale, lesbare Dokumentfluss als Ausfallsicherung erhalten.
