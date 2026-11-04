@@ -53,7 +53,7 @@
   const read=document.createElement('button');read.type='button';read.className='chapter-read';read.textContent='Inhalt lesen ↗';read.addEventListener('click',()=>openReader(content,labels[i]));card.append(read);
   card.querySelectorAll('.heritage-event').forEach(event=>{const button=document.createElement('button');button.type='button';button.className='heritage-read';button.textContent='Station lesen ↗';button.addEventListener('click',()=>openReader(event,event.querySelector('.heritage-year').textContent));event.append(button);});
  });
- let index=0,busy=false,animation=0,wheelSum=0,wheelConsumed=false,lastWheel=0,touch=null;
+ let index=0,busy=false,animationTarget=0,pending=null,wheelSum=0,wheelConsumed=false,lastWheel=0,lastDelta=0,lastTurn=0,touch=null;
  const prev=controls.querySelector('.chapter-prev'),next=controls.querySelector('.chapter-forward');
  const activeContent=()=>cards[index].firstElementChild;
  const cardStyle=(card,transform,opacity,z)=>{card.style.setProperty('--card-transform',transform);card.style.setProperty('--card-opacity',opacity);card.style.zIndex=z;};
@@ -62,7 +62,7 @@
   cards.forEach(card=>{const content=card.firstElementChild;card.classList.toggle('has-overflow',content.scrollHeight>content.clientHeight+5);});measureReader();
  };
  const finish=(n,focus)=>{
-  index=n;busy=false;animation=0;
+  index=n;busy=false;animationTarget=n;
   cards.forEach((card,i)=>{card.style.willChange='auto';card.inert=i!==index;card.setAttribute('aria-hidden',String(i!==index));cardStyle(card,i===index?'translate3d(0,0,0) scale(1)':'translate3d(0,22px,0) scale(.96)',i===index?'1':'0',i===index?'2':'0');});
   buttons.forEach((button,i)=>button.setAttribute('aria-pressed',String(i===index)));prev.disabled=index===0;next.disabled=index===cards.length-1;
   meter.querySelector('span').textContent=`${index+1} von ${cards.length}`;meter.querySelector('b').style.transform=`translateY(${cards.length>1?index/(cards.length-1)*120:0}px)`;
@@ -70,32 +70,59 @@
   cards[index].firstElementChild.dispatchEvent(new Event('chapteractivate'));
   if(focus)activeContent().focus({preventScroll:true});
   const button=buttons[index];nav.scrollTo({left:Math.max(0,button.offsetLeft-nav.clientWidth/2+button.offsetWidth/2),behavior:reduced.matches?'instant':'smooth'});
-  requestAnimationFrame(measure);
+  requestAnimationFrame(()=>{
+   measure();
+   if(pending){const queued=pending;pending=null;go(queued.n,queued.focus);}
+  });
  };
  const go=(n,focus=true)=>{
-  n=Math.max(0,Math.min(cards.length-1,n));if(n===index||busy)return;
+  n=Math.max(0,Math.min(cards.length-1,n));
+  if(busy){pending=n===animationTarget?null:{n,focus};return;}
+  if(n===index)return;
   document.dispatchEvent(new Event('chapterbeforechange'));
   if(reduced.matches){finish(n,focus);return;}
-  busy=true;const old=cards[index],incoming=cards[n],forward=n>index;
+  busy=true;animationTarget=n;
+  const old=cards[index],incoming=cards[n],forward=n>index;
   old.style.willChange='transform, opacity';incoming.style.willChange='transform, opacity';
   old.inert=true;incoming.inert=true;old.setAttribute('aria-hidden','true');incoming.setAttribute('aria-hidden','true');
-  const start=performance.now(),duration=700;
-  const animate=time=>{
-   const p=Math.min(1,(time-start)/duration),t=p*p*(3-2*p);
-   if(forward){cardStyle(old,`translate3d(0,${-t*118}%,0) rotateX(${t*16}deg) scale(${1-t*.05})`,String(1-Math.max(0,(p-.8)/.2)),'3');cardStyle(incoming,`translate3d(0,${22*(1-t)}px,0) scale(${.96+.04*t})`,'1','2');}
-   else{cardStyle(old,`translate3d(0,${22*t}px,0) scale(${1-t*.04})`,'1','2');cardStyle(incoming,`translate3d(0,${-118*(1-t)}%,0) rotateX(${16*(1-t)}deg) scale(${.95+.05*t})`,String(Math.min(1,p*6)),'3');}
-   if(p<1)animation=requestAnimationFrame(animate);else finish(n,focus);
-  };animation=requestAnimationFrame(animate);
+  const flat='translate3d(0,0,0) rotateX(0deg) scale(1)';
+  const lifted='translate3d(0,-108%,-140px) rotateX(-68deg) scale(.96)';
+  const beneath='translate3d(0,4%,-170px) rotateX(10deg) scale(.96)';
+  // Animate compositor properties directly so dense timeline content stays off the frame loop.
+  cardStyle(old,flat,'1',forward?'3':'2');
+  cardStyle(incoming,forward?beneath:lifted,'1',forward?'2':'3');
+  const options={duration:860,easing:'cubic-bezier(.22,.68,.18,1)',fill:'both'};
+  const outgoing=old.animate(forward?[
+   {transform:flat,opacity:1},
+   {transform:'translate3d(0,-68%,-95px) rotateX(-48deg) scale(.975)',opacity:1,offset:.7},
+   {transform:lifted,opacity:0}
+  ]:[{transform:flat,opacity:1},{transform:beneath,opacity:1}],options);
+  const entering=incoming.animate(forward?[
+   {transform:beneath,opacity:1},{transform:flat,opacity:1}
+  ]:[{transform:lifted,opacity:0},{transform:'translate3d(0,-68%,-95px) rotateX(-48deg) scale(.975)',opacity:1,offset:.3},{transform:flat,opacity:1}],options);
+  Promise.all([outgoing.finished,entering.finished]).then(()=>{
+   finish(n,focus);outgoing.cancel();entering.cancel();
+  });
  };
  buttons.forEach((button,i)=>button.addEventListener('click',()=>go(i)));prev.addEventListener('click',()=>go(index-1));next.addEventListener('click',()=>go(index+1));
- // A gesture flips exactly one card; trackpad momentum cannot skip several sections.
+ // Recognise a fresh impulse independently from the fading momentum of the last gesture.
  addEventListener('wheel',event=>{
   if(event.ctrlKey||event.target.closest('textarea,select,input,[data-preserve-wheel]'))return;
   if(Math.abs(event.deltaX)>Math.abs(event.deltaY)||event.shiftKey)return;
   if(reader.open){event.preventDefault();return;}
-  event.preventDefault();const now=performance.now();if(now-lastWheel>180){wheelSum=0;wheelConsumed=false;}lastWheel=now;
-  if(busy||wheelConsumed)return;wheelSum+=event.deltaY*(event.deltaMode===1?16:event.deltaMode===2?innerHeight:1);
-  if(Math.abs(wheelSum)>55){wheelConsumed=true;go(index+Math.sign(wheelSum),false);}
+  event.preventDefault();
+  const now=performance.now(),delta=event.deltaY*(event.deltaMode===1?16:event.deltaMode===2?innerHeight:1);
+  if(!delta)return;
+  const gap=now-lastWheel,reverse=lastDelta&&Math.sign(delta)!==Math.sign(lastDelta);
+  const impulse=Math.abs(delta)>=8&&Math.abs(delta)>Math.abs(lastDelta)*1.8&&now-lastTurn>220;
+  if(gap>90||reverse||impulse){wheelSum=0;wheelConsumed=false;}
+  lastWheel=now;lastDelta=delta;
+  if(wheelConsumed)return;
+  wheelSum+=delta;
+  if(Math.abs(wheelSum)>=18){
+   wheelConsumed=true;lastTurn=now;
+   go((busy?animationTarget:index)+Math.sign(wheelSum),false);
+  }
  },{passive:false});
  addEventListener('keydown',event=>{
   if(event.altKey||event.ctrlKey||event.metaKey||event.target.closest('input,textarea,select,[contenteditable="true"]'))return;
