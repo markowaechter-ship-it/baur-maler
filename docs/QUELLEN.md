@@ -30,3 +30,7 @@ Die öffentlich verlinkten Seiten https://www.baur-maler.ch/, https://www.baur-m
 `docs/original-content.json` dokumentiert die Originaltexte sowie sämtliche Bild-URLs und ihre lokalen Dateinamen. 20 Bildverweise wurden lokal gespeichert (19 unterschiedliche Originalmotive, ein Pinselstrich ist auf zwei Quellseiten vorhanden). Die Dateien unter `assets/original/` behalten ihr Originalformat und bei PNGs den Alpha-Kanal. Alle Motive werden im neuen Auftritt sichtbar verwendet. Die Bewertungsbilder sind aus dem bestehenden Auftritt übernommen; es wurde keine neue Verifizierung ihrer Identität vorgenommen.
 
 Die ursprüngliche Geschichte bestätigt zum 1. Juli 2016 die Firmierung **Baur die Maler GmbH**. Damit ist die zuvor dokumentierte Abweichung zur Bezeichnung „AG“ im ersten Briefing auf Quellenebene geklärt. Die Originaltexte über Leistungen und Umwelttechnik ersetzen die früheren Entwurfstexte an den jeweiligen Stellen; ihre fachlichen Aussagen wurden als bestehende Betriebsaussagen übernommen.
+
+## Schrift
+
+Outfit Variable, lokal eingebunden für die gesamte Website. Quelle: https://github.com/google/fonts/tree/main/ofl/outfit. SIL Open Font License 1.1; Lizenztext unter `assets/fonts/OFL-Outfit.txt`.
