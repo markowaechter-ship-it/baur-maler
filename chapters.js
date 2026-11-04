@@ -79,6 +79,7 @@
   n=Math.max(0,Math.min(cards.length-1,n));
   if(busy){pending=n===animationTarget?null:{n,focus};return;}
   if(n===index)return;
+  cards[n].firstElementChild.dispatchEvent(new Event('chapterprepare'));
   document.dispatchEvent(new Event('chapterbeforechange'));
   if(reduced.matches){finish(n,focus);return;}
   busy=true;animationTarget=n;

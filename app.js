@@ -67,29 +67,38 @@ if(teamPortrait && matchMedia('(prefers-reduced-motion: no-preference)').matches
  movePortrait();
 }
 
-// Reveal the heritage figures once when the section enters view.
+// Start the figures from zero on every visit to the history card.
 const experience=document.querySelector('.experience');
 if(experience){
  const counters=[...experience.querySelectorAll('[data-experience-count]')];
  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
- let experienceStarted=false;
+ let countFrame=0;
+ const resetExperience=()=>{
+  cancelAnimationFrame(countFrame);
+  counters.forEach(counter=>counter.textContent=reduced.matches?counter.dataset.experienceCount:'0');
+ };
  const revealExperience=()=>{
-  if(experienceStarted)return;experienceStarted=true;
-  experience.classList.add('is-visible');
+  resetExperience();experience.classList.add('is-visible');
   if(reduced.matches)return;
   let start;
   const animate=time=>{
    if(start===undefined)start=time;
    const progress=Math.min(1,(time-start)/2800);
    const eased=progress*progress*(3-2*progress);
-   counters.forEach(counter=>{counter.textContent=String(Math.round(Number(counter.dataset.experienceCount)*eased));});
-   if(progress<1)requestAnimationFrame(animate);
+   counters.forEach(counter=>counter.textContent=String(Math.round(Number(counter.dataset.experienceCount)*eased)));
+   if(progress<1)countFrame=requestAnimationFrame(animate);
   };
-  requestAnimationFrame(animate);
+  countFrame=requestAnimationFrame(animate);
  };
+ resetExperience();
+ experience.addEventListener('chapterprepare',resetExperience);
+ experience.addEventListener('chapteractivate',revealExperience);
  if('IntersectionObserver' in window){
-  const observer=new IntersectionObserver(entries=>{if(entries.some(entry=>entry.isIntersecting)&&!experience.closest('[inert]')){revealExperience();observer.disconnect();}},{threshold:.2});
+  const observer=new IntersectionObserver(entries=>{
+   if(!experience.closest('.chapter-deck')&&entries.some(entry=>entry.isIntersecting)){
+    revealExperience();observer.disconnect();
+   }
+  },{threshold:.2});
   observer.observe(experience);
-  experience.addEventListener('chapteractivate',()=>{revealExperience();observer.disconnect();},{once:true});
- }else revealExperience();
+ }else if(!experience.closest('.chapter-deck'))revealExperience();
 }

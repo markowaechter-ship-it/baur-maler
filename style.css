@@ -489,3 +489,9 @@ h1,h2,h3,h4{font-family:inherit;font-weight:650;letter-spacing:-.045em}
 }
 .chapter-fixed .chapter-card>section:focus{outline:none}
 @media(max-width:760px){.chapter-fixed .enquiry-section select{font-size:14px}}
+
+/* Timeline navigation belongs to the bottom center of the history card. */
+.chapter-fixed .chapter-card>.experience{padding-bottom:92px}
+.experience .heritage-controls{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);z-index:5;gap:12px}
+.chapter-fixed .experience .heritage-controls button{width:44px;height:44px;font-size:25px}
+@media(max-width:760px){.chapter-fixed .chapter-card>.experience{padding-bottom:78px}.experience .heritage-controls{bottom:18px}.chapter-fixed .experience .heritage-controls button{width:38px;height:38px;font-size:22px}}
