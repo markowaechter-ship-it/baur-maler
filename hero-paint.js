@@ -1,29 +1,26 @@
 (() => {
- const hero=document.querySelector('.paint-hero');if(!hero)return;
- const canvas=hero.querySelector('.hero-paint-canvas'),ctx=canvas.getContext('2d');if(!ctx)return;
- const cursor=hero.querySelector('.paint-dot'),tools=hero.querySelector('.paint-tools'),status=tools.querySelector('.paint-status');
- document.body.append(tools);
- tools.classList.add('paint-tools-external');
- hero.addEventListener('chapteractivate',()=>{tools.hidden=false;});
- document.addEventListener('chapterbeforechange',()=>{tools.hidden=true;});
- const fx=document.createElement('canvas');fx.className='hero-splatter-canvas';fx.setAttribute('aria-hidden','true');canvas.after(fx);
+ const hero=document.querySelector('.atelier-hero');if(!hero)return;
+ const canvas=hero.querySelector('.atelier-canvas'),ctx=canvas.getContext('2d');if(!ctx)return;
+ const cursor=hero.querySelector('.atelier-cursor'),tools=hero.querySelector('.atelier-tools'),status=tools.querySelector('.atelier-status');
+ const fx=document.createElement('canvas');fx.className='atelier-splatter';fx.setAttribute('aria-hidden','true');canvas.after(fx);
  const fctx=fx.getContext('2d');if(!fctx)return;
- const reduced=matchMedia('(prefers-reduced-motion: reduce)'),TAU=Math.PI*2;
- let colour='#588b9a',width=0,height=0,dpr=1,frame=0,active=false,touching=false,previous=null,lastTime=0;
+ // Offscreen layers: `flat` holds every stroke as an even, matt fill (the dried look); `wet` snapshots the glossy strokes while they dry.
+ const flat=document.createElement('canvas'),flatCtx=flat.getContext('2d'),wetSnap=document.createElement('canvas'),wetCtx=wetSnap.getContext('2d');
+ const reduced=matchMedia('(prefers-reduced-motion: reduce)'),TAU=Math.PI*2,DRY_DELAY=.55,DRY_TIME=1.8;
+ let colour=tools.querySelector('.is-selected')?.dataset.paintColour||'#1f4bff',width=0,height=0,dpr=1,frame=0,active=false,touching=false,previous=null,lastTime=0;
  let target={x:0,y:0},position={x:0,y:0},radius=2,splatterDistance=0;
- let particles=[],wet=[];
+ let particles=[],wet=[],idle=0,drying=-1,dirty=false;
  const tint=(hex,amount)=>{
   const rgb=hex.match(/[a-f\d]{2}/gi).map(c=>parseInt(c,16));
   return `rgb(${rgb.map(c=>Math.round(amount>0?c+(255-c)*amount:c*(1+amount))).join(',')})`;
  };
  const resize=()=>{
   const w=hero.clientWidth,h=hero.clientHeight;if(w===width&&h===height)return;
-  const saved=document.createElement('canvas');saved.width=canvas.width;saved.height=canvas.height;
-  if(saved.width&&saved.height)saved.getContext('2d').drawImage(canvas,0,0);
+  const keep=[canvas,flat].map(layer=>{const copy=document.createElement('canvas');copy.width=layer.width;copy.height=layer.height;if(copy.width&&copy.height)copy.getContext('2d').drawImage(layer,0,0);return copy;});
   width=w;height=h;dpr=Math.min(devicePixelRatio||1,2);
-  for(const layer of [canvas,fx]){layer.width=Math.round(width*dpr);layer.height=Math.round(height*dpr);}
-  ctx.setTransform(dpr,0,0,dpr,0,0);fctx.setTransform(dpr,0,0,dpr,0,0);
-  if(saved.width&&saved.height)ctx.drawImage(saved,0,0,saved.width,saved.height,0,0,width,height);
+  for(const layer of [canvas,fx,flat,wetSnap]){layer.width=Math.round(width*dpr);layer.height=Math.round(height*dpr);}
+  for(const c of [ctx,fctx,flatCtx,wetCtx])c.setTransform(dpr,0,0,dpr,0,0);
+  [ctx,flatCtx].forEach((c,i)=>{const copy=keep[i];if(copy.width&&copy.height)c.drawImage(copy,0,0,copy.width,copy.height,0,0,width,height);});
   previous=null;particles=[];wet=[];
  };
  const sample=(a,control,b,t)=>{
@@ -31,25 +28,30 @@
   const dx=2*u*(control.x-a.x)+2*t*(b.x-control.x),dy=2*u*(control.y-a.y)+2*t*(b.y-control.y),length=Math.hypot(dx,dy)||1;
   return {x,y,nx:-dy/length,ny:dx/length,r:a.r+(b.r-a.r)*t};
  };
+ const outline=(context,points)=>{
+  context.beginPath();
+  points.forEach((p,i)=>{const x=p.x+p.nx*p.r,y=p.y+p.ny*p.r;i?context.lineTo(x,y):context.moveTo(x,y);});
+  // Round the leading edge; the next segment continues seamlessly from this cap.
+  const end=points.at(-1),startAngle=Math.atan2(end.ny,end.nx);
+  context.arc(end.x,end.y,end.r,startAngle,startAngle+Math.PI,true);
+  [...points].reverse().forEach(p=>context.lineTo(p.x-p.nx*p.r,p.y-p.ny*p.r));
+  context.closePath();
+ };
  const ribbon=(a,control,b)=>{
   const length=Math.hypot(b.x-a.x,b.y-a.y),steps=Math.max(3,Math.min(24,Math.ceil(length/3)));
   const points=Array.from({length:steps+1},(_,i)=>sample(a,control,b,i/steps));
   const mid=points[Math.floor(points.length/2)],r=Math.max(a.r,b.r,1);
   const shading=ctx.createLinearGradient(mid.x-mid.nx*r,mid.y-mid.ny*r,mid.x+mid.nx*r,mid.y+mid.ny*r);
-  shading.addColorStop(0,tint(colour,-.06));shading.addColorStop(.18,tint(colour,.12));shading.addColorStop(.42,tint(colour,.04));shading.addColorStop(.87,colour);shading.addColorStop(1,tint(colour,-.08));
-  ctx.fillStyle=shading;ctx.beginPath();
-  points.forEach((p,i)=>{const x=p.x+p.nx*p.r,y=p.y+p.ny*p.r;i?ctx.lineTo(x,y):ctx.moveTo(x,y);});
-  // Round the leading edge; the next segment continues seamlessly from this cap.
-  const end=points.at(-1),startAngle=Math.atan2(end.ny,end.nx);
-  ctx.arc(end.x,end.y,end.r,startAngle,startAngle+Math.PI,true);
-  [...points].reverse().forEach(p=>ctx.lineTo(p.x-p.nx*p.r,p.y-p.ny*p.r));
-  ctx.closePath();ctx.fill();
-  // Fine, low-contrast fibres run along the flow rather than across the paint.
+  shading.addColorStop(0,tint(colour,-.1));shading.addColorStop(.2,tint(colour,.18));shading.addColorStop(.45,tint(colour,.05));shading.addColorStop(.85,colour);shading.addColorStop(1,tint(colour,-.12));
+  outline(ctx,points);ctx.fillStyle=shading;ctx.fill();
+  outline(flatCtx,points);flatCtx.fillStyle=colour;flatCtx.fill();
+  // Fine bristle marks run along the flow while the paint is wet; drying levels them out.
   ctx.lineCap='round';
   for(const offset of [-.72,-.42,-.12,.22,.57]){
-   ctx.strokeStyle='rgba(255,255,255,.13)';ctx.lineWidth=.65;ctx.beginPath();
+   ctx.strokeStyle='rgba(255,255,255,.16)';ctx.lineWidth=.65;ctx.beginPath();
    points.forEach((p,i)=>{const x=p.x+p.nx*p.r*offset,y=p.y+p.ny*p.r*offset;i?ctx.lineTo(x,y):ctx.moveTo(x,y);});ctx.stroke();
   }
+  dirty=true;
   if(!reduced.matches){wet.push({points,age:0,life:.7});if(wet.length>48)wet.shift();}
  };
  const spawn=(speed,vx,vy)=>{
@@ -64,6 +66,16 @@
   context.save();context.translate(p.x,p.y);context.rotate(Math.atan2(p.vy,p.vx));context.fillStyle=p.colour;
   context.beginPath();context.ellipse(0,0,p.radius*(1+Math.min(.5,Math.hypot(p.vx,p.vy)/500)),p.radius,0,0,TAU);context.fill();context.restore();
  };
+ const startDrying=()=>{wetCtx.setTransform(1,0,0,1,0,0);wetCtx.clearRect(0,0,wetSnap.width,wetSnap.height);wetCtx.drawImage(canvas,0,0);wetCtx.setTransform(dpr,0,0,dpr,0,0);drying=0;};
+ const settle=()=>{ctx.clearRect(0,0,width,height);ctx.drawImage(flat,0,0,width,height);drying=-1;dirty=false;};
+ const paintDrying=()=>{
+  // Cross-fade the glossy snapshot into the flat layer: gloss and bristle marks fade, the colour stays.
+  const t=Math.min(1,drying/DRY_TIME),eased=t*t*(3-2*t);
+  ctx.clearRect(0,0,width,height);
+  ctx.drawImage(wetSnap,0,0,width,height);
+  ctx.globalAlpha=eased;ctx.drawImage(flat,0,0,width,height);ctx.globalAlpha=1;
+  if(t>=1)settle();
+ };
  const tick=time=>{
   frame=0;const dt=Math.max(.008,Math.min(.032,lastTime?(time-lastTime)/1000:1/60));lastTime=time;let settling=false;
   if(active){
@@ -77,7 +89,7 @@
    const current={...position,r:radius};
    if(previous&&distance>.07){
     const a=previous.mid,b={x:(current.x+previous.x)/2,y:(current.y+previous.y)/2,r:(current.r+previous.r)/2};
-    ribbon(a,previous,b);current.mid=b;
+    ribbon(a,previous,b);current.mid=b;idle=0;
    }else current.mid=previous?.mid||{...current};
    previous=current;
    splatterDistance+=distance;
@@ -95,25 +107,34 @@
   });
   particles=particles.filter(p=>{
    p.age+=dt;p.vy+=110*dt;p.vx*=Math.exp(-1.4*dt);p.x+=p.vx*dt;p.y+=p.vy*dt;
-   if(p.age>=p.life){droplet(ctx,p);return false;}droplet(fctx,p);return true;
+   if(p.age>=p.life){droplet(ctx,p);droplet(flatCtx,p);dirty=true;return false;}droplet(fctx,p);return true;
   });
-  if(settling||particles.length||wet.length)frame=requestAnimationFrame(tick);else lastTime=0;
+  // Paint dries once the brush rests: a short pause, then the strokes level into an even surface.
+  if(dirty&&!particles.length){
+   if(drying>=0){drying+=dt;paintDrying();}
+   else{idle+=dt;if(idle>=DRY_DELAY){if(reduced.matches)settle();else startDrying();}}
+  }
+  if(settling||particles.length||wet.length||dirty)frame=requestAnimationFrame(tick);else lastTime=0;
  };
  const wake=()=>{if(!frame)frame=requestAnimationFrame(tick);};
  const stop=(clear=false)=>{
   active=false;previous=null;splatterDistance=0;hero.classList.remove('is-painting');
-  if(clear){particles=[];wet=[];fctx.clearRect(0,0,width,height);}
-  if(!particles.length&&!wet.length){if(frame)cancelAnimationFrame(frame);frame=0;lastTime=0;}
+  if(clear){particles=[];wet=[];fctx.clearRect(0,0,width,height);if(dirty)settle();}
+  if(dirty||particles.length||wet.length)wake();
+  else{if(frame)cancelAnimationFrame(frame);frame=0;lastTime=0;}
  };
  const move=event=>{
   if(event.pointerType!=='mouse'&&!touching)return;
-  if(event.target.closest('a,button,input,select,textarea,summary,.paint-tools')){stop();return;}
+  if(event.target.closest('a,button,input,select,textarea,summary,.atelier-tools')){stop();return;}
   const r=hero.getBoundingClientRect();target={x:(event.clientX-r.left)*hero.clientWidth/r.width,y:(event.clientY-r.top)*hero.clientHeight/r.height};
-  if(!active){position={...target};previous=null;radius=2;lastTime=0;active=true;hero.classList.add('is-painting');}
+  // A new stroke on drying paint keeps what is already on the wall and restarts the drying clock.
+  if(drying>=0)drying=-1;
+  idle=0;
+  if(!active){position={...target};previous=null;radius=2;lastTime=0;active=true;hero.classList.add('is-painting','has-paint');}
   wake();
  };
  hero.addEventListener('pointermove',move);hero.addEventListener('pointerleave',()=>stop());
- hero.addEventListener('pointerdown',event=>{if(event.pointerType==='mouse'||event.target.closest('a,button,.paint-tools'))return;touching=true;move(event);});
+ hero.addEventListener('pointerdown',event=>{if(event.pointerType==='mouse'||event.target.closest('a,button,.atelier-tools'))return;touching=true;move(event);});
  hero.addEventListener('pointerup',event=>{if(event.pointerType!=='mouse'){touching=false;stop();}});
  hero.addEventListener('pointercancel',()=>{touching=false;stop();});
  document.addEventListener('chapterbeforechange',()=>stop(true));
@@ -123,6 +144,9 @@
   tools.querySelectorAll('[data-paint-colour]').forEach(b=>{const chosen=b===button;b.classList.toggle('is-selected',chosen);b.setAttribute('aria-pressed',String(chosen));});
   status.textContent=`${button.getAttribute('aria-label')} ausgewählt.`;
  }));
- tools.querySelector('.paint-reset').addEventListener('click',()=>{stop(true);ctx.clearRect(0,0,width,height);status.textContent='Die Malfläche ist wieder frei.';});
+ tools.querySelector('.atelier-reset').addEventListener('click',()=>{
+  stop(true);for(const c of [ctx,flatCtx])c.clearRect(0,0,width,height);dirty=false;drying=-1;hero.classList.remove('has-paint');
+  status.textContent='Die Wand ist wieder frei.';
+ });
  new ResizeObserver(resize).observe(hero);resize();hero.classList.add('paint-ready');
 })();

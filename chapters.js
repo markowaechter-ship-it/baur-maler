@@ -9,15 +9,15 @@
  }
  const stage=deck.querySelector('.chapter-stage'),cards=[...stage.querySelectorAll(':scope>[data-chapter]')];if(!cards.length)return;
  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
- const isHome=!!main.querySelector('.paint-hero'),labels=cards.map(card=>card.dataset.title||card.getAttribute('aria-label')||'Abschnitt');
+ const isHome=!!main.querySelector('.atelier-hero'),labels=cards.map(card=>card.dataset.title||card.getAttribute('aria-label')||'Abschnitt');
  const paths=[
   '<path d="m3 10 9-7 9 7v10H15v-7H9v7H3z"/>',
   '<circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/>',
-  '<path d="M4 4h16v6H4zM20 7h2v7H12v7"/>',
-  '<path d="M5 5h14M5 12h14M5 19h14"/><circle cx="3" cy="5" r="1"/><circle cx="3" cy="12" r="1"/><circle cx="3" cy="19" r="1"/>',
+  '<g transform="translate(-1 -.5)"><path d="M4 4h16v6H4zM20 7h2v7H12v7"/></g>',
+  '<g transform="translate(1.5 0)"><path d="M5 5h14M5 12h14M5 19h14"/><circle cx="3" cy="5" r="1"/><circle cx="3" cy="12" r="1"/><circle cx="3" cy="19" r="1"/></g>',
   '<path d="M20 3C8 2 2 8 5 15s14 4 15-12ZM5 20 16 8"/>',
-  '<path d="M3 5h18v12H9l-5 4v-4H3zM7 9h10M7 13h7"/>',
-  '<circle cx="12" cy="12" r="9"/><path d="M9 8a3 3 0 1 1 4 3c-1 0-1 1-1 3M12 17v1"/>',
+  '<g transform="translate(0 -1)"><path d="M3 5h18v12H9l-5 4v-4H3zM7 9h10M7 13h7"/></g>',
+  '<circle cx="12" cy="12" r="9"/><path d="M9.5 9.6a2.6 2.6 0 0 1 5.1.7c0 1.7-2.6 2.2-2.6 3.9M12 17.2v.01"/>',
   '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/>',
   '<circle cx="12" cy="12" r="9"/><path d="M12 10v7M12 6v1"/>'
  ];
@@ -45,7 +45,7 @@
  const measureReader=()=>{if(!reader.open)return;readerStep=readerView.clientWidth+32;readerCount=Math.max(1,Math.ceil((flow.scrollWidth+32)/readerStep));setReaderPage(readerIndex);};
  const openReader=(source,title)=>{
   readerReturn=document.activeElement;flow.replaceChildren();
-  const nodes=[...source.querySelectorAll('h1,h2,h3,h4,p,blockquote,summary,li')].filter(node=>!node.closest('.paint-tools,.heritage-controls,.chapter-tools')&&!node.parentElement.closest('blockquote,li'));
+  const nodes=[...source.querySelectorAll('h1,h2,h3,h4,p,blockquote,summary,li')].filter(node=>!node.closest('.atelier-tools,.heritage-controls,.chapter-tools')&&!node.parentElement.closest('blockquote,li'));
   nodes.forEach(node=>{const copy=document.createElement(/^H/.test(node.tagName)?'h3':'p');copy.textContent=node.textContent.trim();if(copy.textContent)flow.append(copy);});
   if(!nodes.length){const paragraph=document.createElement('p');paragraph.textContent=source.textContent.trim();flow.append(paragraph);}
   reader.querySelector('.reader-top strong').textContent=title;readerIndex=0;reader.showModal();requestAnimationFrame(measureReader);
@@ -55,7 +55,7 @@
  reader.addEventListener('click',event=>{if(event.target===reader)reader.close();});
  cards.forEach((card,i)=>{
   const content=card.firstElementChild;content.setAttribute('tabindex','-1');
-  const read=document.createElement('button');read.type='button';read.className='chapter-read';read.textContent='Inhalt lesen ↗';read.addEventListener('click',()=>openReader(content,labels[i]));if(!content.matches('.experience,.paint-hero'))card.append(read);
+  const read=document.createElement('button');read.type='button';read.className='chapter-read';read.textContent='Inhalt lesen ↗';read.addEventListener('click',()=>openReader(content,labels[i]));if(!content.matches('.experience,.atelier-hero'))card.append(read);
  });
  let index=0,busy=false,animationTarget=0,pending=null,wheelSum=0,wheelConsumed=false,lastWheel=0,lastDelta=0,lastTurn=0,touch=null;
  const prev=controls.querySelector('.chapter-prev'),next=controls.querySelector('.chapter-forward');
