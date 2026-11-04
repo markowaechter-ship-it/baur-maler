@@ -78,3 +78,11 @@ Die drei Leistungsfelder auf der Startseite öffnen ihre vollständigen Leistung
 ## Vollständiges Leistungskarussell
 
 Zwölf Karten decken die vorhandenen Leistungsinhalte ab. Karussell bei 1440×1000 mit drei sichtbaren Karten, bei 390×720 mit einer Karte und Vorschau auf die nächste geprüft. Pfeile, Mausziehen und echte Touch-Wischgesten verschieben horizontal; Ziehen öffnet keine Detailkarte. Alle zwölf Rückseiten mit Inhalt und Schliessen geprüft, URL bleibt `/`, kein vertikales Seitenscrollen. Texte der zusätzlichen Karten stammen aus den bestehenden Abschnitten von `leistungen/index.html`.
+
+## Kartenrückkehr und neutrale Navigation
+
+Die Rückdrehung verwendet keine getrennte Skalierung der X- und Y-Achse mehr. Die Vorderseite behält die echten Abmessungen und das Layout der Ausgangskarte. Bei 1440×1000 und 390×720 stimmen im letzten Animationsbild die Bounding-Boxes von Karte, Bild und Überschrift mit dem Original überein (Abweichung jeweils 0 px). Nach dem Schliessen: Original sichtbar, Dialog geschlossen, kein Fokusrahmen bei Mausbedienung. Tastaturfokus bleibt als neutraler, nach innen gesetzter Rahmen verfügbar. Die Sektionsnavigation verwendet neutrale Grautöne.
+
+## Individuelle Bilder
+
+Alle zwölf Karten referenzieren unterschiedliche WebP-Dateien und unterschiedliche SHA-256-Inhalte. Bei 1440×1000 und 390×720 alle Bilder erfolgreich dekodiert, neun Hauptsektionen vorhanden, kein vertikaler Seitenüberlauf. Bei allen zwölf Dateien vollständig transparente Pixel nachgewiesen; die Freistellung bleibt erhalten. Export auf maximal 960 px und WebP-Qualität 0.88 reduziert 30.233.222 Byte PNG-Ausgangsdaten auf 3.158.182 Byte (rund 90 %). Native erzeugte Originale verbleiben im Imagegen-Ausgabeverzeichnis; die fertigen Web-Assets sind im Repository gespeichert.

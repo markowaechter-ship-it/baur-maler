@@ -1,0 +1,69 @@
+{
+  "provider": "Built-in image_gen tool",
+  "mode": "generate, one image per service",
+  "purpose": "Illustrative service motifs, not photographs of completed Baur client projects",
+  "transparent_background": true,
+  "web_export": "WebP, max edge 960 px, quality 0.88, alpha retained",
+  "assets": [
+    {
+      "key": "malen-gipsen",
+      "prompt": "Create ONE square premium photorealistic website service illustration for a Swiss painter company, subject: MALEN & GIPSEN, a beautifully plastered interior wall being freshly painted warm ivory, an elegant cornice and an open doorway, small part of oak parquet. No text, no logos, no people. Art direction: editorial architectural photography, warm natural side light, believable fine plaster texture, restrained contemporary Swiss craftsmanship. The photographic scene is isolated within a generously sized irregular dry-brush painted silhouette, with feathered painterly edges and genuinely transparent background OUTSIDE the silhouette. Centered composition filling 85% of square canvas. No white rectangular backdrop, no frame, no drop shadow. A service image, not a UI mockup. This is the first of a cohesive twelve-image series.",
+      "file": "assets/services/malen-gipsen.webp"
+    },
+    {
+      "key": "tapezieren",
+      "prompt": "Create ONE square premium photorealistic website service illustration for a Swiss painter company. Art direction: editorial architectural/product photography, tactile authentic materials, warm natural side light, contemporary restrained Swiss craftsmanship. A coherent series with clean, believable details and one unmistakable subject. Isolate the photographic scene inside a generously sized irregular dry-brush painted silhouette with soft feathered painterly edges; truly transparent background OUTSIDE this silhouette, no rectangular backdrop. Centered composition fills about 85% of square canvas. No text, labels, letters, logos, watermarks, graphic symbols, UI mockups or drop shadow. SUBJECT: A close, clearly recognisable wallpaper-installation scene: an elegant wall with a warm ivory and muted blue botanical wallpaper, a partially unrolled patterned wallpaper sheet and a wallpaper smoothing brush at its edge. No people.",
+      "file": "assets/services/tapezieren.webp"
+    },
+    {
+      "key": "spritzwerk",
+      "prompt": "Create ONE square premium photorealistic website service illustration for a Swiss painter company. Art direction: editorial architectural/product photography, tactile authentic materials, warm natural side light, contemporary restrained Swiss craftsmanship. A coherent series with clean, believable details and one unmistakable subject. Isolate the photographic scene inside a generously sized irregular dry-brush painted silhouette with soft feathered painterly edges; truly transparent background OUTSIDE this silhouette, no rectangular backdrop. Centered composition fills about 85% of square canvas. No text, labels, letters, logos, watermarks, graphic symbols, UI mockups or drop shadow. SUBJECT: A precision professional spray gun applying a fine mist of slate-blue lacquer onto a cabinet door in a clean workshop, showing a beautifully smooth coated surface. Only the gun and door are visible, no people.",
+      "file": "assets/services/spritzwerk.webp"
+    },
+    {
+      "key": "fassaden",
+      "prompt": "Create ONE square premium photorealistic website service illustration for a Swiss painter company. Art direction: editorial architectural/product photography, tactile authentic materials, warm natural side light, contemporary restrained Swiss craftsmanship. A coherent series with clean, believable details and one unmistakable subject. Isolate the photographic scene inside a generously sized irregular dry-brush painted silhouette with soft feathered painterly edges; truly transparent background OUTSIDE this silhouette, no rectangular backdrop. Centered composition fills about 85% of square canvas. No text, labels, letters, logos, watermarks, graphic symbols, UI mockups or drop shadow. SUBJECT: A beautifully restored Swiss townhouse facade in warm mineral cream, refined cornices, tall windows with muted slate shutters, viewed at a slight architectural angle. This must be an exterior facade renovation motif.",
+      "file": "assets/services/fassaden.webp"
+    },
+    {
+      "key": "betonsanierung",
+      "prompt": "Create ONE square premium photorealistic website service illustration for a Swiss painter company. Art direction: editorial architectural/product photography, tactile authentic materials, warm natural side light, contemporary restrained Swiss craftsmanship. A coherent series with clean, believable details and one unmistakable subject. Isolate the photographic scene inside a generously sized irregular dry-brush painted silhouette with soft feathered painterly edges; truly transparent background OUTSIDE this silhouette, no rectangular backdrop. Centered composition fills about 85% of square canvas. No text, labels, letters, logos, watermarks, graphic symbols, UI mockups or drop shadow. SUBJECT: Architectural close-up of a concrete surface repair: a metal finishing trowel beside a carefully repaired crack, visible mineral concrete texture and a contrasting rough unrepaired edge, realistic craftsmanship. No people.",
+      "file": "assets/services/betonsanierung.webp"
+    },
+    {
+      "key": "holzwerk",
+      "prompt": "Create ONE square premium photorealistic website service illustration for a Swiss painter company. Art direction: editorial architectural/product photography, tactile authentic materials, warm natural side light, contemporary restrained Swiss craftsmanship. A coherent series with clean, believable details and one unmistakable subject. Isolate the photographic scene inside a generously sized irregular dry-brush painted silhouette with soft feathered painterly edges; truly transparent background OUTSIDE this silhouette, no rectangular backdrop. Centered composition fills about 85% of square canvas. No text, labels, letters, logos, watermarks, graphic symbols, UI mockups or drop shadow. SUBJECT: A close view of a handcrafted warm oak window frame and a wood-finishing brush with amber oil, rich visible wood grain and joinery, natural gentle side light. No people.",
+      "file": "assets/services/holzwerk.webp"
+    },
+    {
+      "key": "aussenvergoldung",
+      "prompt": "Create ONE square premium photorealistic website service illustration for a Swiss painter company. Art direction: editorial architectural/product photography, tactile authentic materials, warm natural side light, contemporary restrained Swiss craftsmanship. A coherent series with clean, believable details and one unmistakable subject. Isolate the photographic scene inside a generously sized irregular dry-brush painted silhouette with soft feathered painterly edges; truly transparent background OUTSIDE this silhouette, no rectangular backdrop. Centered composition fills about 85% of square canvas. No text, labels, letters, logos, watermarks, graphic symbols, UI mockups or drop shadow. SUBJECT: A refined exterior architectural ornament being gilded: a small classical stone rosette partly covered in luminous gold leaf with a fine gilding brush and a delicate loose gold leaf. Close-up, tactile gold, no people.",
+      "file": "assets/services/aussenvergoldung.webp"
+    },
+    {
+      "key": "farbberatung",
+      "prompt": "Create ONE square premium photorealistic website service illustration for a Swiss painter company. Art direction: editorial architectural/product photography, tactile authentic materials, warm natural side light, contemporary restrained Swiss craftsmanship. A coherent series with clean, believable details and one unmistakable subject. Isolate the photographic scene inside a generously sized irregular dry-brush painted silhouette with soft feathered painterly edges; truly transparent background OUTSIDE this silhouette, no rectangular backdrop. Centered composition fills about 85% of square canvas. No text, labels, letters, logos, watermarks, graphic symbols, UI mockups or drop shadow. SUBJECT: An artful arrangement of an unfolded fan of real paint colour samples, mineral plaster sample panels in muted warm white, terracotta, powder blue and sage, on a small oak surface. No legible labels, no people.",
+      "file": "assets/services/farbberatung.webp"
+    },
+    {
+      "key": "naturfarben",
+      "prompt": "Create ONE square premium photorealistic website service illustration for a Swiss painter company. Art direction: editorial architectural/product photography, tactile authentic materials, warm natural side light, contemporary restrained Swiss craftsmanship. A coherent series with clean, believable details and one unmistakable subject. Isolate the photographic scene inside a generously sized irregular dry-brush painted silhouette with soft feathered painterly edges; truly transparent background OUTSIDE this silhouette, no rectangular backdrop. Centered composition fills about 85% of square canvas. No text, labels, letters, logos, watermarks, graphic symbols, UI mockups or drop shadow. SUBJECT: A ceramic bowl of warm white limewash paint with a natural bristle limewash brush against a softly textured mineral plaster sample slab, earthy mineral pigments, natural materials clearly visible. No people.",
+      "file": "assets/services/naturfarben.webp"
+    },
+    {
+      "key": "edelputz",
+      "prompt": "Create ONE square premium photorealistic website service illustration for a Swiss painter company. Art direction: editorial architectural/product photography, tactile authentic materials, warm natural side light, contemporary restrained Swiss craftsmanship. A coherent series with clean, believable details and one unmistakable subject. Isolate the photographic scene inside a generously sized irregular dry-brush painted silhouette with soft feathered painterly edges; truly transparent background OUTSIDE this silhouette, no rectangular backdrop. Centered composition fills about 85% of square canvas. No text, labels, letters, logos, watermarks, graphic symbols, UI mockups or drop shadow. SUBJECT: An elegant corner wall finished in polished ivory Venetian plaster, visible delicate hand-trowelled tonal movement, soft light reflection, a stainless Venetian plaster trowel resting against the wall. No people.",
+      "file": "assets/services/edelputz.webp"
+    },
+    {
+      "key": "dekorativ",
+      "prompt": "Create ONE square premium photorealistic website service illustration for a Swiss painter company. Art direction: editorial architectural/product photography, tactile authentic materials, warm natural side light, contemporary restrained Swiss craftsmanship. A coherent series with clean, believable details and one unmistakable subject. Isolate the photographic scene inside a generously sized irregular dry-brush painted silhouette with soft feathered painterly edges; truly transparent background OUTSIDE this silhouette, no rectangular backdrop. Centered composition fills about 85% of square canvas. No text, labels, letters, logos, watermarks, graphic symbols, UI mockups or drop shadow. SUBJECT: A close-up of a decorative wall panel with subtle hand-painted grey-blue faux-marble veining and a small decorative painting brush, convincing artisan glazing and patina, luxurious but restrained. No people.",
+      "file": "assets/services/dekorativ.webp"
+    },
+    {
+      "key": "klassische-techniken",
+      "prompt": "Create ONE square premium photorealistic website service illustration for a Swiss painter company. Art direction: editorial architectural/product photography, tactile authentic materials, warm natural side light, contemporary restrained Swiss craftsmanship. A coherent series with clean, believable details and one unmistakable subject. Isolate the photographic scene inside a generously sized irregular dry-brush painted silhouette with soft feathered painterly edges; truly transparent background OUTSIDE this silhouette, no rectangular backdrop. Centered composition fills about 85% of square canvas. No text, labels, letters, logos, watermarks, graphic symbols, UI mockups or drop shadow. SUBJECT: An artisan ornamental wall-stencilling scene: a partially lifted traditional stencil with a refined repeating terracotta geometric pattern on warm ivory plaster, a short round stencil brush beside it, no words, no people.",
+      "file": "assets/services/klassische-techniken.webp"
+    }
+  ]
+}

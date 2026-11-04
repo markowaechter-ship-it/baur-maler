@@ -1,6 +1,8 @@
 (() => {
  const gallery=document.querySelector('.services-gallery');if(!gallery)return;
  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+ document.addEventListener('keydown',event=>{if(event.key==='Tab'||event.key.startsWith('Arrow'))document.documentElement.classList.add('keyboard-input');});
+ document.addEventListener('pointerdown',()=>document.documentElement.classList.remove('keyboard-input'),{passive:true});
  const panels=[...gallery.querySelectorAll('[data-service]')];
  const carouselPrevious=document.querySelector('.service-carousel-prev'),carouselNext=document.querySelector('.service-carousel-next'),carouselStatus=document.querySelector('.service-carousel-status');
  let suppressOpen=false,drag=null,carouselFrame=0;
@@ -47,17 +49,21 @@
  let source=null,motion=null,closing=false,page=0,count=1,step=1;
  const goPage=n=>{page=Math.max(0,Math.min(count-1,n));view.scrollLeft=page*step;dialog.querySelector('.service-pagination span').textContent=`${page+1} / ${count}`;dialog.querySelector('.service-page-prev').disabled=page===0;dialog.querySelector('.service-page-next').disabled=page===count-1;};
  const measure=()=>{if(!dialog.open)return;step=view.clientWidth+36;count=Math.max(1,Math.ceil((flow.scrollWidth+36)/step));goPage(page);};
- const origin=()=>{const a=source.getBoundingClientRect(),b=dialog.getBoundingClientRect();return `translate3d(${a.left+a.width/2-b.left-b.width/2}px,${a.top+a.height/2-b.top-b.height/2}px,0) scale(${a.width/b.width},${a.height/b.height}) rotateY(0deg)`;};
+ const origin=()=>{const a=source.getBoundingClientRect(),b=dialog.getBoundingClientRect();return `translate3d(${a.left+a.width/2-b.left-b.width/2}px,${a.top+a.height/2-b.top-b.height/2}px,0) rotateY(0deg)`;};
  const open=button=>{
   if(dialog.open)return;
   source=button;source.setAttribute('aria-expanded','true');source.style.visibility='hidden';
   front.className=`service-face service-front ${button.className}`;front.innerHTML=button.innerHTML;
+  const rect=button.getBoundingClientRect(),style=getComputedStyle(button);
+  front.style.width=`${rect.width}px`;front.style.height=`${rect.height}px`;
+  front.style.padding=style.padding;front.style.borderRadius=style.borderRadius;
+  front.querySelector('h3').style.fontSize=getComputedStyle(button.querySelector('h3')).fontSize;
   back.style.background=getComputedStyle(button).backgroundColor;
   dialog.querySelector('h2').textContent=button.querySelector('h3').textContent;
   flow.replaceChildren(document.querySelector(`#service-info-${button.dataset.service}`).content.cloneNode(true));
   page=0;dialog.showModal();measure();
   spin.style.transform='rotateY(180deg)';
-  motion=spin.animate([{transform:origin()},{transform:'translate3d(0,0,0) scale(1) rotateY(180deg)'}],{duration:reduced.matches?0:1000,easing:'cubic-bezier(.22,.65,.18,1)'});
+  motion=spin.animate([{transform:origin()},{transform:'translate3d(0,0,0) rotateY(180deg)'}],{duration:reduced.matches?0:1000,easing:'cubic-bezier(.22,.65,.18,1)'});
   motion.finished.then(()=>{motion=null;dialog.querySelector('.service-close').focus({preventScroll:true});},()=>{});
  };
  const close=()=>{

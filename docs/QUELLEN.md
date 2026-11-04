@@ -34,3 +34,7 @@ Die ursprüngliche Geschichte bestätigt zum 1. Juli 2016 die Firmierung **Baur 
 ## Schrift
 
 Outfit Variable, lokal eingebunden für die gesamte Website. Quelle: https://github.com/google/fonts/tree/main/ofl/outfit. SIL Open Font License 1.1; Lizenztext unter `assets/fonts/OFL-Outfit.txt`.
+
+## Individuelle Leistungsmotive
+
+Die zwölf Karussellbilder unter `assets/services/` wurden mit dem integrierten Imagegen-Werkzeug als eigenständige Illustrationen erzeugt. Keine doppelten Bilddateien, keine als Kundenreferenzen ausgegebenen KI-Motive. Vollständige Prompts und Dateizuordnung: `docs/service-images.json`; verlinkte Übersicht: `docs/service-images.md`. Transparenz ist in den optimierten WebP-Dateien erhalten.

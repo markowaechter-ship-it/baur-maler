@@ -591,3 +591,18 @@ h1,h2,h3,h4{font-family:inherit;font-weight:650;letter-spacing:-.045em}
 .service-carousel-status{min-width:80px;font-size:13px;color:#666;text-align:center;font-variant-numeric:tabular-nums}
 @media(max-width:1000px) and (min-width:761px){.services-gallery>.service-panel{flex-basis:calc((100% - 16px)/2)}}
 @media(max-width:760px){.services-gallery{gap:12px}.services-gallery>.service-panel{flex-basis:94%}.service-carousel-controls{gap:18px}.service-carousel-controls button{width:36px;height:36px;font-size:22px}.service-carousel-status{font-size:12px}}
+
+/* Neutral section navigation. */
+.chapter-fixed .chapter-nav button{background:#f2f2f2;color:#737373}
+.chapter-fixed .chapter-nav button[aria-pressed="true"]{background:#dedede;color:#222}
+.chapter-fixed .chapter-nav button:hover{background:#e7e7e7;color:#222}
+.chapter-fixed .chapter-nav button[aria-pressed="true"]:hover{background:#d5d5d5}
+.chapter-fixed .chapter-nav span{background:#333;color:#fff}
+.chapter-fixed .chapter-meter{color:#777}.chapter-fixed .chapter-meter i{background:#ddd}.chapter-fixed .chapter-meter b{background:#444}
+/* The returning front keeps the real card's proportions and layout. */
+.service-front{inset:auto;left:50%;top:50%;transform:translate(-50%,-50%);box-shadow:none}
+.service-front .service-visual{flex:1 1 0;height:auto;min-height:100px;position:relative;margin:15px 0 25px}
+.service-front .service-visual img{position:absolute;inset:0;width:100%;height:100%;transform:scale(1.16)}
+.services-gallery .service-panel:focus{outline:none}
+.keyboard-input .services-gallery .service-panel:focus-visible{outline:2px solid #777;outline-offset:-4px}
+@media(max-width:760px){.service-front .service-visual{min-height:80px;margin:12px 0 20px}.service-front .service-visual img{transform:scale(1.1)}}
