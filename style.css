@@ -578,3 +578,16 @@ h1,h2,h3,h4{font-family:inherit;font-weight:650;letter-spacing:-.045em}
  .service-detail-footer{gap:10px;padding-top:16px}.service-pagination{gap:8px;font-size:12px}.service-pagination button{width:30px;height:30px;font-size:18px}.service-enquire{padding:12px 15px;font-size:12px}
 }
 @media(prefers-reduced-motion:reduce){.service-detail::backdrop{animation:none}}
+
+/* Every discipline shares the same horizontal service carousel. */
+.services-gallery{display:flex;gap:16px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:none;touch-action:pan-x pinch-zoom;overscroll-behavior-x:contain;user-select:none;border-radius:18px}
+.services-gallery::-webkit-scrollbar{display:none}
+.services-gallery>.service-panel{flex:0 0 calc((100% - 32px)/3);scroll-snap-align:start;min-width:0}
+.services-gallery .service-visual img{-webkit-user-drag:none;pointer-events:none}
+.services-gallery.is-dragging{scroll-snap-type:none;cursor:grabbing}.services-gallery.is-dragging .service-panel{cursor:grabbing}
+.service-carousel-controls{display:flex;flex:none;align-items:center;justify-content:center;gap:20px}
+.service-carousel-controls button{display:grid;place-items:center;width:42px;height:42px;border:1px solid #17171735;border-radius:50%;background:transparent;color:#171717;font-size:25px;line-height:1;cursor:pointer;transition:background .2s,color .2s}
+.service-carousel-controls button:hover:not(:disabled){background:#171717;color:#fff}.service-carousel-controls button:disabled{opacity:.25;cursor:default}
+.service-carousel-status{min-width:80px;font-size:13px;color:#666;text-align:center;font-variant-numeric:tabular-nums}
+@media(max-width:1000px) and (min-width:761px){.services-gallery>.service-panel{flex-basis:calc((100% - 16px)/2)}}
+@media(max-width:760px){.services-gallery{gap:12px}.services-gallery>.service-panel{flex-basis:94%}.service-carousel-controls{gap:18px}.service-carousel-controls button{width:36px;height:36px;font-size:22px}.service-carousel-status{font-size:12px}}

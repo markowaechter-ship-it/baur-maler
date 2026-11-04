@@ -74,3 +74,7 @@ Mobile Prüfung (390 × 844): Dokumenthöhe exakt 844 Pixel, scrollY 0, kein sei
 ## Drehbare Leistungskarten
 
 Die drei Leistungsfelder auf der Startseite öffnen ihre vollständigen Leistungs- und FAQ-Texte in einer vergrösserten Karte mit 3D-Drehung. Inhalte aus den bisherigen Detailseiten sind als lokale Templates eingebunden. Die URL bleibt `/`. Geprüft bei 1440×1000 und 390×720: alle drei Karten öffnen/schliessen, Textseiten blättern, Rückseite erneut anklicken, X und Escape, kein Wechsel der Hauptsektion durch Scrollen im geöffneten Detail. Reduzierte Bewegung zeigt die Rückseite ohne Drehung. Der Nachhaltigkeitsbalken in dieser Sektion wurde entfernt.
+
+## Vollständiges Leistungskarussell
+
+Zwölf Karten decken die vorhandenen Leistungsinhalte ab. Karussell bei 1440×1000 mit drei sichtbaren Karten, bei 390×720 mit einer Karte und Vorschau auf die nächste geprüft. Pfeile, Mausziehen und echte Touch-Wischgesten verschieben horizontal; Ziehen öffnet keine Detailkarte. Alle zwölf Rückseiten mit Inhalt und Schliessen geprüft, URL bleibt `/`, kein vertikales Seitenscrollen. Texte der zusätzlichen Karten stammen aus den bestehenden Abschnitten von `leistungen/index.html`.

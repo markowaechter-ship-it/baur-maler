@@ -1,6 +1,45 @@
 (() => {
  const gallery=document.querySelector('.services-gallery');if(!gallery)return;
  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+ const panels=[...gallery.querySelectorAll('[data-service]')];
+ const carouselPrevious=document.querySelector('.service-carousel-prev'),carouselNext=document.querySelector('.service-carousel-next'),carouselStatus=document.querySelector('.service-carousel-status');
+ let suppressOpen=false,drag=null,carouselFrame=0;
+ const stride=()=>panels.length>1?panels[1].getBoundingClientRect().left-panels[0].getBoundingClientRect().left:gallery.clientWidth;
+ const updateCarousel=()=>{
+  carouselFrame=0;const step=stride();if(!step)return;
+  const first=Math.min(panels.length-1,Math.round(gallery.scrollLeft/step));
+  const visible=Math.max(1,Math.round(gallery.clientWidth/step)),last=Math.min(panels.length,first+visible);
+  carouselPrevious.disabled=gallery.scrollLeft<=2;carouselNext.disabled=gallery.scrollLeft>=gallery.scrollWidth-gallery.clientWidth-2;
+  carouselStatus.textContent=visible===1?`${first+1} / ${panels.length}`:`${first+1}–${last} / ${panels.length}`;
+ };
+ const moveCarousel=direction=>gallery.scrollTo({left:Math.max(0,Math.round(gallery.scrollLeft/stride())+direction)*stride(),behavior:reduced.matches?'instant':'smooth'});
+ carouselPrevious.addEventListener('click',()=>moveCarousel(-1));carouselNext.addEventListener('click',()=>moveCarousel(1));
+ gallery.addEventListener('scroll',()=>{if(!carouselFrame)carouselFrame=requestAnimationFrame(updateCarousel);},{passive:true});
+ gallery.addEventListener('keydown',event=>{
+  if(event.key!=='ArrowLeft'&&event.key!=='ArrowRight')return;
+  event.preventDefault();event.stopPropagation();const i=panels.indexOf(document.activeElement),n=Math.max(0,Math.min(panels.length-1,i+(event.key==='ArrowRight'?1:-1)));
+  panels[n].focus({preventScroll:true});gallery.scrollTo({left:n*stride(),behavior:reduced.matches?'instant':'smooth'});
+ });
+ gallery.addEventListener('pointerdown',event=>{
+  if(event.pointerType!=='mouse'||event.button!==0)return;
+  suppressOpen=false;drag={id:event.pointerId,x:event.clientX,left:gallery.scrollLeft,moved:false};
+ });
+ gallery.addEventListener('pointermove',event=>{
+  if(!drag||event.pointerId!==drag.id)return;
+  const dx=event.clientX-drag.x;
+  if(!drag.moved&&Math.abs(dx)>8){drag.moved=true;suppressOpen=true;gallery.setPointerCapture(event.pointerId);gallery.classList.add('is-dragging');}
+  if(drag.moved){event.preventDefault();gallery.scrollLeft=drag.left-dx;}
+ });
+ const endDrag=event=>{
+  if(!drag||event.pointerId!==drag.id)return;
+  const moved=drag.moved;drag=null;gallery.classList.remove('is-dragging');
+  if(gallery.hasPointerCapture(event.pointerId))gallery.releasePointerCapture(event.pointerId);
+  if(moved)gallery.scrollTo({left:Math.round(gallery.scrollLeft/stride())*stride(),behavior:reduced.matches?'instant':'smooth'});
+ };
+ gallery.addEventListener('pointerup',endDrag);gallery.addEventListener('pointercancel',endDrag);
+ gallery.addEventListener('click',event=>{if(suppressOpen){event.preventDefault();event.stopImmediatePropagation();suppressOpen=false;}},true);
+ new ResizeObserver(updateCarousel).observe(gallery);updateCarousel();
+
  const dialog=document.createElement('dialog');dialog.className='service-detail';dialog.setAttribute('aria-labelledby','service-detail-title');
  dialog.innerHTML='<div class="service-spin"><div class="service-face service-front" aria-hidden="true"></div><div class="service-face service-back"><div class="service-detail-heading"><div><p class="service-detail-label">Unsere Leistungen</p><h2 id="service-detail-title"></h2></div><button class="service-close" type="button" aria-label="Karte zurückdrehen">×</button></div><div class="service-pages"><div class="service-text"></div></div><div class="service-detail-footer"><div class="service-pagination"><button class="service-page-prev" type="button" aria-label="Vorherige Textseite">←</button><span aria-live="polite"></span><button class="service-page-next" type="button" aria-label="Nächste Textseite">→</button></div><button class="service-enquire" type="button">Projekt besprechen ↗</button></div></div></div>';
  document.body.append(dialog);
