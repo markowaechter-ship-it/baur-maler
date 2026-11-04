@@ -43,21 +43,18 @@
  new ResizeObserver(updateCarousel).observe(gallery);updateCarousel();
 
  const dialog=document.createElement('dialog');dialog.className='service-detail';dialog.setAttribute('aria-labelledby','service-detail-title');
- dialog.innerHTML='<div class="service-shadow" aria-hidden="true"></div><div class="service-spin"><div class="service-face service-front" aria-hidden="true"></div><div class="service-face service-back"><div class="service-detail-heading"><div><p class="service-detail-label">Unsere Leistungen</p><h2 id="service-detail-title"></h2></div><button class="service-close" type="button" aria-label="Karte zurückdrehen">×</button></div><div class="service-pages"><div class="service-text"></div></div><div class="service-detail-footer"><div class="service-pagination"><button class="service-page-prev" type="button" aria-label="Vorherige Textseite">←</button><span aria-live="polite"></span><button class="service-page-next" type="button" aria-label="Nächste Textseite">→</button></div><button class="service-enquire" type="button">Projekt besprechen ↗</button></div></div></div>';
+ dialog.innerHTML='<div class="service-spin"><div class="service-face service-front" aria-hidden="true"></div><div class="service-face service-back"><div class="service-detail-heading"><div><p class="service-detail-label">Unsere Leistungen</p><h2 id="service-detail-title"></h2></div><button class="service-close" type="button" aria-label="Karte zurückdrehen">×</button></div><div class="service-pages"><div class="service-text"></div></div><div class="service-detail-footer"><div class="service-pagination"><button class="service-page-prev" type="button" aria-label="Vorherige Textseite">←</button><span aria-live="polite"></span><button class="service-page-next" type="button" aria-label="Nächste Textseite">→</button></div><button class="service-enquire" type="button">Projekt besprechen ↗</button></div></div></div>';
  document.body.append(dialog);
  const spin=dialog.querySelector('.service-spin'),front=dialog.querySelector('.service-front'),back=dialog.querySelector('.service-back'),view=dialog.querySelector('.service-pages'),flow=dialog.querySelector('.service-text');
  let source=null,backgroundCard=null,motion=null,closing=false,page=0,count=1,step=1;
  const goPage=n=>{page=Math.max(0,Math.min(count-1,n));view.scrollLeft=page*step;dialog.querySelector('.service-pagination span').textContent=`${page+1} / ${count}`;dialog.querySelector('.service-page-prev').disabled=page===0;dialog.querySelector('.service-page-next').disabled=page===count-1;};
  const measure=()=>{if(!dialog.open)return;step=view.clientWidth+36;count=Math.max(1,Math.ceil((flow.scrollWidth+36)/step));goPage(page);};
- // Find the narrowest comfortable width that fits the rendered copy on one text page.
+ // Keep desktop detail cards within one third of the main section card.
  const fitWidth=()=>{
   if(!dialog.open||closing)return;
-  const max=Math.max(0,Math.min(1120,innerWidth-(innerWidth<=760?24:64)));
-  const min=Math.min(560,max);
-  for(let width=min;;width=Math.min(max,width+32)){
-   dialog.style.width=`${width}px`;
-   if(flow.scrollWidth<=view.clientWidth+2||width>=max)break;
-  }
+  const sectionWidth=source.closest('.chapter-card').getBoundingClientRect().width;
+  const width=innerWidth>760?Math.min(sectionWidth*.33,innerWidth-64):innerWidth-24;
+  dialog.style.width=`${Math.floor(width)}px`;
   measure();
  };
  const origin=()=>{const a=source.getBoundingClientRect(),b=dialog.getBoundingClientRect();return `translate3d(${a.left+a.width/2-b.left-b.width/2}px,${a.top+a.height/2-b.top-b.height/2}px,0) rotateY(0deg)`;};

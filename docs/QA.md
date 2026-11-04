@@ -94,3 +94,7 @@ Die Leistungskarten verwenden einen transparenten Dialog-Backdrop. Nur der Inhal
 ## Dynamische Detailbreite und weicher Schatten
 
 Die geöffneten Karten wählen anhand des gerenderten Textüberlaufs eine Breite zwischen 560 und 1120 px, begrenzt durch den verfügbaren Bildschirm. Bei langen Texten bleiben die Textseiten erreichbar. Geprüft bei 1440×1000 und 1440×800: kurze Leistungen 560 px, umfangreiche Leistungen bis 1120 px; bei 390×720 alle innerhalb des Viewports (366 px). Der zusätzliche Schatten wird über eine separate transparente Ebene in 650 ms ein- und ausgeblendet; Zwischenwerte beim Öffnen und Schliessen sowie vollständiges Schliessen geprüft.
+
+## Kompakte Detailkarten ohne feste Schattenfläche
+
+Desktop-Breite auf höchstens 33 % der grossen Sektionskarte begrenzt; für lesbare Mobilansichten wird die verfügbare Breite genutzt. Alle zwölf Texte redaktionell verdichtet, ohne Leistungsumfang, Materialien, Vorteile oder Voraussetzungen zu ändern. Geprüft bei 1440×1000, 1440×800 und 390×720: sämtliche Texte passen jeweils auf eine Textseite. Die separate `.service-shadow`-Fläche ist entfernt; nur die tatsächlich drehende Rückseite trägt einen weich überblendeten Schatten. Dialoghülle und Backdrop sind transparent und ohne eigenen Schatten. Animations-Zwischenbild visuell ohne stehenbleibenden Rahmen geprüft.
