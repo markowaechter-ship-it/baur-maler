@@ -6,7 +6,7 @@
  const panels=[...gallery.querySelectorAll('[data-service]')];
  const carouselPrevious=document.querySelector('.service-carousel-prev'),carouselNext=document.querySelector('.service-carousel-next'),carouselStatus=document.querySelector('.service-carousel-status');
  let suppressOpen=false,drag=null,carouselFrame=0;
- const stride=()=>panels.length>1?panels[1].getBoundingClientRect().left-panels[0].getBoundingClientRect().left:gallery.clientWidth;
+ const stride=()=>panels.length>1?panels[1].offsetLeft-panels[0].offsetLeft:gallery.clientWidth;
  const updateCarousel=()=>{
   carouselFrame=0;const step=stride();if(!step)return;
   const first=Math.min(panels.length-1,Math.round(gallery.scrollLeft/step));
@@ -30,7 +30,7 @@
   if(!drag||event.pointerId!==drag.id)return;
   const dx=event.clientX-drag.x;
   if(!drag.moved&&Math.abs(dx)>8){drag.moved=true;suppressOpen=true;gallery.setPointerCapture(event.pointerId);gallery.classList.add('is-dragging');}
-  if(drag.moved){event.preventDefault();gallery.scrollLeft=drag.left-dx;}
+  if(drag.moved){event.preventDefault();gallery.scrollLeft=drag.left-dx/(gallery.getBoundingClientRect().width/gallery.clientWidth);}
  });
  const endDrag=event=>{
   if(!drag||event.pointerId!==drag.id)return;

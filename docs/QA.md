@@ -118,3 +118,7 @@ Den verschachtelten grauen Kasten durch eine offene Komposition ersetzt: zweistu
 ## Schriftvergrösserung um 30 %
 
 Absolute und viewportabhängige Schriftgrössen in der gesamten CSS-Typografie um Faktor 1,3 erhöht; relative em-Verhältnisse bleiben proportional zum bereits vergrösserten Elterntext. Desktop: alle acht Sektionen bei 1440×1000 ohne Textüberlauf geprüft. Mobile 390×720: Abstände gestrafft, kurze Einleitungen verdichtet, Hero-Aktionen umbrechbar und Palette nach oben versetzt. Kontaktformular mobil in Kontaktdaten/Nachricht aufgeteilt; beide Schritte einschliesslich Weiter-Validierung und sichtbarem Absende-Button geprüft. Desktop behält das einteilige Formular. FAQ und Nachhaltigkeit passen ohne vertikalen Überlauf, der gewollte Beschnitt des grossen Teamfotos bleibt erhalten.
+
+## Alle zwölf Leistungen nach Skalierungsänderungen erreichbar
+
+Karussell-Schrittweite auf unskalierte Layout-Pixel umgestellt; Ziehen mit der Maus rechnet Bildschirmbewegung korrekt in Layout-Koordinaten um. Alle zwölf Karten und Templates waren vorhanden. Geprüft bei 1440×1000: lückenlose Pfeilfolge 1–3 bis 10–12 / 12 und zurück. Bei 390×720: 1 / 12 bis 12 / 12 und zurück. Alle zwölf Detailkarten je Bildschirmgrösse geöffnet und geschlossen; zugehörige Texte vorhanden.
