@@ -1055,131 +1055,188 @@ html body header .button{--btn-h:42px}
 /* Hero group photo: a touch brighter so faces read fresh against the light wall */
 .atelier-team img{filter:brightness(1.1) contrast(.97)}
 
-/* Ablauf: the finished room as a full-colour photo across the top of the card.
-   The headline sits on the plain wall; the floor fades into the paper where the steps live. */
-.process-studio{position:relative;isolation:isolate}
-.process-studio::before{content:"";position:absolute;inset:0 0 auto;height:60%;z-index:-1;background:url(/assets/ablauf-wohnraum.jpg) 50% 34%/cover no-repeat;-webkit-mask-image:linear-gradient(to bottom,#000 0,#000 46%,rgba(0,0,0,.5) 72%,transparent 96%);mask-image:linear-gradient(to bottom,#000 0,#000 46%,rgba(0,0,0,.5) 72%,transparent 96%);pointer-events:none}
-.chapter-fixed .chapter-card>.process-studio{justify-content:space-between}
-.process-studio .process-heading{align-items:flex-start}
-@media(max-width:760px){.process-studio::before{height:52%;background-position:22% 18%}}
+/* ==========================================================================
+   Design system: one family for all chapters
+   - Surfaces: paper (light) and Baur navy (dark) only. Navy marks two anchors:
+     Stimmen and Kontakt.
+   - Accent: Baur orange, used only for numbers, the phone and small markers.
+   - Photos: always in the same window (right, same radius, same grade).
+   - Every chapter opens with the same eyebrow: number, rule, label.
+   ========================================================================== */
+:root{--paper:#f5f5f3;--navy:#132c58;--navy-2:#1c3a6e;--accent:#df6230;--accent-ink:#b9501f;--accent-on-navy:#f2884f;--line:rgba(16,20,18,.12);--win-gap:clamp(14px,1.5vw,24px);--win-w:36%;--win-radius:20px}
 
-/* Nachhaltigkeit: misty forest, full bleed. The fog carries the headline in dark ink;
-   the forest below becomes a deep green ground for the two pillars in white. */
-.eco-editorial{position:relative;isolation:isolate;background:#1f3a2a}
-.eco-editorial::before{content:"";position:absolute;inset:0;z-index:-2;background:url(/assets/nachhaltigkeit-wald.jpg) 50% 30%/cover no-repeat;pointer-events:none}
-.eco-editorial::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(to bottom,rgba(238,240,237,.55) 0,rgba(238,240,237,.15) 32%,rgba(12,30,20,0) 42%,rgba(10,28,18,.6) 60%,rgba(8,22,14,.88) 100%)}
-.chapter-fixed .chapter-card>.eco-editorial{justify-content:flex-start}
-.chapter-fixed .chapter-card>.eco-editorial>.eco-practice{margin-top:auto}
-.chapter-fixed .chapter-card>.eco-editorial>.eco-studio-note{margin-top:clamp(20px,4vh,48px)}
-html body .eco-editorial .eco-studio-heading h2{color:#101512}
-html body .eco-editorial .eco-studio-heading h2 span{color:#2f5a40}
-html body .eco-editorial .section-label,html body .eco-editorial .eco-studio-lead{color:#2c3530}
-html body .eco-editorial .eco-practice-item{border-top-color:rgba(255,255,255,.28)}
-html body .eco-editorial .eco-practice-item,html body .eco-editorial .eco-practice-item h3,html body .eco-editorial .eco-principle-icon{color:#fff}
-html body .eco-editorial .eco-practice-item p:not(.eco-principle-label){color:rgba(255,255,255,.86)}
-html body .eco-editorial .eco-principle-label,html body .eco-editorial .eco-studio-note{color:rgba(255,255,255,.72)}
-html body .eco-editorial .eco-studio-note .button{background:#fff;color:#101512;border-color:#fff}
-html body .eco-editorial .eco-studio-note .button:hover{background:#e9efe9}
-@media(max-width:760px){.eco-editorial::after{background:linear-gradient(to bottom,rgba(238,240,237,.6) 0,rgba(238,240,237,.25) 18%,rgba(10,28,18,.62) 32%,rgba(10,28,18,.78) 50%,rgba(8,22,14,.9) 100%)}.eco-editorial::before{background-position:40% 20%}}
+/* Eyebrow: "03 —— So arbeiten wir" */
+html body :is(.experience-top>p:first-child,.services-heading .section-label,.process-heading .section-label,.eco-studio-heading .section-label,.reviews-heading .section-label,.faq-intro .section-label,.contact-eyebrow)::before{display:inline-block;padding-right:2.6em;margin-right:.7em;color:var(--accent-ink);font-weight:600;letter-spacing:.04em;font-variant-numeric:tabular-nums;background:linear-gradient(currentColor,currentColor) right 55%/1.8em 1px no-repeat}
+.chapter-card[data-chapter="1"] .experience-top>p:first-child::before{content:"02"}
+.chapter-card[data-chapter="2"] .services-heading .section-label::before{content:"03"}
+.chapter-card[data-chapter="3"] .process-heading .section-label::before{content:"04"}
+.chapter-card[data-chapter="4"] .eco-studio-heading .section-label::before{content:"05"}
+.chapter-card[data-chapter="5"] .reviews-heading .section-label::before{content:"06"}
+.chapter-card[data-chapter="6"] .faq-intro .section-label::before{content:"07"}
+.chapter-card[data-chapter="7"] .contact-eyebrow::before{content:"08"}
+html body :is(.is-navy) :is(.section-label,.contact-eyebrow)::before{color:var(--accent-on-navy)}
 
-/* FAQ: studio portrait on slate. She stands on the right and points at the questions;
-   the content becomes one light-on-slate column on the left. */
-.faq-editorial{position:relative;isolation:isolate;background:#35464a;color:#fff}
-.faq-editorial::before{content:"";position:absolute;top:0;bottom:0;left:18%;height:100%;aspect-ratio:2000/1125;z-index:-1;background:url(/assets/faq-fragen.jpg) center/cover no-repeat;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 14%);mask-image:linear-gradient(to right,transparent 0,#000 14%);pointer-events:none}
-html body .faq-editorial h2,html body .faq-editorial .faq-items summary{color:#fff}
-html body .faq-editorial .section-label,html body .faq-editorial .faq-lead,html body .faq-editorial .faq-contact>p{color:rgba(255,255,255,.7)}
-html body .faq-editorial .faq-items,html body .faq-editorial .faq-items details,html body .faq-editorial .faq-contact{border-color:rgba(255,255,255,.2)}
-html body .faq-editorial .faq-items summary:before{color:rgba(255,255,255,.55)}
-html body .faq-editorial .faq-items summary:after{border-color:rgba(255,255,255,.45)}
-html body .faq-editorial .faq-items summary:hover:after{border-color:#fff}
-html body .faq-editorial .faq-items details[open] summary:after{background-color:#fff;border-color:#fff;color:#17241c}
-html body .faq-editorial .faq-items details p{color:rgba(255,255,255,.8)}
-html body .faq-editorial .faq-ask{background:#fff;color:#17241c}
-html body .faq-editorial .faq-ask:hover{background:#e6ecec}
-html body .faq-editorial .faq-phone{color:#fff}
+/* Accent: small numbers pick up the orange */
+html body .process-step>span,html body .faq-items summary:before{color:var(--accent-ink)}
+
+/* Photo window */
+.has-window{position:relative;isolation:isolate}
+.has-window::before{content:"";position:absolute;z-index:-1;top:var(--win-gap);right:var(--win-gap);bottom:var(--win-gap);width:var(--win-w);border-radius:var(--win-radius);background:var(--win-bg,#dfe2dc) var(--win) var(--win-pos,center)/var(--win-size,cover) no-repeat;filter:var(--win-filter,saturate(.82) sepia(.1) contrast(.97));pointer-events:none}
 @media(min-width:1000px){
- html body .faq-editorial{grid-template-columns:minmax(0,42%) 1fr;grid-auto-flow:row;align-content:center;align-items:start;row-gap:0;column-gap:0}
- .faq-editorial .faq-intro{display:contents}
- .faq-editorial .faq-intro>*,.faq-editorial .faq-items{grid-column:1}
- .faq-editorial .faq-items{order:1;margin-top:clamp(20px,3.5vh,40px)}
- .faq-editorial .faq-contact{order:2;margin-top:clamp(18px,3vh,36px)}
- .faq-editorial .faq-items summary{font-size:clamp(18px,1.45vw,22px);padding:clamp(12px,1.9vh,22px) 0}
+ html body .has-window{padding-right:calc(var(--win-w) + var(--win-gap) + clamp(32px,3.2vw,60px))!important}
+ /* Ablauf: the three steps become calm rows beside the photo */
+ .process-studio.process-studio.process-studio .original-process-grid{display:grid;grid-template-columns:1fr;gap:0;border-top:1px solid var(--line)}
+ .process-studio.process-studio.process-studio .original-process-grid article,.process-studio.process-studio.process-studio .original-process-grid article:first-child,.process-studio.process-studio.process-studio .original-process-grid article:last-child{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,2fr);column-gap:clamp(20px,2.4vw,44px);align-items:start;padding:clamp(14px,2.2vh,26px) 0;margin:0;border:0;border-bottom:1px solid var(--line)}
+ .process-studio.process-studio.process-studio .process-step{grid-column:1;grid-row:1;margin:0 0 6px}
+ .process-studio.process-studio.process-studio .original-process-grid h3{grid-column:1;grid-row:2;margin:0}
+ .process-studio.process-studio.process-studio .original-process-grid p{grid-column:2;grid-row:1/span 2;margin:0}
+ .process-studio.process-studio.process-studio .original-process-grid p:last-child{grid-column:2;grid-row:3;padding-top:8px}
+ html body .process-heading>p{display:none}
+ /* Nachhaltigkeit: lead drops below the headline */
+ html body .eco-editorial .eco-studio-heading{display:block}
+ html body .eco-editorial .eco-studio-lead{margin-top:16px}
 }
 @media(max-width:999px){
- .faq-editorial::before{left:auto;right:-30%;top:0;bottom:auto;height:clamp(160px,27vh,225px);-webkit-mask-image:linear-gradient(to bottom,#000 55%,transparent),linear-gradient(to right,transparent,#000 20%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to bottom,#000 55%,transparent),linear-gradient(to right,transparent,#000 20%);mask-composite:intersect}
- html .chapter-fixed .chapter-card>.faq-editorial,html body .faq-editorial{padding-top:clamp(150px,25vh,205px)}
+ .has-window::before{left:var(--win-gap);bottom:auto;width:auto;height:clamp(120px,20vh,180px)}
+ html body .has-window{padding-top:calc(clamp(120px,20vh,180px) + var(--win-gap) + 20px)!important}
+ .google-stories.has-window::before{background-size:auto 100%}
 }
-@media(min-width:1000px){
- html body .faq-editorial .faq-intro h2{font-size:clamp(34px,3.3vw,64px);line-height:1.02}
- html body .faq-editorial{grid-template-columns:minmax(0,44%) 1fr}
-}
-@media(min-width:1000px) and (max-height:960px){
- html body .faq-editorial .faq-lead,html body .faq-editorial .faq-contact>p{display:none}
- html body .faq-editorial .faq-items summary{padding:11px 0}
- html body .faq-editorial .faq-contact{margin-top:16px;padding-top:16px}
-}
-/* the read-more row sits under the section: keep it on the same slate */
-.chapter-fixed .chapter-card.has-overflow:has(>.faq-editorial){background:#35464a}
-/* FAQ: the list already ends on a rule, so the contact block needs none of its own */
-html body .faq-editorial .faq-contact{border-top:0}
 
-/* Stimmen: same slate studio as the FAQ. She stands on the right and gives the reviews
-   a thumbs-up; one review at a time in a calm column on the left. */
-.google-stories{position:relative;isolation:isolate;background:#35464a;color:#fff}
-.google-stories::before{content:"";position:absolute;top:0;bottom:0;left:21%;height:100%;aspect-ratio:2000/1125;z-index:-1;background:url(/assets/stimmen-daumen.jpg) center/cover no-repeat;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 16%);mask-image:linear-gradient(to right,transparent 0,#000 16%);pointer-events:none}
-html body .google-stories .reviews-heading h2{color:#fff}
-html body .google-stories .section-label,html body .google-stories .reviews-heading>p,html body .google-stories .reviews-bottom>span,html body .google-stories .reviews-position{color:rgba(255,255,255,.72)}
-html body .google-stories .reviews-controls button{color:#fff;border-color:rgba(255,255,255,.5);background:transparent}
-html body .google-stories .reviews-controls button:disabled{opacity:.35}
-html body .google-stories .google-review{background:#fff;border:0;box-shadow:0 24px 60px -30px rgba(0,0,0,.55)}
-.chapter-fixed .chapter-card.has-overflow:has(>.google-stories){background:#35464a}
+/* Chapters 06-08: one closing sequence on paper.
+   06 shows the team in the photo window; 07 and 08 turn the same window into a navy
+   panel that carries the call to action (ask a question, send the enquiry). */
 @media(min-width:1000px){
- html body .google-stories>*{width:46%;max-width:46%;margin-right:auto}
  html body .google-stories .reviews-heading{display:block}
- html body .google-stories .reviews-heading h2{font-size:clamp(34px,3.3vw,64px);line-height:1.02}
- html body .google-stories .reviews-heading>p{display:block;margin-top:14px}
+ html body .google-stories .reviews-heading>p{margin-top:14px}
  html body .google-stories .google-review{flex-basis:100%}
 }
-@media(min-width:1000px) and (max-height:960px){html body .google-stories .reviews-heading>p{display:none}}
-@media(max-width:999px){
- .google-stories::before{left:auto;right:-38%;top:0;bottom:auto;height:clamp(160px,27vh,225px);-webkit-mask-image:linear-gradient(to bottom,#000 55%,transparent),linear-gradient(to right,transparent,#000 20%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to bottom,#000 55%,transparent),linear-gradient(to right,transparent,#000 20%);mask-composite:intersect}
- html .chapter-fixed .chapter-card>.google-stories,html body .google-stories{padding-top:clamp(150px,25vh,205px)}
+html body .google-stories .google-review{background:#fff;border:1px solid var(--line);box-shadow:none}
+
+/* Navy panel: same frame as the photo window */
+@media(min-width:1000px){
+ html body .has-panel{padding-right:calc(var(--win-w) + var(--win-gap) + clamp(32px,3.2vw,60px))!important}
+ html body .has-panel.faq-editorial,html .chapter-fixed .chapter-card>.has-panel.contact-finale,html body .has-panel.contact-finale{grid-template-columns:minmax(0,1fr)!important;align-content:center}
+ html body .has-panel :is(.faq-contact,form#enquiry){position:absolute!important;top:var(--win-gap)!important;right:var(--win-gap)!important;bottom:var(--win-gap)!important;left:auto!important;width:var(--win-w)!important;max-width:none!important;height:auto!important;margin:0!important;box-sizing:border-box;border:0!important;border-radius:var(--win-radius)!important;box-shadow:none!important;background:var(--navy)!important;color:#fff;padding:clamp(28px,2.8vw,52px)!important;display:flex!important;flex-direction:column;justify-content:center;overflow:auto}
+ html body .has-panel.faq-editorial .faq-contact{justify-content:flex-end}
 }
-html body .google-stories .google-review{color:#17241c}
-html body .google-stories .google-review h3{color:#17241c}
-html body .google-stories .reviews-controls button{background:#fff;color:#17241c;border-color:#fff}
-@media(min-width:1000px){html body .google-stories .reviews-heading h2{font-size:clamp(32px,2.9vw,56px)}}
+@media(max-width:999px){
+ html body .has-panel :is(.faq-contact,form#enquiry){background:var(--navy)!important;color:#fff;border:0!important;border-radius:18px!important;box-shadow:none!important;padding:20px!important;margin-top:18px}
+}
+/* panel content */
+html body .has-panel .faq-contact::before{content:"Direkt zu uns";display:block;margin-bottom:14px;font-size:14px;letter-spacing:.04em;color:var(--accent-on-navy)}
+html body .has-panel .faq-contact>p{display:block!important;margin:0;color:#fff!important;font-size:clamp(26px,2.3vw,40px);line-height:1.08;letter-spacing:-.02em;font-weight:600}
+html body .has-panel .faq-contact-actions{margin-top:clamp(18px,2.6vh,30px)}
+html body .has-panel .faq-ask{background:#fff!important;color:var(--navy)!important}
+html body .has-panel .faq-ask:hover{background:#e8edf5!important}
+html body .has-panel .faq-phone{color:#fff}
+.contact-finale.contact-finale.contact-finale.has-panel form :is(label,.small,.small a,legend){color:rgba(255,255,255,.82)}
+.contact-finale.contact-finale.contact-finale.has-panel form .small a{color:#fff}
+.contact-finale.contact-finale.contact-finale.has-panel form :is(input,select,textarea){background:#fff;border-color:transparent;color:#17241c}
+.contact-finale.contact-finale.contact-finale.has-panel form :is(button,.button){background:#fff!important;color:var(--navy)!important}
+.contact-finale.contact-finale.contact-finale.has-panel .contact-direct a[href^="tel"]{color:var(--accent-ink)}
+/* Window chapters on shorter desktops: tighten type so nothing spills */
 @media(min-width:1000px) and (max-height:960px){
- html body .google-stories .google-review blockquote{font-size:clamp(16px,1.25vw,19px);line-height:1.5}
- html body .google-stories .google-review{padding:22px 26px}
- html body .google-stories .review-stars{margin:12px 0}
+ .process-studio.process-studio.process-studio .process-heading h2,.eco-editorial.eco-editorial .eco-studio-heading h2{font-size:clamp(34px,3.2vw,52px);line-height:1.02}
+ .process-studio.process-studio.process-studio .original-process-grid p{font-size:16px;line-height:1.5}
+ .process-studio.process-studio.process-studio .original-process-grid p:last-child{display:none}
+ .process-studio.process-studio.process-studio .original-process-grid h3{font-size:24px}
+ .process-studio.process-studio.process-studio .original-process-grid article{padding:12px 0}
+ .eco-editorial.eco-editorial .eco-studio-lead{display:none}
+ .eco-editorial.eco-editorial .eco-practice-item p:not(.eco-principle-label){font-size:16px;line-height:1.5}
+ .eco-editorial.eco-editorial .eco-practice-item h3{font-size:24px}
 }
+@media(max-width:999px){html .chapter-fixed .chapter-card>.has-window,html body .has-window{justify-content:flex-start;align-content:start}}
 @media(max-width:999px){
- html .chapter-fixed .chapter-card>.google-stories,html body .google-stories{padding-top:clamp(110px,17vh,150px)}
- .google-stories::before{height:clamp(130px,20vh,170px)}
- html body .google-stories .section-label,html body .google-stories .reviews-bottom>span{display:none}
  html body .google-stories .reviews-heading h2{font-size:30px;line-height:1.05}
-}
-@media(max-width:999px){
- .google-stories::before{right:-12%}
+ html body .google-stories .reviews-bottom>span{display:none}
  html body .google-stories .google-review blockquote{font-size:16px;line-height:1.45}
  html body .google-stories .review-stars{margin:10px 0}
-}
-
-/* Kontakt: a black rotary phone on a pale wall. Text and form sit in the open wall,
-   the phone rises from the bottom edge like a full stop under the invitation to call. */
-.contact-finale{position:relative;isolation:isolate;background:#e3e5e1 url(/assets/kontakt-telefon.jpg) 50% 100%/cover no-repeat}
-.chapter-fixed .chapter-card.has-overflow:has(>.contact-finale){background:#e3e5e1}
-.chapter-fixed .chapter-card>.contact-finale{align-content:start;align-items:start}
-.enquiry-section.contact-finale.contact-finale.contact-finale .contact-direct a[href^="tel"]{color:#df6230}
-.enquiry-section.contact-finale.contact-finale.contact-finale form{background:rgba(255,255,255,.92);border:0;box-shadow:0 30px 70px -34px rgba(20,24,22,.35);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
-.enquiry-section.contact-finale.contact-finale.contact-finale .contact-signoff{border-color:transparent}
-@media(min-width:1000px) and (max-height:960px){
- .enquiry-section.contact-finale.contact-finale.contact-finale .contact-invitation{display:none}
- .enquiry-section.contact-finale.contact-finale.contact-finale .contact-direct{margin-top:14px}
- .enquiry-section.contact-finale.contact-finale.contact-finale .contact-facts{margin-top:16px}
+ html body .google-stories .google-review{padding:16px 18px}
 }
 @media(max-width:999px){
- .contact-finale{background:linear-gradient(to bottom,#e3e5e1 0,#e3e5e1 40%,rgba(227,229,225,0) 62%),#e3e5e1 url(/assets/kontakt-telefon.jpg) 50% 100%/170% auto no-repeat}
- .enquiry-section.contact-finale.contact-finale.contact-finale .contact-signoff{background:rgba(255,255,255,.88);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-radius:14px;padding:10px 14px}
+ .google-stories.has-window::before{height:118px}
+ html .chapter-fixed .chapter-card>.google-stories.has-window,html body .google-stories.has-window{padding-top:150px!important}
+}
+@media(min-width:1000px){
+ html body .has-panel.faq-editorial .faq-contact:not(#_){justify-content:flex-end!important}
+ html body .has-panel.faq-editorial{grid-template-rows:auto auto!important;align-content:center!important;row-gap:clamp(24px,4vh,48px)!important}
+}
+@media(min-width:1000px){html body .has-panel.faq-editorial .faq-contact:not(#_){background:var(--navy) url(/assets/baur-logo-weiss.png) clamp(28px,2.8vw,52px) clamp(28px,2.8vw,52px)/clamp(110px,9vw,170px) auto no-repeat!important}}
+/* Both navy panels share one anatomy: logo top-left, orange label, content at the bottom */
+@media(min-width:1000px){
+ html body .has-panel.contact-finale form#enquiry:not(#_){justify-content:flex-end!important;background:var(--navy) url(/assets/baur-logo-weiss.png) clamp(28px,2.8vw,52px) clamp(28px,2.8vw,52px)/clamp(110px,9vw,170px) auto no-repeat!important}
+}
+html body .has-panel.contact-finale form#enquiry::before{content:"Ihre Anfrage";display:block;margin-bottom:14px;font-size:14px;letter-spacing:.04em;color:var(--accent-on-navy)}
+.contact-finale.contact-finale.contact-finale.has-panel form select{font-size:15px}
+@media(max-width:999px){
+ html .chapter-fixed .chapter-card>.has-panel,html body .has-panel{justify-content:flex-start;align-content:start}
+ html body .has-panel.faq-editorial .faq-intro{display:contents}
+ html body .has-panel.faq-editorial .faq-items{order:1}
+ html body .has-panel.faq-editorial .faq-contact{order:2;margin-top:4px}
+ html body .has-panel .faq-contact>p{font-size:21px}
+ html body .has-panel .faq-contact::before{margin-bottom:6px}
+ html body .has-panel .faq-contact-actions{margin-top:12px}
+}
+@media(max-width:999px){
+ html .chapter-fixed .chapter-card>.has-panel.faq-editorial,html body .has-panel.faq-editorial{gap:12px!important}
+ html body .has-panel.faq-editorial .faq-intro h2{font-size:30px;line-height:1.05}
+ html body .has-panel.faq-editorial .faq-items summary{padding:10px 0}
+ html body .has-panel .faq-contact:not(#_){padding:16px 18px!important}
+}
+@media(max-width:999px){
+ .contact-finale.contact-finale.contact-finale.has-panel .contact-intro h2{font-size:32px;line-height:1.02}
+ html body .has-panel.contact-finale form#enquiry:not(#_){margin-top:8px;padding:16px 18px!important}
+ html body .has-panel.contact-finale form#enquiry::before{margin-bottom:8px}
+ .contact-finale.contact-finale.contact-finale.has-panel .contact-signoff{padding-top:10px;gap:6px}
+}
+
+/* Rechtliches: Impressum and Datenschutz in the same family as the chapters.
+   Paper page, eyebrow, big title, calm blocks on hairlines, navy panel on the right. */
+html body .legal-page{text-align:left;display:block}
+html body .legal-page .legal-body{max-width:none;margin:0}
+html body .legal-page .section-label::before{content:"§";display:inline-block;padding-right:2.6em;margin-right:.7em;color:var(--accent-ink);font-weight:600;background:linear-gradient(currentColor,currentColor) right 55%/1.8em 1px no-repeat}
+html body .legal-page .section-label{font-size:15px;color:var(--reading-muted,#6a6a66);margin:0 0 14px}
+html body .legal-page h1{font-size:clamp(46px,5vw,88px);line-height:1;letter-spacing:-.05em;margin:0 0 clamp(24px,4vh,48px);text-align:left}
+html body .legal-page .legal-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 clamp(24px,3vw,56px)}
+html body .legal-page .legal-block{border-top:1px solid var(--line);padding:clamp(14px,2vh,22px) 0}
+html body .legal-page .legal-wide{grid-column:1/-1}
+html body .legal-page .legal-block h2{font-size:15px;font-weight:500;letter-spacing:.01em;color:var(--reading-muted,#6a6a66);margin:0 0 8px}
+html body .legal-page .legal-block p{margin:0;font-size:18px;line-height:1.55;color:#222}
+html body .legal-page .legal-block a{color:inherit;text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(0,0,0,.25)}
+html body .legal-page .legal-note p,html body .legal-page .legal-small{font-size:15px!important;color:#6a6a66!important}
+html body .legal-page .legal-small{margin-top:10px!important}
+html body .legal-page .legal-credits{list-style:none;margin:0;padding:0}
+html body .legal-page .legal-credits li{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr) auto;gap:16px;padding:8px 0;font-size:18px;color:#222;border-bottom:1px solid var(--line)}
+html body .legal-page .legal-credits li:last-child{border-bottom:0}
+html body .legal-page .legal-credits li span:nth-child(2){color:#6a6a66}
+html body .legal-page .legal-credits li span:last-child{color:var(--accent-ink)}
+/* navy panel, same anatomy as Fragen/Kontakt */
+html body .legal-panel{background:var(--navy) url(/assets/baur-logo-weiss.png) clamp(28px,2.8vw,52px) clamp(28px,2.8vw,52px)/clamp(110px,9vw,170px) auto no-repeat;color:#fff;border-radius:var(--win-radius);padding:clamp(28px,2.8vw,52px);box-sizing:border-box;display:flex;flex-direction:column;justify-content:flex-end;text-align:left}
+html body .legal-panel p{margin:0}
+html body .legal-panel .legal-panel-label{font-size:14px;letter-spacing:.04em;color:var(--accent-on-navy);margin-bottom:12px}
+html body .legal-panel .legal-panel-title{font-size:clamp(26px,2.3vw,40px);line-height:1.08;letter-spacing:-.02em;font-weight:600;color:#fff}
+html body .legal-panel .legal-panel-links{display:flex;flex-direction:column;gap:6px;margin:18px 0 22px;font-size:18px}
+html body .legal-panel .legal-panel-links a{color:#fff;text-decoration:none}
+html body .legal-panel .legal-panel-links a[href^="tel"]{color:var(--accent-on-navy)}
+html body .legal-panel .legal-panel-button{align-self:flex-start;background:#fff!important;color:var(--navy)!important}
+@media(min-width:1000px){
+ html body .legal-page{position:relative}
+ html body .legal-page .legal-panel{position:absolute;top:var(--win-gap);right:var(--win-gap);bottom:var(--win-gap);width:var(--win-w)}
+ html body .legal-page .legal-body{display:flex;flex-direction:column;justify-content:center;min-height:100%}
+}
+@media(max-width:999px){
+ html body .legal-page .legal-grid{grid-template-columns:1fr}
+ html body .legal-page .legal-panel{margin-top:22px;border-radius:18px;padding:20px;background-image:none}
+ html body .legal-page .legal-credits li{grid-template-columns:1fr auto}
+ html body .legal-page .legal-credits li span:nth-child(2){grid-column:1;grid-row:2;font-size:15px}
+ html body .legal-page .legal-credits li span:last-child{grid-row:1/span 2;align-self:center}
+}
+.legal-page.legal-page.legal-page>.legal-body{flex:1 1 auto;width:100%;align-self:stretch}
+.legal-page.legal-page.legal-page h1{margin:0 0 clamp(24px,4vh,48px);max-width:none;width:auto}
+@media(min-width:1000px){html body .legal-page .legal-body{justify-content:safe center}}
+@media(min-width:1000px) and (max-height:960px){
+ .legal-page.legal-page.legal-page h1{font-size:clamp(40px,4vw,60px);margin-bottom:20px}
+ html body .legal-page .legal-block p,html body .legal-page .legal-credits li{font-size:16px;line-height:1.5}
+ html body .legal-page .legal-block{padding:12px 0}
+ html body .legal-page .legal-block h2{margin-bottom:5px}
 }
