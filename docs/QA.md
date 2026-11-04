@@ -110,3 +110,7 @@ Hero-Nebentexte und CTAs in einer hellen, kompakten Kontaktleiste zusammengefüh
 ## Malpräzision, Detailbreite und Timeline-Links
 
 Canvas-Abmessungen und Pointer-Koordinaten verwenden lokale, unskalierte Hero-Koordinaten; die verkleinerte Präsentationskarte verursacht dadurch keinen Cursorversatz mehr. Bei 1440×1000 und 390×720 lag die Abweichung zwischen Zielpunkt und Pigmentcursor unter 0,001 px. Leistungskarten auf Desktop relativ zur vorherigen Breite um 20 % vergrössert (39,6 % statt 33 % der sichtbaren Sektionsbreite); auf Mobil bleibt die Bildschirmbegrenzung erhalten. Alle elf „Station lesen“-Buttons und ihre individuellen Öffnen-Handler entfernt; die Timeline bleibt blätterbar.
+
+## Offene Nachhaltigkeitsgestaltung
+
+Den verschachtelten grauen Kasten durch eine offene Komposition ersetzt: zweistufige Überschrift, getrennte Prinzipien für Umwelttechnik und Materialwahl mit eigenen monochromen Linien-Icons, CTA am unteren rechten Abschluss. Startseite und Nachhaltigkeitsroute verwenden dieselbe Gestaltung. Bei 1440×1000 und 390×720 visuell und ohne vertikalen Inhaltsüberlauf geprüft; beide Icons sichtbar, Hintergrund der Prinzipien transparent.

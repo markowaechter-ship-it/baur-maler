@@ -791,3 +791,31 @@ h1,h2,h3,h4{font-family:inherit;font-weight:650;letter-spacing:-.045em}
  .chapter-fixed .paint-hero .hero-contact-bar .button{padding:12px;gap:12px;font-size:12px}
  .chapter-fixed .paint-hero .hero-contact-bar .hero-phone{padding:12px;font-size:12px}
 }
+
+/* Sustainability as an open editorial composition, without a nested grey panel. */
+.chapter-fixed .chapter-card>.eco-editorial{display:flex;flex-direction:column;justify-content:center;align-items:stretch;gap:42px;padding:44px 48px}
+.eco-editorial .eco-studio-heading{display:grid;grid-template-columns:1.8fr 1fr;gap:14px 38px;align-items:end}
+.eco-editorial .section-label{grid-column:1/-1;margin:0 0 4px;font-size:12px;color:#888}
+.eco-editorial .eco-studio-heading h1,.eco-editorial .eco-studio-heading h2{max-width:none;font-size:clamp(34px,3.8vw,55px);line-height:1.06;letter-spacing:-.045em}
+.eco-editorial .eco-studio-heading h1 span,.eco-editorial .eco-studio-heading h2 span{color:#747b84}
+.eco-editorial .eco-studio-lead{font-size:14px;line-height:1.65;margin:0 0 4px;color:#888;max-width:28ch}
+.eco-editorial .eco-practice{display:grid;grid-template-columns:1fr 1fr;gap:40px;background:none;padding:0;border-radius:0}
+.eco-editorial .eco-practice-item{display:flex;align-items:flex-start;gap:24px;border-top:1px solid #d9dcd9;margin:0;padding:28px 0 0}
+.eco-principle-icon{width:52px;height:56px;flex:none;color:#69717d}.eco-principle-icon svg{width:100%;height:100%}
+.eco-editorial .eco-principle-label{font-size:11px;color:#969b9e;margin:0 0 9px;line-height:1.4}
+.eco-editorial .eco-practice-item h3{font-size:25px;margin:0 0 13px;line-height:1.15;letter-spacing:-.035em}
+.eco-editorial .eco-practice-item p:not(.eco-principle-label){font-size:15px;line-height:1.65;color:#777;max-width:35ch}
+.eco-editorial .eco-studio-note{display:flex;align-items:center;justify-content:space-between;border:0;padding:0;margin-top:0;gap:25px;font-size:12px;line-height:1.6;color:#999}
+.eco-editorial .eco-studio-note .button{border:0;border-radius:999px;padding:14px 23px;font-size:14px;gap:28px;background:#111;color:#fff;box-shadow:none}
+.eco-editorial .eco-studio-note .button:hover{background:#333}
+@media(max-width:1000px) and (min-width:761px){.eco-editorial .eco-studio-heading{grid-template-columns:1fr}.eco-editorial .eco-studio-lead br{display:none}.eco-editorial .eco-studio-lead{max-width:none}.eco-editorial .eco-practice{gap:25px}.eco-editorial .eco-practice-item{gap:15px}.eco-principle-icon{width:40px;height:44px}}
+@media(max-width:760px){
+ .chapter-fixed .chapter-card>.eco-editorial{padding:24px;gap:24px}
+ .eco-editorial .eco-studio-heading{grid-template-columns:1fr;gap:10px}.eco-editorial .section-label{font-size:10px;margin:0}.eco-editorial .eco-studio-heading h1,.eco-editorial .eco-studio-heading h2{font-size:30px;line-height:1.06}
+ .eco-editorial .eco-studio-lead{font-size:11px;line-height:1.5;margin:0;max-width:none}.eco-editorial .eco-studio-lead br{display:none}
+ .eco-editorial .eco-practice{grid-template-columns:1fr;gap:18px;align-self:stretch}
+ .eco-editorial .eco-practice-item{padding-top:17px;gap:16px;border-top:1px solid #d9dcd9;margin:0}
+ .eco-principle-icon{width:34px;height:38px}.eco-editorial .eco-principle-label{font-size:9px;margin-bottom:5px}.eco-editorial .eco-practice-item h3{font-size:20px;margin-bottom:8px}.eco-editorial .eco-practice-item p:not(.eco-principle-label){font-size:12px;line-height:1.5;max-width:none}
+ .eco-editorial .eco-studio-note{font-size:9px;gap:16px}.eco-editorial .eco-studio-note .button{font-size:11px;padding:11px 14px;gap:12px;white-space:nowrap}
+}
+@media(max-height:740px) and (min-width:761px){.chapter-fixed .chapter-card>.eco-editorial{gap:28px;padding:32px 38px}.eco-editorial .eco-studio-heading h1,.eco-editorial .eco-studio-heading h2{font-size:38px}}
