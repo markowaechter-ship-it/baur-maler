@@ -11,7 +11,7 @@
   previous.disabled=rail.scrollLeft<=2;next.disabled=rail.scrollLeft>=max-2;
   if(started){furthest=Math.max(furthest,Math.min(1,(rail.scrollLeft+rail.clientWidth*.8)/Math.max(1,track.scrollWidth-32)));progress.style.transform=`scaleX(${furthest})`;}
  };
- const move=direction=>{const step=events[0].getBoundingClientRect().width;rail.scrollBy({left:direction*step,behavior:reduced.matches?'instant':'smooth'});};
+ const move=direction=>{const step=events[0].offsetWidth;rail.scrollBy({left:direction*step,behavior:reduced.matches?'instant':'smooth'});};
  previous.addEventListener('click',()=>move(-1));next.addEventListener('click',()=>move(1));
  rail.addEventListener('scroll',()=>{if(!queued){queued=true;requestAnimationFrame(update);}},{passive:true});
  if('IntersectionObserver' in window){
@@ -22,5 +22,6 @@
   const bounds=rail.getBoundingClientRect();
   events.forEach(event=>{const r=event.getBoundingClientRect();if(r.right>bounds.left&&r.left<bounds.right&&r.bottom>0&&r.top<innerHeight){event.classList.add('is-revealed');started=true;}});update();
  });
- new ResizeObserver(update).observe(rail);update();
+ const layout=()=>{const columns=innerWidth<=760?1:innerWidth<=1100?2:3;rail.style.setProperty('--heritage-step',`${rail.clientWidth/columns}px`);update();};
+ new ResizeObserver(layout).observe(rail);layout();
 })();

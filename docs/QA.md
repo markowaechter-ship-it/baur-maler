@@ -98,3 +98,7 @@ Die geöffneten Karten wählen anhand des gerenderten Textüberlaufs eine Breite
 ## Kompakte Detailkarten ohne feste Schattenfläche
 
 Desktop-Breite auf höchstens 33 % der grossen Sektionskarte begrenzt; für lesbare Mobilansichten wird die verfügbare Breite genutzt. Alle zwölf Texte redaktionell verdichtet, ohne Leistungsumfang, Materialien, Vorteile oder Voraussetzungen zu ändern. Geprüft bei 1440×1000, 1440×800 und 390×720: sämtliche Texte passen jeweils auf eine Textseite. Die separate `.service-shadow`-Fläche ist entfernt; nur die tatsächlich drehende Rückseite trägt einen weich überblendeten Schatten. Dialoghülle und Backdrop sind transparent und ohne eigenen Schatten. Animations-Zwischenbild visuell ohne stehenbleibenden Rahmen geprüft.
+
+## Geschichte im hellen Gesamtdesign
+
+Geschichte auf Papierweiss/Graphit/Schiefergrau umgestellt; Kennzahlen, Porträts, Texte und alle elf Stationen bleiben erhalten. Desktop-Timeline zeigt drei gleich breite Stationen, Mobil eine. Navigation verwendet Layout-Pixel statt skalierter Bildschirmmasse, damit jeder Pfeilklick genau eine Station weiterführt. Bei 1440×1000 und 390×720 ohne vertikalen Überlauf geprüft; Vorwärtsschritt 385 bzw. 326 px. Zähler- und Reveal-Logik bleibt erhalten.
