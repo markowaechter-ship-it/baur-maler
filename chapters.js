@@ -86,20 +86,20 @@
   old.style.willChange='transform, opacity';incoming.style.willChange='transform, opacity';
   old.inert=true;incoming.inert=true;old.setAttribute('aria-hidden','true');incoming.setAttribute('aria-hidden','true');
   const flat='translate3d(0,0,0) rotateX(0deg) scale(1)';
-  const lifted='translate3d(0,-108%,-140px) rotateX(-68deg) scale(.96)';
-  const beneath='translate3d(0,4%,-170px) rotateX(10deg) scale(.96)';
+  const lifted='translate3d(0,-108%,-140px) rotateX(68deg) scale(.96)';
+  const beneath='translate3d(0,4%,-170px) rotateX(-10deg) scale(.96)';
   // Animate compositor properties directly so dense timeline content stays off the frame loop.
   cardStyle(old,flat,'1',forward?'3':'2');
   cardStyle(incoming,forward?beneath:lifted,'1',forward?'2':'3');
-  const options={duration:860,easing:'cubic-bezier(.22,.68,.18,1)',fill:'both'};
+  const options={duration:1250,easing:'cubic-bezier(.3,.55,.18,1)',fill:'both'};
   const outgoing=old.animate(forward?[
    {transform:flat,opacity:1},
-   {transform:'translate3d(0,-68%,-95px) rotateX(-48deg) scale(.975)',opacity:1,offset:.7},
+   {transform:'translate3d(0,-68%,-95px) rotateX(48deg) scale(.975)',opacity:1,offset:.7},
    {transform:lifted,opacity:0}
   ]:[{transform:flat,opacity:1},{transform:beneath,opacity:1}],options);
   const entering=incoming.animate(forward?[
    {transform:beneath,opacity:1},{transform:flat,opacity:1}
-  ]:[{transform:lifted,opacity:0},{transform:'translate3d(0,-68%,-95px) rotateX(-48deg) scale(.975)',opacity:1,offset:.3},{transform:flat,opacity:1}],options);
+  ]:[{transform:lifted,opacity:0},{transform:'translate3d(0,-68%,-95px) rotateX(48deg) scale(.975)',opacity:1,offset:.3},{transform:flat,opacity:1}],options);
   Promise.all([outgoing.finished,entering.finished]).then(()=>{
    finish(n,focus);outgoing.cancel();entering.cancel();
   });
