@@ -17,10 +17,10 @@
   return `rgb(${rgb.map(c=>Math.round(amount>0?c+(255-c)*amount:c*(1+amount))).join(',')})`;
  };
  const resize=()=>{
-  const r=hero.getBoundingClientRect();if(r.width===width&&r.height===height)return;
+  const w=hero.clientWidth,h=hero.clientHeight;if(w===width&&h===height)return;
   const saved=document.createElement('canvas');saved.width=canvas.width;saved.height=canvas.height;
   if(saved.width&&saved.height)saved.getContext('2d').drawImage(canvas,0,0);
-  width=r.width;height=r.height;dpr=Math.min(devicePixelRatio||1,2);
+  width=w;height=h;dpr=Math.min(devicePixelRatio||1,2);
   for(const layer of [canvas,fx]){layer.width=Math.round(width*dpr);layer.height=Math.round(height*dpr);}
   ctx.setTransform(dpr,0,0,dpr,0,0);fctx.setTransform(dpr,0,0,dpr,0,0);
   if(saved.width&&saved.height)ctx.drawImage(saved,0,0,saved.width,saved.height,0,0,width,height);
@@ -108,7 +108,7 @@
  const move=event=>{
   if(event.pointerType!=='mouse'&&!touching)return;
   if(event.target.closest('a,button,input,select,textarea,summary,.paint-tools')){stop();return;}
-  const r=hero.getBoundingClientRect();target={x:event.clientX-r.left,y:event.clientY-r.top};
+  const r=hero.getBoundingClientRect();target={x:(event.clientX-r.left)*hero.clientWidth/r.width,y:(event.clientY-r.top)*hero.clientHeight/r.height};
   if(!active){position={...target};previous=null;radius=2;lastTime=0;active=true;hero.classList.add('is-painting');}
   wake();
  };

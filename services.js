@@ -49,11 +49,11 @@
  let source=null,backgroundCard=null,motion=null,closing=false,page=0,count=1,step=1;
  const goPage=n=>{page=Math.max(0,Math.min(count-1,n));view.scrollLeft=page*step;dialog.querySelector('.service-pagination span').textContent=`${page+1} / ${count}`;dialog.querySelector('.service-page-prev').disabled=page===0;dialog.querySelector('.service-page-next').disabled=page===count-1;};
  const measure=()=>{if(!dialog.open)return;step=view.clientWidth+36;count=Math.max(1,Math.ceil((flow.scrollWidth+36)/step));goPage(page);};
- // Keep desktop detail cards within one third of the main section card.
+ // Keep desktop detail cards 20 percent wider than the previous one-third layout.
  const fitWidth=()=>{
   if(!dialog.open||closing)return;
   const sectionWidth=source.closest('.chapter-card').getBoundingClientRect().width;
-  const width=innerWidth>760?Math.min(sectionWidth*.33,innerWidth-64):innerWidth-24;
+  const width=innerWidth>760?Math.min(sectionWidth*.396,innerWidth-64):innerWidth-24;
   dialog.style.width=`${Math.floor(width)}px`;
   measure();
  };

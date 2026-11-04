@@ -51,7 +51,6 @@
  cards.forEach((card,i)=>{
   const content=card.firstElementChild;content.setAttribute('tabindex','-1');
   const read=document.createElement('button');read.type='button';read.className='chapter-read';read.textContent='Inhalt lesen ↗';read.addEventListener('click',()=>openReader(content,labels[i]));if(!content.matches('.experience'))card.append(read);
-  card.querySelectorAll('.heritage-event').forEach(event=>{const button=document.createElement('button');button.type='button';button.className='heritage-read';button.textContent='Station lesen ↗';button.addEventListener('click',()=>openReader(event,event.querySelector('.heritage-year').textContent));event.append(button);});
  });
  let index=0,busy=false,animationTarget=0,pending=null,wheelSum=0,wheelConsumed=false,lastWheel=0,lastDelta=0,lastTurn=0,touch=null;
  const prev=controls.querySelector('.chapter-prev'),next=controls.querySelector('.chapter-forward');

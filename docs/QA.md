@@ -106,3 +106,7 @@ Geschichte auf Papierweiss/Graphit/Schiefergrau umgestellt; Kennzahlen, Porträt
 ## Hero-Text und Kontaktaktionen
 
 Hero-Nebentexte und CTAs in einer hellen, kompakten Kontaktleiste zusammengeführt. Hauptüberschrift, Teamfoto und Malinteraktion bleiben erhalten. Geprüft bei 1440×1000 und 390×720: Leiste innerhalb der Hero-Karte, kein horizontaler Überlauf, Projekt-CTA öffnet die Kontaktsektion (Index 7), Telefonlink behält seine Rufnummer. Keine erneute Verlaufsabdunklung.
+
+## Malpräzision, Detailbreite und Timeline-Links
+
+Canvas-Abmessungen und Pointer-Koordinaten verwenden lokale, unskalierte Hero-Koordinaten; die verkleinerte Präsentationskarte verursacht dadurch keinen Cursorversatz mehr. Bei 1440×1000 und 390×720 lag die Abweichung zwischen Zielpunkt und Pigmentcursor unter 0,001 px. Leistungskarten auf Desktop relativ zur vorherigen Breite um 20 % vergrössert (39,6 % statt 33 % der sichtbaren Sektionsbreite); auf Mobil bleibt die Bildschirmbegrenzung erhalten. Alle elf „Station lesen“-Buttons und ihre individuellen Öffnen-Handler entfernt; die Timeline bleibt blätterbar.
