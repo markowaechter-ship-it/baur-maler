@@ -414,7 +414,7 @@ body.chapter-fixed{background:#fff;touch-action:pan-x pinch-zoom}
 
 .chapter-fixed .chapter-actions{display:none}
 /* Minimal white header with a persistent quote request. */
-header,header.is-scrolled,.chapter-fixed header,.chapter-fixed header.is-scrolled{flex-direction:row;justify-content:space-between;align-items:center;gap:20px;min-height:92px;padding:10px var(--margin);background:#fff;border:0;box-shadow:none}
+header,header.is-scrolled,.chapter-fixed header,.chapter-fixed header.is-scrolled{flex-direction:row;justify-content:space-between;align-items:center;gap:20px;min-height:92px;padding:10px var(--margin);background:transparent;border:0;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none;pointer-events:none}
 header .wordmark,header.is-scrolled .wordmark{flex:0 1 176px;width:176px;height:72px;justify-content:flex-start}
 header .wordmark img,header.is-scrolled .wordmark img{object-position:left center}
 header #navigation{display:flex;position:static;width:auto;min-height:0;margin-left:auto;padding:0;border:0;background:transparent;justify-content:flex-end}
@@ -439,3 +439,5 @@ header #navigation .button{justify-content:center;padding:14px 25px}
 .experience .heritage-portraits img{background:#2b3347}
 .chapter-fixed .experience .heritage-read{color:#fff;text-decoration-color:var(--history-accent)}
 .chapter-fixed .chapter-card:has(>.experience)>.chapter-read{background:#fa7b18;color:#212b40}
+
+header .wordmark,header #navigation .button{pointer-events:auto}
