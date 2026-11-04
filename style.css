@@ -665,3 +665,5 @@ h1,h2,h3,h4{font-family:inherit;font-weight:650;letter-spacing:-.045em}
  .contact-finale .contact-signoff{font-size:9px;gap:10px;padding-top:10px;flex-wrap:wrap}.contact-signoff nav{gap:18px}.contact-signoff nav a{font-size:10px}
 }
 @media(max-width:760px){.chapter-fixed .enquiry-section.contact-finale .contact-facts p{display:block}.chapter-fixed .enquiry-section.contact-finale .contact-eyebrow{display:block}.contact-finale h2 br{display:initial}}
+/* Clear team portrait without the former gradient overlay. */
+.hero-photo-shade{display:none}
