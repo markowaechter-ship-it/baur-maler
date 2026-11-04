@@ -4,7 +4,7 @@
  if(!deck){
   deck=document.createElement('div');deck.className='chapter-deck';
   const stage=document.createElement('div');stage.className='chapter-stage';
-  const sections=[...main.children];const footer=document.querySelector('body>footer');if(footer)sections.push(footer);
+  const sections=[...main.children];
   sections.forEach((section,i)=>{const card=document.createElement('div');card.className='chapter-card';card.dataset.chapter=i;card.dataset.title=section.tagName==='FOOTER'?'Info':section.querySelector('h1,h2,h3')?.textContent.trim()||'Kontakt';card.append(section);stage.append(card);});deck.append(stage);main.append(deck);
  }
  const stage=deck.querySelector('.chapter-stage'),cards=[...stage.querySelectorAll(':scope>[data-chapter]')];if(!cards.length)return;
