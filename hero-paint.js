@@ -7,7 +7,7 @@
  // Offscreen layers: `flat` holds every stroke as an even, matt fill (the dried look); `wet` snapshots the glossy strokes while they dry.
  const flat=document.createElement('canvas'),flatCtx=flat.getContext('2d'),wetSnap=document.createElement('canvas'),wetCtx=wetSnap.getContext('2d');
  const reduced=matchMedia('(prefers-reduced-motion: reduce)'),TAU=Math.PI*2,DRY_DELAY=.55,DRY_TIME=1.8;
- let colour=tools.querySelector('.is-selected')?.dataset.paintColour||'#1f4bff',width=0,height=0,dpr=1,frame=0,active=false,touching=false,previous=null,lastTime=0;
+ let colour=tools.querySelector('.is-selected')?.dataset.paintColour||'#df6230',width=0,height=0,dpr=1,frame=0,active=false,touching=false,previous=null,lastTime=0;
  let target={x:0,y:0},position={x:0,y:0},radius=2,splatterDistance=0;
  let particles=[],wet=[],idle=0,drying=-1,dirty=false;
  const tint=(hex,amount)=>{
