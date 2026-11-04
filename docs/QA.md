@@ -90,3 +90,7 @@ Alle zwölf Karten referenzieren unterschiedliche WebP-Dateien und unterschiedli
 ## Begrenzte Unschärfe statt Abdunklung
 
 Die Leistungskarten verwenden einen transparenten Dialog-Backdrop. Nur der Inhalt der grossen Sektionskarte wird auf 6 px weichgezeichnet; der Kartencontainer schneidet die Unschärfe an seinen runden Rändern ab. Öffnen und Schliessen blenden den Filter über 600 ms ein bzw. aus. Geprüft bei 1440×1000 und 390×720: Logo/Header, Sektionsmenü und Detailkarte bleiben ohne Filter; Backdrop vollständig transparent; nach Schliessen Blur 0 px und kein Maus-Fokusrahmen. Der X-Button hat keinen Rahmen, Tastaturfokus bleibt neutral sichtbar.
+
+## Dynamische Detailbreite und weicher Schatten
+
+Die geöffneten Karten wählen anhand des gerenderten Textüberlaufs eine Breite zwischen 560 und 1120 px, begrenzt durch den verfügbaren Bildschirm. Bei langen Texten bleiben die Textseiten erreichbar. Geprüft bei 1440×1000 und 1440×800: kurze Leistungen 560 px, umfangreiche Leistungen bis 1120 px; bei 390×720 alle innerhalb des Viewports (366 px). Der zusätzliche Schatten wird über eine separate transparente Ebene in 650 ms ein- und ausgeblendet; Zwischenwerte beim Öffnen und Schliessen sowie vollständiges Schliessen geprüft.

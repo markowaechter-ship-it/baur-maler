@@ -616,3 +616,10 @@ h1,h2,h3,h4{font-family:inherit;font-weight:650;letter-spacing:-.045em}
 .chapter-card>.services-showcase{filter:blur(0);transition:filter .6s cubic-bezier(.22,.65,.18,1)}
 .chapter-card.service-background-blurred>.services-showcase{filter:blur(6px)}
 @media(prefers-reduced-motion:reduce){.chapter-card>.services-showcase{transition:none}}
+
+/* The dialog width is measured from its copy; the soft shadow fades independently. */
+.service-shadow{position:absolute;inset:0;pointer-events:none;border-radius:24px;box-shadow:0 28px 90px rgba(20,24,33,.18),0 6px 30px rgba(20,24,33,.08);opacity:0;transition:opacity .65s cubic-bezier(.22,.65,.18,1)}
+.service-detail.service-is-open .service-shadow{opacity:1}
+.service-back{box-shadow:none}
+@media(max-width:760px){.service-shadow{border-radius:20px}}
+@media(prefers-reduced-motion:reduce){.service-shadow{transition:none}}
