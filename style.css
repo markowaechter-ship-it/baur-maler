@@ -1007,7 +1007,7 @@ html body header .button{--btn-h:42px}
 .atelier-reset svg{width:17px;height:17px}
 .atelier-status{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .atelier-hero h1{grid-column:1/-1;position:relative;z-index:4;margin-top:clamp(28px,5vh,64px);font-size:clamp(56px,7.2vw,124px);line-height:.92;letter-spacing:-.06em;font-weight:800;max-width:none;pointer-events:none}
-.atelier-hero h1 span{color:var(--paint-colour);color:color-mix(in oklab,var(--paint-colour) 80%,#000);transition:color .35s ease}
+.atelier-hero h1 span{color:var(--paint-colour);color:color-mix(in oklab,var(--paint-colour) 89%,#000);transition:color .35s ease}
 .atelier-team{position:absolute;z-index:3;right:clamp(0px,2vw,32px);bottom:0;height:min(76%,calc(100% - 120px));max-width:54%;aspect-ratio:1500/1234;margin:0;pointer-events:none}
 .atelier-team img{display:block;width:100%;height:100%;object-fit:contain;object-position:bottom right}
 .atelier-foot{grid-column:1;grid-row:4;position:relative;z-index:4;display:flex;flex-direction:column;gap:22px;max-width:min(400px,100%);padding-top:24px}
@@ -1051,3 +1051,6 @@ html body header .button{--btn-h:42px}
 .chapter-fixed .chapter-nav{background:none;border:0}
 /* Timeline portraits: lift the dark studio backgrounds and faces a little */
 .experience .heritage-portraits img{filter:grayscale(.25) brightness(1.18) contrast(.92)}
+
+/* Hero group photo: a touch brighter so faces read fresh against the light wall */
+.atelier-team img{filter:brightness(1.1) contrast(.97)}
