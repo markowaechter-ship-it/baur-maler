@@ -102,3 +102,14 @@ if(experience){
   observer.observe(experience);
  }else if(!experience.closest('.chapter-deck'))revealExperience();
 }
+
+// Split the mobile enquiry into two readable steps when the larger type needs more room.
+if(form?.closest('.contact-finale')){
+ const grid=form.querySelector('.form-grid'),message=document.createElement('div');message.className='contact-message-step';
+ const nodes=[...form.children].filter(node=>node!==grid);nodes.forEach(node=>message.append(node));
+ const controls=document.createElement('div');controls.className='contact-step-controls';controls.innerHTML='<button type="button" class="contact-step-back">← Zurück</button><button type="button" class="contact-step-next">Weiter zur Nachricht ↗</button>';
+ form.append(controls,message);form.dataset.contactStep='1';
+ controls.querySelector('.contact-step-next').addEventListener('click',()=>{for(const input of grid.querySelectorAll('input,select'))if(!input.reportValidity())return;form.dataset.contactStep='2';message.querySelector('textarea').focus({preventScroll:true});});
+ controls.querySelector('.contact-step-back').addEventListener('click',()=>{form.dataset.contactStep='1';grid.querySelector('input').focus({preventScroll:true});});
+ grid.addEventListener('keydown',event=>{if(event.key==='Enter'&&event.target.tagName==='INPUT'&&matchMedia('(max-width:760px)').matches){event.preventDefault();controls.querySelector('.contact-step-next').click();}});
+}

@@ -50,7 +50,7 @@
  reader.addEventListener('click',event=>{if(event.target===reader)reader.close();});
  cards.forEach((card,i)=>{
   const content=card.firstElementChild;content.setAttribute('tabindex','-1');
-  const read=document.createElement('button');read.type='button';read.className='chapter-read';read.textContent='Inhalt lesen ↗';read.addEventListener('click',()=>openReader(content,labels[i]));if(!content.matches('.experience'))card.append(read);
+  const read=document.createElement('button');read.type='button';read.className='chapter-read';read.textContent='Inhalt lesen ↗';read.addEventListener('click',()=>openReader(content,labels[i]));if(!content.matches('.experience,.paint-hero'))card.append(read);
  });
  let index=0,busy=false,animationTarget=0,pending=null,wheelSum=0,wheelConsumed=false,lastWheel=0,lastDelta=0,lastTurn=0,touch=null;
  const prev=controls.querySelector('.chapter-prev'),next=controls.querySelector('.chapter-forward');
