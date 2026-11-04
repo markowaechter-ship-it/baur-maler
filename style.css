@@ -631,7 +631,7 @@ h1,h2,h3,h4{font-family:inherit;font-weight:650;letter-spacing:-.045em}
 .service-detail{box-shadow:none;appearance:none;-webkit-appearance:none}
 
 /* Smaller presentation cards leave generous white space around the scene. */
-.chapter-fixed .chapter-stage{transform:scale(.8625);transform-origin:center center}
+.chapter-fixed .chapter-stage{transform:scale(1.035);transform-origin:center center}
 .paint-tools-external{position:fixed!important;z-index:65;right:20px!important;left:auto!important;top:calc(45% - 230px)!important;bottom:auto!important;transform:none!important;width:45px!important;max-width:none!important;padding:0!important;gap:14px!important;background:none!important;border:0!important;box-shadow:none!important;border-radius:0!important;display:flex;flex-direction:column!important;align-items:center}
 .paint-tools-external[hidden]{display:none!important}
 .paint-tools-external .paint-tools-title,.paint-tools-external .paint-hint{display:none!important}
@@ -842,3 +842,86 @@ h1,h2,h3,h4{font-family:inherit;font-weight:650;letter-spacing:-.045em}
  .eco-editorial .eco-studio-lead{display:none}
  .chapter-fixed .schema-faq{gap:10px}
 }
+
+/* Readability pass: clear body copy, useful labels and stronger neutral contrast. */
+:root{--reading-ink:#343434;--reading-muted:#686868}
+@media(min-width:761px){
+ .chapter-fixed .section-label,.chapter-fixed .experience-top>p:first-child{font-size:15px;color:var(--reading-muted)}
+ .chapter-fixed .heritage-heading>p,.chapter-fixed .experience-stat>p{font-size:16px;line-height:1.55;color:var(--reading-muted)}
+ .chapter-fixed .heritage-event>p{font-size:19px;line-height:1.55;color:var(--reading-ink);-webkit-line-clamp:6}
+ .chapter-fixed .heritage-portraits figcaption{font-size:15px;line-height:1.4;color:var(--reading-muted)}
+ .chapter-fixed .heritage-hint,.chapter-fixed .heritage-hint span{font-size:14px;color:var(--reading-muted)}
+ .chapter-fixed .experience-intro{font-size:19px;color:var(--reading-muted)}
+ .service-description p{font-size:19px;line-height:1.55;color:var(--reading-muted)}
+ .service-meta{font-size:15px;color:var(--reading-muted)}
+ .service-carousel-status,.reviews-position{font-size:16px;color:var(--reading-muted)}
+ .process-studio .original-process-grid p{font-size:20px;line-height:1.55;color:var(--reading-ink)}
+ .process-studio .original-process-grid p:last-child{font-size:17px;color:#444}
+ .process-step>span,.process-heading .section-label{font-size:15px;color:var(--reading-muted)}
+ .eco-editorial .eco-practice-item p:not(.eco-principle-label){font-size:20px;line-height:1.55;color:var(--reading-ink)}
+ .eco-editorial .eco-principle-label,.eco-editorial .section-label{font-size:15px;color:var(--reading-muted)}
+ .eco-editorial .eco-studio-lead,.process-heading>p,.reviews-heading>p,.services-intro{font-size:18px;line-height:1.55;color:var(--reading-muted)}
+ .eco-editorial .eco-studio-note,.reviews-bottom>span{font-size:15px;color:var(--reading-muted)}
+ .google-review-label{font-size:15px;color:var(--reading-muted)}
+ .chapter-fixed .contact-finale label{font-size:17px}
+ .chapter-fixed .contact-finale .contact-eyebrow,.contact-facts span{font-size:15px;color:var(--reading-muted)}
+ .chapter-fixed .contact-finale .contact-facts p{font-size:17px;line-height:1.55;color:var(--reading-ink)}
+ .chapter-fixed .contact-finale form .small{font-size:15px;line-height:1.5;color:var(--reading-muted)}
+ .contact-finale .contact-signoff,.contact-signoff nav a{font-size:14px;color:var(--reading-muted)}
+ .chapter-fixed .hero-contact-bar .hero-photo-caption,.chapter-fixed .hero-contact-bar .hero-overlay-note{font-size:15px;color:var(--reading-muted)}
+}
+.chapter-fixed .chapter-meter{font-size:15px;color:#666}
+@media(max-width:760px){
+ .chapter-fixed .chapter-meter{font-size:12px}
+ .chapter-fixed .heritage-portraits figcaption,.chapter-fixed .heritage-heading>p{font-size:13px;color:#666}
+ .google-review-label,.reviews-bottom>span,.eco-editorial .eco-principle-label,.eco-editorial .section-label{font-size:13px;color:#666}
+ .contact-signoff nav a{font-size:14px}
+}
+@media(min-width:761px) and (max-height:850px){
+ .chapter-fixed .chapter-card>.experience{gap:22px 30px;padding-top:26px;padding-bottom:76px}
+ .chapter-fixed .heritage-portraits{height:116px}.chapter-fixed .heritage-portraits figure{max-width:90px}.chapter-fixed .heritage-progress{top:125px}
+ .chapter-fixed .heritage-event>p{-webkit-line-clamp:5}
+ .chapter-fixed .chapter-card>.process-studio{gap:28px;padding-top:28px;padding-bottom:28px}
+}
+@media(min-width:761px){
+ .chapter-fixed .enquiry-section.contact-finale .contact-intro h2{font-size:clamp(40px,4vw,58px);line-height:1.04}
+ .chapter-fixed .enquiry-section.contact-finale .contact-eyebrow{font-size:15px;line-height:1.4;color:#686868}
+ .chapter-fixed .enquiry-section.contact-finale .contact-invitation{font-size:18px;line-height:1.5}
+ .chapter-fixed .enquiry-section.contact-finale .contact-facts p{font-size:17px;line-height:1.5;margin-top:7px}
+}
+@media(min-width:761px) and (max-height:850px){
+ .contact-finale .contact-direct{margin-top:20px}.contact-finale .contact-facts{margin-top:22px}
+ .chapter-fixed .chapter-card>.contact-finale{gap:18px 40px;padding:28px 36px 22px}
+}
+@media(min-width:761px){
+ .chapter-fixed .experience-top h2{font-size:clamp(36px,3.3vw,52px);line-height:1.05}
+ .chapter-fixed .experience-number{font-size:clamp(70px,6vw,96px)}
+}
+@media(min-width:761px) and (max-height:850px){
+ .chapter-fixed .experience-top{gap:9px}.chapter-fixed .experience-stats{padding-left:24px}
+ .chapter-fixed .heritage-portraits figure{max-width:140px}.chapter-fixed .heritage-portraits img{width:86px;margin:0 auto}
+ .chapter-fixed .heritage-portraits figcaption{white-space:nowrap}
+ .chapter-fixed .heritage-heading{padding-top:14px;margin-bottom:16px}
+ .chapter-fixed .heritage-event h4{margin:10px 0;font-size:26px}
+}
+
+/* A real home link on legal and detail pages, separate from section controls. */
+.chapter-fixed .chapter-nav .chapter-home{display:grid;place-items:center;position:relative;flex:none;width:45px;height:45px;border:0;border-radius:13px;background:#f2f2f2;color:#737373;text-decoration:none;transition:background .2s,color .2s}
+.chapter-fixed .chapter-nav .chapter-home:hover{background:#e7e7e7;color:#222}
+.chapter-fixed .chapter-nav .chapter-home:hover span,.chapter-fixed .chapter-nav .chapter-home:focus-visible span{opacity:1}
+@media(max-width:760px){.chapter-fixed .chapter-nav .chapter-home{width:42px;height:42px;border-radius:12px}}
+@media(max-height:740px){.chapter-fixed .chapter-nav .chapter-home{width:36px;height:36px}}
+@media(min-width:761px) and (max-height:850px){
+ .chapter-fixed .experience-stats{align-self:start}
+ .chapter-fixed .experience-number{font-size:58px;line-height:1}
+ .chapter-fixed .experience-stat h3{font-size:19px;margin-top:8px}
+ .chapter-fixed .experience-stat>p{font-size:15px;line-height:1.4;margin-top:5px}
+}
+@media(min-width:761px) and (max-height:850px){
+ .chapter-fixed .chapter-card>.experience{row-gap:16px;padding-bottom:62px}
+ .chapter-fixed .heritage-portraits{height:100px}
+ .chapter-fixed .heritage-portraits img{width:74px}
+ .chapter-fixed .heritage-progress{top:109px}
+ .chapter-fixed .heritage-event>p{-webkit-line-clamp:4}
+}
+@media(min-width:761px) and (max-height:850px){.chapter-fixed .heritage-hint{display:none}}

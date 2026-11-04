@@ -22,9 +22,14 @@
   '<circle cx="12" cy="12" r="9"/><path d="M12 10v7M12 6v1"/>'
  ];
  const nav=document.createElement('nav');nav.className='chapter-nav';nav.setAttribute('aria-label','Sektionen wechseln');
+ if(!isHome){
+  const home=document.createElement('a');home.href='/';home.className='chapter-home';home.setAttribute('aria-label','Zur Startseite');
+  home.innerHTML=`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">${paths[0]}</svg><span>Startseite</span>`;
+  nav.append(home);
+ }
  const buttons=cards.map((card,i)=>{
   const button=document.createElement('button');button.type='button';button.dataset.chapterGo=i;button.setAttribute('aria-label',labels[i]);
-  const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.setAttribute('viewBox','0 0 24 24');svg.setAttribute('fill','none');svg.setAttribute('stroke','currentColor');svg.setAttribute('stroke-width','1.6');svg.setAttribute('aria-hidden','true');svg.innerHTML=paths[isHome?i:Math.min(i,8)];
+  const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.setAttribute('viewBox','0 0 24 24');svg.setAttribute('fill','none');svg.setAttribute('stroke','currentColor');svg.setAttribute('stroke-width','1.6');svg.setAttribute('aria-hidden','true');svg.innerHTML=paths[isHome?i:8];
   const label=document.createElement('span');label.textContent=labels[i];button.append(svg,label);nav.append(button);return button;
  });
  const meter=document.createElement('div');meter.className='chapter-meter';meter.setAttribute('aria-hidden','true');meter.innerHTML='<span></span><i><b></b></i>';

@@ -22,6 +22,6 @@
   const bounds=rail.getBoundingClientRect();
   events.forEach(event=>{const r=event.getBoundingClientRect();if(r.right>bounds.left&&r.left<bounds.right&&r.bottom>0&&r.top<innerHeight){event.classList.add('is-revealed');started=true;}});update();
  });
- const layout=()=>{const columns=innerWidth<=760?1:innerWidth<=1100?2:3;rail.style.setProperty('--heritage-step',`${rail.clientWidth/columns}px`);update();};
+ const layout=()=>{const columns=innerWidth<=760?1:innerWidth<=1800?2:3;rail.style.setProperty('--heritage-step',`${rail.clientWidth/columns}px`);update();};
  new ResizeObserver(layout).observe(rail);layout();
 })();
