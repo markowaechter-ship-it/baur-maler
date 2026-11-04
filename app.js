@@ -1,7 +1,7 @@
 const menu = document.querySelector('.menu-toggle');
 const nav = document.querySelector('#navigation');
-function closeMenu(){ nav.classList.remove('open'); menu.setAttribute('aria-expanded','false'); }
-menu.addEventListener('click',()=>{ const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open)); });
+function closeMenu(){ nav.classList.remove('open'); menu?.setAttribute('aria-expanded','false'); }
+menu?.addEventListener('click',()=>{ const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open)); });
 nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&nav.classList.contains('open')){closeMenu();menu.focus();}});
 document.querySelectorAll('.swatch').forEach(button=>button.addEventListener('click',()=>{
