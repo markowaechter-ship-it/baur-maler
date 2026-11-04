@@ -86,3 +86,7 @@ Die Rückdrehung verwendet keine getrennte Skalierung der X- und Y-Achse mehr. D
 ## Individuelle Bilder
 
 Alle zwölf Karten referenzieren unterschiedliche WebP-Dateien und unterschiedliche SHA-256-Inhalte. Bei 1440×1000 und 390×720 alle Bilder erfolgreich dekodiert, neun Hauptsektionen vorhanden, kein vertikaler Seitenüberlauf. Bei allen zwölf Dateien vollständig transparente Pixel nachgewiesen; die Freistellung bleibt erhalten. Export auf maximal 960 px und WebP-Qualität 0.88 reduziert 30.233.222 Byte PNG-Ausgangsdaten auf 3.158.182 Byte (rund 90 %). Native erzeugte Originale verbleiben im Imagegen-Ausgabeverzeichnis; die fertigen Web-Assets sind im Repository gespeichert.
+
+## Begrenzte Unschärfe statt Abdunklung
+
+Die Leistungskarten verwenden einen transparenten Dialog-Backdrop. Nur der Inhalt der grossen Sektionskarte wird auf 6 px weichgezeichnet; der Kartencontainer schneidet die Unschärfe an seinen runden Rändern ab. Öffnen und Schliessen blenden den Filter über 600 ms ein bzw. aus. Geprüft bei 1440×1000 und 390×720: Logo/Header, Sektionsmenü und Detailkarte bleiben ohne Filter; Backdrop vollständig transparent; nach Schliessen Blur 0 px und kein Maus-Fokusrahmen. Der X-Button hat keinen Rahmen, Tastaturfokus bleibt neutral sichtbar.
