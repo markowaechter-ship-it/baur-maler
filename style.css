@@ -420,3 +420,22 @@ header .wordmark img,header.is-scrolled .wordmark img{object-position:left cente
 header #navigation{display:flex;position:static;width:auto;min-height:0;margin-left:auto;padding:0;border:0;background:transparent;justify-content:flex-end}
 header #navigation .button{justify-content:center;padding:14px 25px}
 @media(max-width:760px){header,header.is-scrolled,.chapter-fixed header,.chapter-fixed header.is-scrolled{min-height:70px;padding:8px 6vw}header .wordmark,header.is-scrolled .wordmark{flex-basis:112px;width:112px;height:50px}header #navigation .button{font-size:13px;padding:12px 17px}}
+
+/* History palette inspired by the supplied Baur branding. */
+.experience{--history-base:#364059;--history-accent:#fa7b18;--history-text:#fff;--history-muted:#e0e3eb;background:var(--history-base);color:var(--history-text)}
+.chapter-fixed .chapter-card:has(>.experience){background:#364059}
+.experience:before{border-color:rgba(255,255,255,.1)}
+.experience h2,.experience .experience-stat h3,.experience .heritage-event h4{color:var(--history-text)}
+.experience .experience-top>p,.experience .experience-stat>p,.experience .heritage-heading>p,.experience .heritage-event>p,.experience .heritage-portraits figcaption,.experience .heritage-hint,.experience .heritage-hint span{color:var(--history-muted)}
+.experience .experience-number,.experience .heritage-year{color:var(--history-accent)}
+.experience .experience-dot,.experience .heritage-progress span{background:var(--history-accent)}
+.experience .heritage-progress{background:rgba(255,255,255,.2)}
+.experience .heritage-point{background:var(--history-accent);border-color:var(--history-base);box-shadow:0 0 0 3px var(--history-base)}
+.experience .heritage-controls button{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.3);color:#fff}
+.experience .heritage-controls button:hover:not(:disabled){background:var(--history-accent);border-color:var(--history-accent);color:#212b40}
+.experience .heritage-rail{scrollbar-color:var(--history-accent) rgba(255,255,255,.12)}
+.experience .heritage-rail::-webkit-scrollbar-track{background:rgba(255,255,255,.12)}
+.experience .heritage-rail::-webkit-scrollbar-thumb{background:var(--history-accent)}
+.experience .heritage-portraits img{background:#2b3347}
+.chapter-fixed .experience .heritage-read{color:#fff;text-decoration-color:var(--history-accent)}
+.chapter-fixed .chapter-card:has(>.experience)>.chapter-read{background:#fa7b18;color:#212b40}
