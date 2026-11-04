@@ -715,3 +715,23 @@ h1,h2,h3,h4{font-family:inherit;font-weight:650;letter-spacing:-.045em}
  .eco-studio-note{font-size:9px;line-height:1.4;padding-top:12px;gap:12px}.eco-studio-note>span{max-width:23ch}
 }
 @media(max-height:740px) and (min-width:761px){.chapter-fixed .chapter-card>.eco-studio{padding:28px;gap:20px 35px}.eco-studio-heading h1,.eco-studio-heading h2{font-size:36px}.eco-practice{padding:22px}.eco-emblem svg{width:65px;height:65px}.eco-practice-item{margin-top:15px;padding-top:15px}}
+
+/* Authentic supplied Google reviews, presented as a restrained editorial carousel. */
+.chapter-fixed .chapter-card>.google-stories{display:flex;flex-direction:column;justify-content:center;gap:30px;padding:40px 44px}
+.reviews-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:30px}
+.reviews-heading .section-label{font-size:12px;color:#888;margin:0 0 12px}.reviews-heading h2{font-size:clamp(32px,3.7vw,53px);line-height:1.04;letter-spacing:-.045em}.reviews-heading>p{font-size:14px;line-height:1.6;color:#777;max-width:25ch;margin:0 0 5px}
+.google-review-track{display:flex;gap:18px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:none;touch-action:pan-x;overscroll-behavior-x:contain;user-select:none;border-radius:18px}
+.google-review-track::-webkit-scrollbar{display:none}.google-review-track.is-dragging{scroll-snap-type:none;cursor:grabbing}
+.google-review{flex:0 0 calc((100% - 18px)/2);min-width:0;display:flex;flex-direction:column;padding:28px;border-radius:18px;background:#fff;border:1px solid #e5e5e1;scroll-snap-align:start}
+.google-review-top{display:flex;align-items:center;gap:12px}.review-initials{display:grid;place-items:center;width:42px;height:42px;flex:none;background:#ededeb;border-radius:50%;font-size:12px;font-weight:500;color:#666}.google-review-top h3{font-size:17px;letter-spacing:-.025em;line-height:1.2;margin:0}.google-review-label{font-size:11px;color:#999}.review-quote-mark{margin-left:auto;align-self:flex-start;font-size:65px;color:#dcdedc;line-height:.9;font-weight:500}
+.review-stars{color:#b58936;font-size:17px;letter-spacing:2px;margin:22px 0 18px}
+.google-review blockquote{font-size:20px;line-height:1.5;letter-spacing:-.015em;margin:0;color:#333;font-weight:400}
+.reviews-bottom{display:flex;align-items:center;justify-content:space-between;gap:25px}.reviews-bottom>span{font-size:11px;color:#999;max-width:45ch}.reviews-controls{display:flex;align-items:center;gap:18px}.reviews-controls button{width:38px;height:38px;border:1px solid #ccc;border-radius:50%;background:transparent;color:#222;font-size:23px;cursor:pointer}.reviews-controls button:hover:not(:disabled){background:#222;color:#fff}.reviews-controls button:disabled{opacity:.25;cursor:default}.reviews-position{font-size:12px;color:#777;min-width:65px;text-align:center;font-variant-numeric:tabular-nums}
+@media(max-width:760px){
+ .chapter-fixed .chapter-card>.google-stories{padding:24px;gap:18px;justify-content:center}
+ .reviews-heading h2{font-size:29px}.reviews-heading .section-label{font-size:10px;margin-bottom:9px}.reviews-heading>p{display:none}
+ .google-review-track{gap:12px;border-radius:15px}.google-review{flex-basis:100%;padding:20px;border-radius:15px}.review-initials{width:34px;height:34px;font-size:10px}.google-review-top h3{font-size:15px}.google-review-label{font-size:10px}.review-quote-mark{font-size:48px}.review-stars{font-size:15px;margin:17px 0 14px}.google-review blockquote{font-size:16px;line-height:1.5}
+ .reviews-bottom{flex-direction:column-reverse;gap:14px}.reviews-bottom>span{font-size:9px;text-align:center}.reviews-controls button{width:34px;height:34px;font-size:21px}
+}
+@media(max-height:740px){.chapter-fixed .chapter-card>.google-stories{gap:18px}.google-review{padding:20px}.google-review blockquote{font-size:16px;line-height:1.5}.review-stars{margin:16px 0 13px}}
+@media(max-width:760px) and (max-height:740px){.chapter-fixed .chapter-card>.google-stories{padding:20px;gap:14px}.reviews-heading h2{font-size:27px}.google-review{padding:16px}.google-review blockquote{font-size:14px;line-height:1.5}.review-stars{margin:12px 0}.reviews-bottom{gap:9px}}

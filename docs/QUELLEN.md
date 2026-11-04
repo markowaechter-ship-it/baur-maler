@@ -38,3 +38,7 @@ Outfit Variable, lokal eingebunden für die gesamte Website. Quelle: https://git
 ## Individuelle Leistungsmotive
 
 Die zwölf Karussellbilder unter `assets/services/` wurden mit dem integrierten Imagegen-Werkzeug als eigenständige Illustrationen erzeugt. Keine doppelten Bilddateien, keine als Kundenreferenzen ausgegebenen KI-Motive. Vollständige Prompts und Dateizuordnung: `docs/service-images.json`; verlinkte Übersicht: `docs/service-images.md`. Transparenz ist in den optimierten WebP-Dateien erhalten.
+
+## Google-Rezensionen aus Nutzer-Screenshots (4. November 2026)
+
+Die Startseite verwendet fünf vom Nutzer bereitgestellte Rezensionen: Edgar Fisler, Jürg Thöny und Nico Baumbach (`Bildschirmfoto 2026-11-04 um 06.00.34.png`), Hanna Meier (`06.01.03.png`) und Gerteis Stefan (`06.01.13.png`). Texte und jeweils fünf Sterne wurden aus diesen Screenshots übernommen und unter `docs/google-reviews.json` dokumentiert. Es wird kein aktueller Gesamtbewertungswert und kein Live-Abgleich mit Google behauptet. Die früheren Website-Zitate und Profilbilder wurden in dieser Sektion ersetzt.

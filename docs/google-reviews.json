@@ -1,0 +1,32 @@
+{
+  "source": "User-provided screenshots of Google reviews, supplied 2026-11-04",
+  "business": "Baur die Maler GmbH, Agnesstrasse 36, 8406 Winterthur, Schweiz",
+  "not_live_feed": true,
+  "reviews": [
+    {
+      "author": "Edgar Fisler",
+      "rating": 5,
+      "text": "Im Zusammenhang mit der Fassadenrenovation habe ich mit dieser Firma sehr gute Erfahrung gemacht. Sauber und speditiv arbeitende Angestellte, kompetenter und kooperativer Chef der auf besondere Wünsche des Kunden eingehen kann. Vernünftige Preise."
+    },
+    {
+      "author": "Jürg Thöny",
+      "rating": 5,
+      "text": "Zuverlässiger und kompetenter Familienbetrieb. Ich kenne die Baur Maler schon seit zwei Generationen und war immer äusserst zufrieden - Weiter so!"
+    },
+    {
+      "author": "Nico Baumbach",
+      "rating": 5,
+      "text": "Kompetente und vor allem ehrliche Beratung, sehr angenehme Mitarbeiter, alle Erwartungen erfüllt. Gerne wieder."
+    },
+    {
+      "author": "Hanna Meier",
+      "rating": 5,
+      "text": "Super freundliche Mitarbeiter und Top Service. Wir mussten uns um nichts kümmern."
+    },
+    {
+      "author": "Gerteis Stefan",
+      "rating": 5,
+      "text": "Kompetenter Malerbetrieb mit angenehmen Mitarbeitern, gerne wieder"
+    }
+  ]
+}
