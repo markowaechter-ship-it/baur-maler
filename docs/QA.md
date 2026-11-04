@@ -102,3 +102,7 @@ Desktop-Breite auf höchstens 33 % der grossen Sektionskarte begrenzt; für lesb
 ## Geschichte im hellen Gesamtdesign
 
 Geschichte auf Papierweiss/Graphit/Schiefergrau umgestellt; Kennzahlen, Porträts, Texte und alle elf Stationen bleiben erhalten. Desktop-Timeline zeigt drei gleich breite Stationen, Mobil eine. Navigation verwendet Layout-Pixel statt skalierter Bildschirmmasse, damit jeder Pfeilklick genau eine Station weiterführt. Bei 1440×1000 und 390×720 ohne vertikalen Überlauf geprüft; Vorwärtsschritt 385 bzw. 326 px. Zähler- und Reveal-Logik bleibt erhalten.
+
+## Hero-Text und Kontaktaktionen
+
+Hero-Nebentexte und CTAs in einer hellen, kompakten Kontaktleiste zusammengeführt. Hauptüberschrift, Teamfoto und Malinteraktion bleiben erhalten. Geprüft bei 1440×1000 und 390×720: Leiste innerhalb der Hero-Karte, kein horizontaler Überlauf, Projekt-CTA öffnet die Kontaktsektion (Index 7), Telefonlink behält seine Rufnummer. Keine erneute Verlaufsabdunklung.

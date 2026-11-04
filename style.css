@@ -771,3 +771,23 @@ h1,h2,h3,h4{font-family:inherit;font-weight:650;letter-spacing:-.045em}
  .chapter-fixed .heritage-year{font-size:21px}.chapter-fixed .heritage-event h4{font-size:20px;margin:12px 0 10px}.chapter-fixed .heritage-event>p{font-size:13px;line-height:1.6}
  .chapter-fixed .heritage-portraits figcaption{font-size:10px}
 }
+
+/* A calm contact bar makes the hero copy legible without shading the photograph. */
+.chapter-fixed .hero-overlay.hero-contact-bar{left:50%;right:auto;bottom:24px;transform:translateX(-50%);width:min(860px,calc(100% - 48px));display:flex;flex-direction:row;align-items:center;justify-content:space-between;gap:26px;text-align:left;color:#171717;background:#fff;border:1px solid #e6e6e2;border-radius:18px;padding:20px 24px;box-shadow:0 8px 30px #1717170d}
+.hero-contact-bar .hero-message{min-width:0}
+.chapter-fixed .hero-contact-bar .hero-photo-caption{font-size:11px;line-height:1.4;color:#888;margin:0 0 7px!important}
+.chapter-fixed .hero-contact-bar .hero-overlay-title{font-size:25px;font-weight:600;line-height:1.15;letter-spacing:-.035em;color:#171717;margin:0!important}
+.chapter-fixed .hero-contact-bar .hero-overlay-note{font-size:11px;line-height:1.4;color:#888;margin:7px 0 0!important}
+.chapter-fixed .paint-hero .hero-contact-bar .hero-actions{margin:0;gap:10px;flex-wrap:nowrap;flex-shrink:0}
+.chapter-fixed .paint-hero .hero-contact-bar .button{background:#111;color:#fff;border:0;padding:14px 21px;gap:22px;border-radius:999px;font-size:14px;font-weight:600;white-space:nowrap}
+.chapter-fixed .paint-hero .hero-contact-bar .button:hover{background:#333;color:#fff;transform:translateY(-2px)}
+.chapter-fixed .paint-hero .hero-contact-bar .hero-phone{background:#000;color:#fff;border:0;border-radius:999px;padding:14px 18px;font-size:13px;white-space:nowrap;line-height:1.4;transition:background .2s,transform .2s}
+.chapter-fixed .paint-hero .hero-contact-bar .hero-phone:hover{background:#333;transform:translateY(-2px)}
+@media(max-width:1100px){.chapter-fixed .hero-overlay.hero-contact-bar{flex-direction:column;text-align:center;gap:14px;padding:17px 20px;width:min(620px,calc(100% - 36px))}}
+@media(max-width:760px){
+ .chapter-fixed .hero-overlay.hero-contact-bar{bottom:15px;width:calc(100% - 20px);padding:14px 12px;gap:12px;border-radius:15px}
+ .chapter-fixed .hero-contact-bar .hero-photo-caption{font-size:9px;margin-bottom:5px!important}.chapter-fixed .hero-contact-bar .hero-overlay-title{font-size:20px}.chapter-fixed .hero-contact-bar .hero-overlay-note{font-size:9px;margin-top:5px!important}
+ .chapter-fixed .paint-hero .hero-contact-bar .hero-actions{gap:8px}
+ .chapter-fixed .paint-hero .hero-contact-bar .button{padding:12px;gap:12px;font-size:12px}
+ .chapter-fixed .paint-hero .hero-contact-bar .hero-phone{padding:12px;font-size:12px}
+}
